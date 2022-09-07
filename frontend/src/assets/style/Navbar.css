@@ -1,0 +1,29 @@
+* {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #0c131f;
+}
+
+.sncf-explo-logo {
+  width: 100%;
+  height: auto;
+  margin: 10px 10px;
+}
+
+.user-account-logo {
+  width: 30%;
+  height: auto;
+  margin: 10px 0 0 50px;
+}
+.navbar li {
+  width: 25%;
+}
