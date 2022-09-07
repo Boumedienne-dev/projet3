@@ -31,7 +31,7 @@ export default function Footer() {
             to="tiktok"
             img
             src="https://res.cloudinary.com/otire82/image/upload/v1662553361/logo/tiktok_kn7lua.svg"
-            alt="logo de tiktok" 
+            alt="logo de tiktok"
           />
         </li>
         <li>
