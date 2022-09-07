@@ -5,14 +5,7 @@ export default function Footer() {
     <div className="footer_css">
       <ul className="footer">
         <li className="liWithName">
-          <Link to="/home">
-            accueil
-            <img
-              className="sncf-explo-logo"
-              src="../assets/image/sncfexplowhite.png"
-              alt="logo de sncf exploration"
-            />
-          </Link>
+          <Link to="/home">accueil</Link>
         </li>
         <li className="contact_css">
           <Link to="/contact">Contact</Link>
@@ -20,6 +13,11 @@ export default function Footer() {
         <li>
           <Link to="/accountuser">Mon Compte</Link>
         </li>
+        <img
+          className="sncf-explo-logo"
+          src="../assets/image/sncfexplowhite.png"
+          alt="logo de sncf exploration"
+        />
         <li>
           <Link
             to="/instagram"
