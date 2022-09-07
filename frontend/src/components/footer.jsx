@@ -15,34 +15,47 @@ export default function Footer() {
         </li>
         <img
           className="sncf-explo-logo"
-          src="../assets/image/sncfexplowhite.png"
+          src="https://res.cloudinary.com/otire82/image/upload/v1662553361/logo/SNCFConnectLogo_x5eclf.svg"
           alt="logo de sncf exploration"
         />
         <li>
           <Link
             to="/instagram"
             img
-            src="frontend\src\assets\image\instagram.svg"
+            src="https://res.cloudinary.com/otire82/image/upload/v1662553360/logo/instagram_lho6sp.svg"
+            alt="logo d'instagram"
           />
         </li>
         <li>
-          <Link to="tiktok" img src="frontend\src\assets\image\tiktok.svg" />
+          <Link
+            to="tiktok"
+            img
+            src="https://res.cloudinary.com/otire82/image/upload/v1662553361/logo/tiktok_kn7lua.svg"
+            alt="logo de tiktok" 
+          />
         </li>
         <li>
           <Link
             to="/facebook"
             img
-            src="frontend\src\assets\image\facebook.png"
+            src="https://res.cloudinary.com/otire82/image/upload/v1662553360/logo/facebook_sbn4rk.svg"
+            alt="logo de facebook"
           />
         </li>
         <li>
-          <Link to="/twitter" img src="frontend\src\assets\image\twitter.svg" />
+          <Link
+            to="/twitter"
+            img
+            src="https://res.cloudinary.com/otire82/image/upload/v1662553361/logo/twitter_shp47g.svg"
+            alt="logo de twitter"
+          />
         </li>
         <li>
           <Link
             to="/pinterest"
             img
-            src="frontend\src\assets\image\pinterest.svg"
+            src="https://res.cloudinary.com/otire82/image/upload/v1662553361/logo/pinterest_k9pjvi.svg"
+            alt="logo de pinterest"
           />
         </li>
       </ul>
