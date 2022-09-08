@@ -7,8 +7,8 @@ import AllLines from "./pages/AllLines";
 import User from "./pages/User";
 import RegistrationUser from "./pages/RegistrationUser";
 import AdminAccount from "./pages/AdminAccount";
-import Navbar from "./pages/Navbar";
-import Footer from "./pages/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import UserConnexion from "./pages/UserConnexion";
 import Home from "./pages/Home";
 
