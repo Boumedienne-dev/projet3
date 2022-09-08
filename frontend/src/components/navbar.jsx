@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="navbarmain">
         <ul className="navbar">
           <li className="liWithName">
-            <Link to="/">
+            <Link to="/accueil">
               <img
                 className="sncf-explo-logo"
                 src="https://res.cloudinary.com/otire82/image/upload/v1662557593/logo/sncfexplowhite_wxzckg.png"
@@ -17,7 +17,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li className="liWithName">
-            <Link to="/connexionuser">
+            <Link to="/utilisateur">
               <img
                 className="user-account-logo"
                 src="https://res.cloudinary.com/otire82/image/upload/v1662558227/logo/userHC_n5pb8l.png"
