@@ -1,0 +1,44 @@
+* {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.footer_css {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #0c131f;
+  height: 90px;
+  width: 100%;
+}
+
+.sncf-connect-logo {
+  width: 25%;
+  margin-left: 35%;
+  margin-top: 30px;
+}
+
+.menu {
+  text-align: left;
+  margin-left: 10px;
+  position: fixed;
+  font-size: 1em;
+}
+
+.menu a {
+  color: rgb(255, 255, 255);
+}
+
+.menu .plan-du-site link {
+  font-size: 80%;
+}
+.social-networks {
+  display: flex;
+  justify-content: right;
+  padding-right: 15px;
+  margin-top: 30px;
+}

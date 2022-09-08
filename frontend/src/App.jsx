@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
+import "@assets/style/Footer.css";
 import Region from "./pages/Region";
 import AccountUser from "./pages/AccountUser";
 import Contact from "./pages/Contact";
@@ -29,6 +30,7 @@ function App() {
           <Route path="/inscription" element={<RegistrationUser />} />
           <Route path="/administrateur" element={<AdminAccount />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
