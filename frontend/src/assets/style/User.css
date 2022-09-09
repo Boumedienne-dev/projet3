@@ -14,6 +14,7 @@
   justify-content: space-around;
   position: fixed;
   bottom: 0;
+  margin-bottom: 90px;
   width: 100%;
 }
 /* btn-pill-color */

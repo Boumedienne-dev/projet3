@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
-    <footer className="">
+    <div className="">
       <p>page contact</p>
-    </footer>
+    </div>
   );
 }

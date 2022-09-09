@@ -1,6 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
-import "@assets/style/Footer.css";
 import Region from "./pages/Region";
 import AccountUser from "./pages/AccountUser";
 import Contact from "./pages/Contact";
@@ -9,15 +7,19 @@ import AllLines from "./pages/AllLines";
 import User from "./pages/User";
 import RegistrationUser from "./pages/RegistrationUser";
 import AdminAccount from "./pages/AdminAccount";
-import Navbar from "./components/navbar";
+import Header from "./components/Header";
+import Footerb from "./components/Footerb";
 import UserConnexion from "./pages/UserConnexion";
 import Home from "./pages/Home";
+
+import "./App.css";
+import "./assets/style/Footer.css";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Header />
         <Routes>
           <Route path="/accueil" element={<Home />} />
           <Route path="/region" element={<Region />} />
@@ -30,7 +32,7 @@ function App() {
           <Route path="/inscription" element={<RegistrationUser />} />
           <Route path="/administrateur" element={<AdminAccount />} />
         </Routes>
-        <Footer />
+        <Footerb />
       </div>
     </Router>
   );
