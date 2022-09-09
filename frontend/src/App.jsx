@@ -7,8 +7,8 @@ import AllLines from "./pages/AllLines";
 import User from "./pages/User";
 import RegistrationUser from "./pages/RegistrationUser";
 import AdminAccount from "./pages/AdminAccount";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Footerb from "./components/Footerb";
 import UserConnexion from "./pages/UserConnexion";
 import Home from "./pages/Home";
 
@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Header />
         <Routes>
           <Route path="/accueil" element={<Home />} />
           <Route path="/region" element={<Region />} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/inscription" element={<RegistrationUser />} />
           <Route path="/administrateur" element={<AdminAccount />} />
         </Routes>
-        <Footer />
+        <Footerb />
       </div>
     </Router>
   );

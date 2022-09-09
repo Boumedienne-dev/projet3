@@ -5,7 +5,7 @@ import Insta from "../assets/image/instagram1.png";
 import Twitter from "../assets/image/twitter.png";
 import Pinterest from "../assets/image/pinterest.png";
 
-export default function Footer() {
+export default function Footerb() {
   return (
     <div className="footer_css">
       <div className="menu">
