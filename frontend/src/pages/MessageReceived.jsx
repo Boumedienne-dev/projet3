@@ -12,7 +12,7 @@ export default function MessageReceived() {
       </p>
       <div>
         <Link to="/accueil">
-          <img className="Btnaccueil-message" src={Btnaccueil} alt="accueil" />
+          <img className="btnHome-message" src={Btnaccueil} alt="accueil" />
         </Link>
       </div>
     </div>

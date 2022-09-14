@@ -5,7 +5,7 @@
   background-color: #ffffff;
 }
 
-.nous-contacter {
+.contactUs {
   position: absolute;
   left: 31.03%;
   right: 30.51%;
@@ -22,7 +22,7 @@
   color: #000000;
 }
 
-.texte-contact {
+.text-contact {
   position: absolute;
   left: 9.49%;
   right: 8.97%;
@@ -40,7 +40,7 @@
   color: #000000;
 }
 
-.champs-obligatoires {
+.requiredFields {
   position: absolute;
   left: 4.36%;
   right: 63.33%;
@@ -56,7 +56,7 @@
 }
 
 /* Nom* : */
-.nom {
+.name {
   position: absolute;
   left: 44.62%;
   right: 41.79%;
@@ -88,7 +88,7 @@ input {
 }
 
 /* Prénom : */
-.prenom {
+.firstName {
   position: absolute;
   left: 42.82%;
   right: 37.44%;
@@ -106,7 +106,7 @@ input {
   color: #000000;
 }
 
-.input-prenom {
+.input-firstName {
   box-sizing: border-box;
   position: absolute;
   left: 6.92%;
@@ -150,7 +150,7 @@ input {
 }
 
 /* Votre commentaire* : */
-.commentaire {
+.comment {
   position: absolute;
   left: 30.77%;
   right: 27.95%;
@@ -169,7 +169,7 @@ input {
 }
 
 /* Input Votre commentaire */
-.textarera-commentaire {
+.textarera-comment {
   box-sizing: border-box;
   position: absolute;
   left: 6.92%;
