@@ -1,6 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LinePage from "@pages/LinePage";
-import AdminLinePage from "@pages/AdminLinePage";
 import Region from "./pages/Region";
 import AccountUser from "./pages/AccountUser";
 import Contact from "./pages/Contact";
@@ -27,9 +25,7 @@ function App() {
           <Route path="/region" element={<Region />} />
           <Route path="/compte_utilisateur" element={<AccountUser />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/line/:id" element={<LinePage />} />
-          <Route path="/admin/line" element={<AdminLinePage />} />
-          <Route path="/ligne" element={<AllLines />} />
+          <Route path="/line" element={<AllLines />} />
           <Route path="/ville" element={<City />} />
           <Route path="/utilisateur" element={<User />} />
           <Route path="/connexion" element={<UserConnexion />} />

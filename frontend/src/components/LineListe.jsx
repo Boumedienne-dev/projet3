@@ -14,10 +14,10 @@ export default function RegionList() {
   }, []);
 
   return (
-    <div className="line-esp-foot">
+    <div>
       {lines &&
         lines.map((line) => (
-          <Link to={`/lines/${line.id}`} key={line.id}>
+          <Link to={`/ville/${line.id}`} key={line.id}>
             <Line line={line} />
           </Link>
         ))}
