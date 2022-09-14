@@ -1,33 +1,67 @@
-.title-registration{
-    margin:10px 10% 10px 10%;
+.title-registration {
+  margin: 10px 10% 10px 10%;
 }
 
-.text-registration{
-    margin: 15px;
-    font-size: 14px;
+.text-registration {
+  margin: 15px;
+  font-size: 14px;
 }
 
-.text-require{
-    font-size: 8px;
-    text-align: left;
-    margin-left: 30px;
+.text-require {
+  font-size: 8px;
+  text-align: left;
+  margin-left: 30px;
 }
 
-.form-container{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-.form-container input{
-    border-radius: 5px;
-    width: 80%;
-    text-align: center;
+.form-container input {
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+  align-self: center;
+  background-color: rgb(216, 216, 216);
+}
+#file {
+margin-bottom: 10px;
+width: max-content;
+}
+
+.btn-picture{
+    width: 150px;
+    font-size: small;
     align-self: center;
-    background-color: rgb(216, 216, 216);
 }
-.review-picture img{
-    border: black solid 1px;
-    width: 30%;
-    height: auto;
+.review-picture img {
+  border: black solid 1px;
+  width: 30%;
+  height: auto;
+}
+
+.toggle-blue button {
+  position: relative;
+  width: 8em;
+  height: 2em;
+  margin-bottom: 110px;
+  border-radius: 1em;
+  background: #8de8fe;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+}
+
+.toggle-blue button:before {
+  content: "";
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 1em;
+  background: #0c131f;
+  position: absolute;
+  left: 0.2em;
+  top: 0.1em;
 }

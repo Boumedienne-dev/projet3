@@ -24,7 +24,9 @@ export default function RegistrationUser() {
 
   return (
     <div className="">
-      <h3 className="title-registration">Bienvenue sur le formulaire d'inscription:</h3>
+      <h3 className="title-registration">
+        Bienvenue sur le formulaire d'inscription:
+      </h3>
       <p className="text-registration">
         En tant qu’utilisateur, tu pourras retrouver facilement- retrouver les
         activités que tu as ajoutées en favoris.
@@ -54,13 +56,15 @@ export default function RegistrationUser() {
         <div className="form-container">
           <label htmlFor="file">Photo de profil:</label>
           <input
+            className="inp-picture"
             type="file"
             name="file"
             id="file"
             alt="Profil"
+            accept="image/*"
             onChange={(e) => setImage(e.target.files[0])}
           />
-          <button type="button" onClick={uploadImage}>
+          <button className="btn-picture" type="button" onClick={uploadImage}>
             Charger votre photo
           </button>
         </div>
@@ -68,7 +72,7 @@ export default function RegistrationUser() {
           <p>Prévualisation de votre avatar:</p>
           <img alt={url} src={url} />
         </div>
-        <div className="toggle-pill-blue">
+        <div className="toggle-blue">
           <Link to="/compte_utilisateur">
             <button type="button">
               <span className="text-btn-black">Valider</span>
