@@ -1,5 +1,5 @@
+/* eslint-disable prettier/prettier */
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Region from "./pages/Region";
 import AccountUser from "./pages/AccountUser";
 import Contact from "./pages/Contact";
 import City from "./pages/City";
@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Footerb from "./components/Footerb";
 import UserConnexion from "./pages/UserConnexion";
 import Home from "./pages/Home";
+import AllCity from "./pages/AllCity";
 
 import "./App.css";
 import "./assets/style/Footer.css";
@@ -21,13 +22,13 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/region" element={<Region />} />
+          <Route path="/accueil" element={<Home />} />
+          <Route path="/les_villes" element={<AllCity />} />
           <Route path="/compte_utilisateur" element={<AccountUser />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/ligne" element={<AllLines />} />
+          <Route path="/les_lignes" element={<AllLines />} />
           <Route path="/ville" element={<City />} />
-          <Route path="/utilisateur" element={<User />} />
+          <Route path="/acces_compte" element={<User />} />
           <Route path="/connexion" element={<UserConnexion />} />
           <Route path="/inscription" element={<RegistrationUser />} />
           <Route path="/administrateur" element={<AdminAccount />} />
