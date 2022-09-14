@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Region from "./pages/Region";
 import AccountUser from "./pages/AccountUser";
 import Contact from "./pages/Contact";
+import MessageReceived from "./pages/MessageReceived";
 import City from "./pages/City";
 import AllLines from "./pages/AllLines";
 import User from "./pages/User";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/region" element={<Region />} />
           <Route path="/compte_utilisateur" element={<AccountUser />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/message_recu" element={<MessageReceived />} />
           <Route path="/ligne" element={<AllLines />} />
           <Route path="/ville" element={<City />} />
           <Route path="/utilisateur" element={<User />} />
