@@ -18,7 +18,9 @@ export default function LinePage() {
   return (
     <>
       <h2>Page d'une ligne</h2>
-      <Line line={line} />
+      <div>
+        <Line line={line} />
+      </div>
     </>
   );
 }

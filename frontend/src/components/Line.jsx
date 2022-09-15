@@ -2,7 +2,7 @@ export default function Line({ line }) {
   return (
     <div className="line-map">
       <div>
-        <div>
+        <div className="lineflex">
           {line.picture ? (
             <img
               className="line-map-img"

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import LineList from "../components/LineListe";
+
 import "../assets/style/line.css";
 
 export default function AllLines() {
