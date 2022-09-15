@@ -27,8 +27,8 @@ export default function Home() {
           getRegion.map((region) => (
             <div className="homeRegionContainersParent">
               <Link to={`/les_lignes/${region.id}`}>
-                <h4 className="homeRegionTitle">{region.name}</h4>
                 <div className="homeRegionContainersEnfant" key={region.id}>
+                  <h4 className="homeRegionTitle">{region.name}</h4>
                   <img
                     className="homeRegionImg"
                     src={region.picture}
