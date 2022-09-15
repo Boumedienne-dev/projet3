@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/home.css";
+import "../assets/style/line.css";
 
 export default function Home() {
   const [getRegion, setGetRegion] = useState();

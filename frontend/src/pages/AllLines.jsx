@@ -1,6 +1,6 @@
 import LineList from "@components/LineListe";
 import { Link } from "react-router-dom";
-import "../line.css";
+import "../assets/style/line.css";
 
 export default function AllLines() {
   return (
