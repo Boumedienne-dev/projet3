@@ -56,7 +56,6 @@ export default function RegistrationUser() {
         <div className="form-container">
           <label htmlFor="file">Photo de profil:</label>
           <input
-            className="inp-picture"
             type="file"
             name="file"
             id="file"

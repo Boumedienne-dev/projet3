@@ -28,15 +28,18 @@
   background-color: rgb(216, 216, 216);
 }
 #file {
-margin-bottom: 10px;
-width: max-content;
-max-width: 95%;
+  margin-bottom: 10px;
+  width: max-content;
+  max-width: 95%;
+  border: 1px solid;
 }
 
-.btn-picture{
-    width: 150px;
-    font-size: small;
-    align-self: center;
+.btn-picture {
+  width: 150px;
+  font-size: small;
+  align-self: center;
+  background: #8de8fe;
+  border-radius: 10px;
 }
 .review-picture img {
   border: black solid 1px;
