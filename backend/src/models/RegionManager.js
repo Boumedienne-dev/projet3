@@ -12,7 +12,6 @@ class RegionManager extends AbstractManager {
     );
   }
 
-
   update(region) {
     return this.connection.query(
       `update ${this.table} set title = ? where id = ?`,

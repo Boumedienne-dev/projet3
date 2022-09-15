@@ -1,8 +1,8 @@
-import LineList from "@components/LineListe";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import "../line.css";
+import LineList from "../components/LineListe";
+import "../assets/style/line.css";
 
 export default function AllLines() {
   const [getLines, setGetLines] = useState();
@@ -29,6 +29,7 @@ export default function AllLines() {
         src={getRegion.picture}
         alt={getRegion.name}
       />
+      <p>{getRegion.description}</p>
       {getLines &&
         getLines.map((line) => (
           <div>

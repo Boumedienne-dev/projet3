@@ -1,7 +1,7 @@
-import Line from "@components/Line";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Line from "../components/Line";
 
 export default function LinePage() {
   const [line, setLine] = useState("");
