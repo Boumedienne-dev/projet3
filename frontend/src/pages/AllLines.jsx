@@ -1,5 +1,5 @@
-import LineList from "@components/LineListe";
 import { Link } from "react-router-dom";
+import LineList from "../components/LineListe";
 import "../line.css";
 
 export default function AllLines() {

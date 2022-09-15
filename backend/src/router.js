@@ -7,6 +7,8 @@ const itemControllers = require("./controllers/itemControllers");
 const lineControllers = require("./controllers/lineControllers");
 const regionControllers = require("./controllers/regionControllers");
 
+const userRegistrationControllers = require("./controllers/userRegistrationControllers");
+
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
 router.put("/items/:id", itemControllers.edit);
@@ -23,5 +25,6 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
+router.post("inscription", userRegistrationControllers.add);
 
 module.exports = router;
