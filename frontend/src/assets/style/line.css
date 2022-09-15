@@ -1,3 +1,4 @@
+
 .line-first {
   width: 100%;
   height: 50%;
@@ -20,8 +21,8 @@
 }
 
 .line-map-img {
-  width: 52%;
-  height: 109px;
+  width: 380px;
+  height: 150px;
   object-fit: fill;
 }
 
@@ -86,8 +87,4 @@
   }
 }
 
-.line-map-img {
-  width: 380px;
-  height: 150px;
-  object-fit: fill;
-}
+

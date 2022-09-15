@@ -5,6 +5,19 @@ class LineManager extends AbstractManager {
     super({ table: "line" });
   }
 
+  findAllWithRegionId() {
+    return this.connection.query(
+      `select * from  ${this.table} join region ON region.id=line.id_region`
+    );
+  }
+
+  findWithRegionId(id) {
+    return this.connection.query(
+      `select * from  ${this.table} join region ON region.id=line.id_region WHERE region.id = ?`,
+      [id]
+    );
+  }
+
   insert(line) {
     return this.connection.query(
       `insert into ${this.table} (id_region, line_name, picture) values (?, ?, ?)`,

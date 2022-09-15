@@ -1,5 +1,3 @@
-import "../App.css";
-
 export default function Line({ line }) {
   return (
     <div className="line-map">

@@ -1,6 +1,6 @@
 const models = require("../models");
 
-const browse = (req, res) => {
+const getAll = (req, res) => {
   models.line
     .findAll()
     .then(([rows]) => {
@@ -12,7 +12,7 @@ const browse = (req, res) => {
     });
 };
 
-const read = (req, res) => {
+const getById = (req, res) => {
   models.line
     .find(req.params.id)
     .then(([rows]) => {
@@ -21,6 +21,18 @@ const read = (req, res) => {
       } else {
         res.send(rows[0]);
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const getWithIdRegion = (req, res) => {
+  models.line
+    .findWithRegionId(req.params.id)
+    .then(([rows]) => {
+      res.send(rows);
     })
     .catch((err) => {
       console.error(err);
@@ -83,8 +95,9 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
-  browse,
-  read,
+  getAll,
+  getById,
+  getWithIdRegion,
   edit,
   add,
   destroy,
