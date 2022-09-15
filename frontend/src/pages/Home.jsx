@@ -12,7 +12,7 @@ export default function Home() {
       .get(`${import.meta.env.VITE_BACKEND_URL}/regions`)
       .then((response) => response.data)
       .then((data) => setGetRegion(data));
-  });
+  }, []);
   return (
     <div className="homeDivMain">
       <header>
