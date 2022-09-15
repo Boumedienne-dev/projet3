@@ -33,7 +33,7 @@ export default function Contact() {
         </label>
         <textarea className="textarera-comment" name="message" />
       </form>
-      <Link to="/message_recu" className="buttonSubmit">
+      <Link to="/accueil" className="buttonSubmit">
         <img src={Btnenvoyer} alt="envoi-formulaire" />
       </Link>
     </div>

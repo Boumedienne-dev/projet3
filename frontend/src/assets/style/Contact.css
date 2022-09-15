@@ -28,7 +28,6 @@
   right: 8.97%;
   top: 13.24%;
   bottom: 79.79%;
-
   font-family: "?????";
   font-style: normal;
   font-weight: 400;
@@ -55,7 +54,7 @@
   color: #000000;
 }
 
-/* Nom* : */
+/* Name* : */
 .name {
   position: absolute;
   left: 44.62%;
@@ -87,7 +86,7 @@ input {
   padding-left: 10px;
 }
 
-/* Prénom : */
+/* Firstname : */
 .firstName {
   position: absolute;
   left: 42.82%;
@@ -149,7 +148,7 @@ input {
   border-radius: 9px;
 }
 
-/* Votre commentaire* : */
+/* Your comment* : */
 .comment {
   position: absolute;
   left: 30.77%;
@@ -168,7 +167,7 @@ input {
   color: #000000;
 }
 
-/* Input Votre commentaire */
+/* Input Your comment */
 .textarera-comment {
   box-sizing: border-box;
   position: absolute;
@@ -183,7 +182,7 @@ input {
   padding-top: 10px;
 }
 
-/* BTN envoyer */
+/* BTN submit */
 .buttonSubmit {
   position: absolute;
   left: 33.33%;
