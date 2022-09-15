@@ -26,6 +26,7 @@ function App() {
           <Route path="/les_villes" element={<AllCity />} />
           <Route path="/compte_utilisateur" element={<AccountUser />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/ligne" element={<AllLines />} />
           <Route path="/les_lignes" element={<AllLines />} />
           <Route path="/ville" element={<City />} />
           <Route path="/acces_compte" element={<User />} />
