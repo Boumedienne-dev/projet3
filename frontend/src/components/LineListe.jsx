@@ -14,7 +14,7 @@ export default function RegionList() {
   }, []);
 
   return (
-    <div>
+    <div className="lineposflex">
       {lines &&
         lines.map((line) => (
           <Link to={`/ville/${line.id}`} key={line.id}>
