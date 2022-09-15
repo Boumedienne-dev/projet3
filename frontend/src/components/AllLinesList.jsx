@@ -5,7 +5,7 @@ function AllLinesList({ line }) {
     <div className="lineposflex">
       <div className="line-map">
         <div>
-          <Link to="/les_villes">
+          <Link to={`/les_villes/${line.id}`}>
             <div className="lineflex">
               {line.picture ? (
                 <img

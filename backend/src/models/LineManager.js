@@ -13,7 +13,7 @@ class LineManager extends AbstractManager {
 
   findWithRegionId(id) {
     return this.connection.query(
-      `select l.line_name,  l.picture from  ${this.table} as l join region as r on r.id=l.id_region WHERE r.id = ?`,
+      `select l.id, l.line_name,  l.picture from  ${this.table} as l join region as r on r.id=l.id_region WHERE r.id = ?`,
       [id]
     );
   }
