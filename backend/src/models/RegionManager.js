@@ -1,6 +1,6 @@
 const AbstractManager = require("./AbstractManager");
 
-class ItemManager extends AbstractManager {
+class RegionManager extends AbstractManager {
   constructor() {
     super({ table: "region" });
   }
@@ -12,6 +12,7 @@ class ItemManager extends AbstractManager {
     );
   }
 
+
   update(region) {
     return this.connection.query(
       `update ${this.table} set title = ? where id = ?`,
@@ -20,4 +21,4 @@ class ItemManager extends AbstractManager {
   }
 }
 
-module.exports = ItemManager;
+module.exports = RegionManager;
