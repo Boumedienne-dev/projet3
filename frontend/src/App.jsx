@@ -23,7 +23,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/accueil" element={<Home />} />
-          <Route path="/les_villes" element={<AllCity />} />
+          <Route path="/les_villes/:id" element={<AllCity />} />
           <Route path="/compte_utilisateur" element={<AccountUser />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/les_lignes/:id" element={<AllLines />} />

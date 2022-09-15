@@ -10,7 +10,7 @@
 .homeRegionContainersParent {
   font-size: 8px;
   width: 40%;
-  height: 10vh;
+  height: 15vh;
   margin-top: 10px;
   align-items: center;
   overflow: hidden;
@@ -18,14 +18,16 @@
 }
 
 .homeRegionImg {
-  z-index: -100;
+  z-index: -1;
   position: relative;
   width: 300px;
   height: 10vh;
   right: 75px;
+  bottom: 5px;
   object-fit: cover;
 }
 
 .homeRegionTitle {
-  margin-bottom: 5px;
+  position: relative;
+  top: 95px;
 }
