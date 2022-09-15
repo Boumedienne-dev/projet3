@@ -1,10 +1,29 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/style/RegistrationUser.css";
+import axios from "axios";
+import PasswordAndConfirmPasswordRegistration from "../components/PasswordAndConfirmPasswordRegistration";
 
 export default function RegistrationUser() {
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
+  const [user, setUser] = useState({
+    last_name: "",
+    first_name: "",
+    mail: "",
+    password: "",
+    picture: false,
+  });
+
+  const postUser = () => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/user`, { ...user })
+      .then((res) => {
+        console.error(res);
+        console.error(res.data);
+      });
+  };
+
   const uploadImage = () => {
     const data = new FormData();
     data.append("file", image);
@@ -32,26 +51,60 @@ export default function RegistrationUser() {
         activités que tu as ajoutées en favoris.
       </p>
       <p className="text-require">* Champs obligatoires.</p>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          postUser();
+        }}
+      >
         <div className="form-container">
           <label htmlFor="name">Nom:*</label>
-          <input type="text" name="name" id="name" required />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            onChange={(e) =>
+              setUser({
+                ...user,
+                last_name: e.target.value,
+              })
+            }
+            required
+          />
         </div>
         <div className="form-container">
           <label htmlFor="firstname">Prénom:*</label>
-          <input type="text" name="firstname" id="firstname" required />
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            onChange={(e) =>
+              setUser({
+                ...user,
+                first_name: e.target.value,
+              })
+            }
+            required
+          />
         </div>
         <div className="form-container">
           <label htmlFor="email">Email:*</label>
-          <input type="email" name="email" id="email" required />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            onChange={(e) =>
+              setUser({
+                ...user,
+                mail: e.target.value,
+              })
+            }
+            required
+          />
         </div>
         <div className="form-container">
           <label htmlFor="password">Mot de passe:*</label>
-          <input type="password" name="password" id="password" required />
-        </div>
-        <div className="form-container">
-          <label htmlFor="password">Confirmez le mot de passe:*</label>
-          <input type="password" name="password" id="password" required />
+          <PasswordAndConfirmPasswordRegistration />
         </div>
         <div className="form-container">
           <label htmlFor="file">Photo de profil:</label>
@@ -61,7 +114,10 @@ export default function RegistrationUser() {
             id="file"
             alt="Profil"
             accept="image/*"
-            onChange={(e) => setImage(e.target.files[0])}
+            onChange={(e) =>
+              setImage(e.target.files[0]) &&
+              setUser({ picture: e.target.value })
+            }
           />
           <button className="btn-picture" type="button" onClick={uploadImage}>
             Charger votre photo
@@ -73,7 +129,7 @@ export default function RegistrationUser() {
         </div>
         <div className="toggle-blue">
           <Link to="/compte_utilisateur">
-            <button type="button">
+            <button type="submit">
               <span className="text-btn-black">Valider</span>
             </button>
           </Link>
