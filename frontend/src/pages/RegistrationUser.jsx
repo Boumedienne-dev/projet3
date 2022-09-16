@@ -16,12 +16,10 @@ export default function RegistrationUser() {
   });
 
   const postUser = () => {
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/user`, { ...user })
-      .then((res) => {
-        console.error(res);
-        console.error(res.data);
-      });
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/user`).then((res) => {
+      console.error(res);
+      console.error(res.data);
+    });
   };
 
   const uploadImage = () => {
@@ -33,7 +31,7 @@ export default function RegistrationUser() {
       method: "post",
       body: data,
     })
-      .then((resp) => resp.json())
+      .then((res) => res.json())
       .then((data1) => {
         setUrl(data1.url);
       })
@@ -42,7 +40,7 @@ export default function RegistrationUser() {
 
   function handleInputProfile(e) {
     setImage(e.target.files[0]);
-    setUser({ picture: e.target.value });
+    setUser({ picture: e.target.value }); // e.target.file[url]
   }
 
   function handlePassword(e) {
@@ -134,7 +132,7 @@ export default function RegistrationUser() {
           <img alt={url} src={url} />
         </div>
         <div className="toggle-blue">
-          <button type="submit" value="Nouveau profil">
+          <button type="submit" value="Submit">
             <span className="text-btn-black">Valider</span>
           </button>
         </div>

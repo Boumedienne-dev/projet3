@@ -10,18 +10,18 @@ export default function PasswordAndConfirmPasswordRegistration() {
     password: "",
     confirmPassword: "",
   });
-  const handlePasswordChange = (evnt) => {
-    const passwordInputValue = evnt.target.value.trim();
-    const passwordInputFieldName = evnt.target.name;
+  const handlePasswordChange = (e) => {
+    const passwordInputValue = e.target.value.trim();
+    const passwordInputFieldName = e.target.name;
     const NewPasswordInput = {
       ...passwordInput,
       [passwordInputFieldName]: passwordInputValue,
     };
     setPasswordInput(NewPasswordInput);
   };
-  const handleValidation = (evnt) => {
-    const passwordInputValue = evnt.target.value.trim();
-    const passwordInputFieldName = evnt.target.name;
+  const handleValidation = (e) => {
+    const passwordInputValue = e.target.value.trim();
+    const passwordInputFieldName = e.target.name;
     // for password
     if (passwordInputFieldName === "password") {
       const uppercaseRegExp = /(?=.*?[A-Z])/;
