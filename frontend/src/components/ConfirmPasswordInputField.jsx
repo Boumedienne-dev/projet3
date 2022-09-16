@@ -5,7 +5,7 @@ function ConfirmPasswordInputField({
   confirmPasswordError,
 }) {
   return (
-    <div className="form-group my-3">
+    <div>
       <input
         type="password"
         value={confirmPasswordValue}
@@ -13,7 +13,6 @@ function ConfirmPasswordInputField({
         onKeyUp={handleValidation}
         name="confirmPassword"
         placeholder="Répéter le mot de passe"
-        className="form-control"
       />
       <p className="text-danger">{confirmPasswordError}</p>
     </div>

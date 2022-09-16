@@ -5,7 +5,7 @@ function PasswordInputField({
   passwordError,
 }) {
   return (
-    <div className="form-group my-3">
+    <div>
       <input
         type="password"
         value={passwordValue}
@@ -13,7 +13,6 @@ function PasswordInputField({
         onKeyUp={handleValidation}
         name="password"
         placeholder="Mot de passe"
-        className="form-control"
       />
       <p className="text-danger">{passwordError}</p>
     </div>

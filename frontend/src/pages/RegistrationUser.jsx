@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../assets/style/RegistrationUser.css";
 import axios from "axios";
 import PasswordAndConfirmPasswordRegistration from "../components/PasswordAndConfirmPasswordRegistration";
@@ -134,7 +134,7 @@ export default function RegistrationUser() {
           <img alt={url} src={url} />
         </div>
         <div className="toggle-blue">
-          <button type="submit">
+          <button type="submit" value="Nouveau profil">
             <span className="text-btn-black">Valider</span>
           </button>
         </div>

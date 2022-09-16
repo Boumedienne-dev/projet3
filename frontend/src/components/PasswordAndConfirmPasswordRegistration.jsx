@@ -67,8 +67,8 @@ export default function PasswordAndConfirmPasswordRegistration() {
     }
   };
   return (
-    <div className="row">
-      <div className="col-sm-4">
+    <div>
+      <div>
         <PasswordInputField
           handlePasswordChange={handlePasswordChange}
           handleValidation={handleValidation}
