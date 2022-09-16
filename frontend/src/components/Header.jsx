@@ -17,7 +17,7 @@ export default function Header() {
             </Link>
           </li>
           <li className="liWithName">
-            <Link to="/utilisateur">
+            <Link to="/acces_compte">
               <img
                 className="user-account-logo"
                 src="https://res.cloudinary.com/otire82/image/upload/v1662558227/logo/userHC_n5pb8l.png"

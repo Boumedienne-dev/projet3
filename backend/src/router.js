@@ -25,6 +25,6 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
-router.post("inscription", userRegistrationControllers.add);
+router.post("/inscription", userRegistrationControllers.add);
 
 module.exports = router;

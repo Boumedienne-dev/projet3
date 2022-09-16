@@ -12,7 +12,7 @@ export default function RegistrationUser() {
     first_name: "",
     mail: "",
     password: "",
-    picture: false,
+    picture: "",
   });
 
   const postUser = () => {
@@ -32,7 +32,6 @@ export default function RegistrationUser() {
     fetch("  https://api.cloudinary.com/v1_1/otire82/image/upload", {
       method: "post",
       body: data,
-      sources: ["local", "url", "camera"],
     })
       .then((resp) => resp.json())
       .then((data1) => {
@@ -41,6 +40,14 @@ export default function RegistrationUser() {
       .catch((err) => console.error(err));
   };
 
+  function handleInputProfile(e) {
+    setImage(e.target.files[0]);
+    setUser({ picture: e.target.value });
+  }
+
+  function handlePassword(e) {
+    setUser({ password: e.target.value });
+  }
   return (
     <div className="">
       <h3 className="title-registration">
@@ -104,7 +111,9 @@ export default function RegistrationUser() {
         </div>
         <div className="form-container">
           <label htmlFor="password">Mot de passe:*</label>
-          <PasswordAndConfirmPasswordRegistration />
+          <PasswordAndConfirmPasswordRegistration
+            onChange={(e) => handlePassword(e)}
+          />
         </div>
         <div className="form-container">
           <label htmlFor="file">Photo de profil:</label>
@@ -114,10 +123,7 @@ export default function RegistrationUser() {
             id="file"
             alt="Profil"
             accept="image/*"
-            onChange={(e) =>
-              setImage(e.target.files[0]) &&
-              setUser({ picture: e.target.value })
-            }
+            onChange={(e) => handleInputProfile(e)}
           />
           <button className="btn-picture" type="button" onClick={uploadImage}>
             Charger votre photo
@@ -128,11 +134,9 @@ export default function RegistrationUser() {
           <img alt={url} src={url} />
         </div>
         <div className="toggle-blue">
-          <Link to="/compte_utilisateur">
-            <button type="submit">
-              <span className="text-btn-black">Valider</span>
-            </button>
-          </Link>
+          <button type="submit">
+            <span className="text-btn-black">Valider</span>
+          </button>
         </div>
       </form>
     </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PasswordInputField from "./PasswordInputField";
 import ConfirmPasswordInputField from "./ConfirmPasswordInputField";
+import "../assets/style/RegistrationUser.css";
 
 export default function PasswordAndConfirmPasswordRegistration() {
   const [passwordError, setPasswordError] = useState("");
