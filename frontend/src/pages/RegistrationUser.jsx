@@ -6,7 +6,6 @@ import PasswordAndConfirmPasswordRegistration from "../components/PasswordAndCon
 
 export default function RegistrationUser() {
   const [image, setImage] = useState("");
-  const [url, setUrl] = useState("");
   const [user, setUser] = useState({
     last_name: "",
     first_name: "",
@@ -16,10 +15,14 @@ export default function RegistrationUser() {
   });
 
   const postUser = () => {
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/user`).then((res) => {
-      console.error(res);
-      console.error(res.data);
-    });
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/users`, {
+        ...user,
+      })
+      .then((res) => {
+        console.error(res);
+        console.error(res.data);
+      });
   };
 
   const uploadImage = () => {
@@ -33,14 +36,14 @@ export default function RegistrationUser() {
     })
       .then((res) => res.json())
       .then((data1) => {
-        setUrl(data1.url);
+        setUser({ ...user, picture: data1.url });
       })
       .catch((err) => console.error(err));
   };
 
   function handleInputProfile(e) {
     setImage(e.target.files[0]);
-    setUser({ picture: e.target.value }); // e.target.file[url]
+    setUser({ ...user, picture: e.target.value });
   }
 
   function handlePassword(e) {
@@ -129,7 +132,7 @@ export default function RegistrationUser() {
         </div>
         <div className="review-picture">
           <p>Prévualisation de votre avatar:</p>
-          <img alt={url} src={url} />
+          <img alt={user.picture} src={user.picture} />
         </div>
         <div className="toggle-blue">
           <button type="submit" value="Submit">
