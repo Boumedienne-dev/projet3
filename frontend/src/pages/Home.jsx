@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/home.css";
+
+import "../assets/style/home.css";
 
 export default function Home() {
   const [getRegion, setGetRegion] = useState();
@@ -25,9 +26,9 @@ export default function Home() {
         {getRegion &&
           getRegion.map((region) => (
             <div className="homeRegionContainersParent">
-              <Link to="/ligne">
-                <h4 className="homeRegionTitle">{region.name}</h4>
+              <Link to={`/les_lignes/${region.id}`}>
                 <div className="homeRegionContainersEnfant" key={region.id}>
+                  <h4 className="homeRegionTitle">{region.name}</h4>
                   <img
                     className="homeRegionImg"
                     src={region.picture}
