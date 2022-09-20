@@ -12,11 +12,13 @@ export default function Home() {
       .get(`${import.meta.env.VITE_BACKEND_URL}/regions`)
       .then((response) => response.data)
       .then((data) => setGetRegion(data));
-  });
+  }, []);
   return (
-    <div>
+    <div className="homeDivMain">
       <header>
-        <h2>Bienvenue sur l'application Sncf Exploration</h2>
+        <h2 className="homeTitle">
+          Bienvenue sur l'application Sncf Exploration
+        </h2>
         <p>
           Vous voulez trouver une activité proche de nos gare TER? Vous êtes au
           bon endroit
@@ -25,9 +27,9 @@ export default function Home() {
       <div className="homeDiv">
         {getRegion &&
           getRegion.map((region) => (
-            <div className="homeRegionContainersParent">
+            <div className="homeRegionContainers">
               <Link to={`/les_lignes/${region.id}`}>
-                <div className="homeRegionContainersEnfant" key={region.id}>
+                <div className="homeRegionContainersChild" key={region.id}>
                   <h4 className="homeRegionTitle">{region.name}</h4>
                   <img
                     className="homeRegionImg"
