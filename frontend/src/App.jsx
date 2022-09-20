@@ -22,6 +22,8 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/region" element={<AllLines />} />
           <Route path="/accueil" element={<Home />} />
           <Route path="/les_villes/:id" element={<AllCity />} />
           <Route path="/compte_utilisateur" element={<AccountUser />} />
