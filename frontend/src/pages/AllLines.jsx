@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
-import LineList from "../components/LineListe";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import AllLinesList from "../components/AllLinesList";
 import "../assets/style/allLines.css";
 
