@@ -36,8 +36,10 @@ export default function AllLines() {
       ) : (
         <h2>Page en cours de construction</h2>
       )}
-      {getLines &&
-        getLines.map((line) => <AllLinesList key={line.id} line={line} />)}
+      <div className="lineposflex">
+        {getLines &&
+          getLines.map((line) => <AllLinesList key={line.id} line={line} />)}
+      </div>
     </div>
   );
 }
