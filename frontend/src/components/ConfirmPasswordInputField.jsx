@@ -1,16 +1,16 @@
 function ConfirmPasswordInputField({
   handleValidation,
-  handlePasswordChange,
-  confirmPasswordValue,
   confirmPasswordError,
+  confirmPassword,
+  setConfirmPassword,
 }) {
   return (
     <div>
       <input
         type="password"
-        value={confirmPasswordValue}
-        onChange={handlePasswordChange}
-        onKeyUp={handleValidation}
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        onBlur={(e) => handleValidation(e)}
         name="confirmPassword"
         placeholder="Répéter le mot de passe"
       />

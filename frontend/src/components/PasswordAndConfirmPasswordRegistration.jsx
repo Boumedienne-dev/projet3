@@ -3,22 +3,15 @@ import PasswordInputField from "./PasswordInputField";
 import ConfirmPasswordInputField from "./ConfirmPasswordInputField";
 import "../assets/style/RegistrationUser.css";
 
-export default function PasswordAndConfirmPasswordRegistration() {
+export default function PasswordAndConfirmPasswordRegistration({
+  password,
+  setPassword,
+  setErrorsPassword,
+}) {
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
-  const [passwordInput, setPasswordInput] = useState({
-    password: "",
-    confirmPassword: "",
-  });
-  const handlePasswordChange = (e) => {
-    const passwordInputValue = e.target.value.trim();
-    const passwordInputFieldName = e.target.name;
-    const NewPasswordInput = {
-      ...passwordInput,
-      [passwordInputFieldName]: passwordInputValue,
-    };
-    setPasswordInput(NewPasswordInput);
-  };
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   const handleValidation = (e) => {
     const passwordInputValue = e.target.value.trim();
     const passwordInputFieldName = e.target.name;
@@ -36,33 +29,41 @@ export default function PasswordAndConfirmPasswordRegistration() {
       const specialCharPassword = specialCharRegExp.test(passwordInputValue);
       const minLengthPassword = minLengthRegExp.test(passwordInputValue);
       let errMsg = "";
+
       if (passwordLength === 0) {
         errMsg = "Veuillez indiquer un mot de passe";
+        setErrorsPassword(true);
       } else if (!uppercasePassword) {
         errMsg = "Au minimum une majuscule";
+        setErrorsPassword(true);
       } else if (!lowercasePassword) {
         errMsg = "Au moins une minuscule";
+        setErrorsPassword(true);
       } else if (!digitsPassword) {
         errMsg = "Au minimum un chiffre";
+        setErrorsPassword(true);
       } else if (!specialCharPassword) {
         errMsg = "Au moins un caractère spécial";
+        setErrorsPassword(true);
       } else if (!minLengthPassword) {
         errMsg = "Au minimum 8 caractères";
+        setErrorsPassword(true);
       } else {
         errMsg = "";
+        setErrorsPassword(false);
       }
       setPasswordError(errMsg);
     }
     // for confirm password
     if (
       passwordInputFieldName === "confirmPassword" ||
-      (passwordInputFieldName === "password" &&
-        passwordInput.confirmPassword.length > 0)
+      (passwordInputFieldName === "password" && confirmPassword.length > 0)
     ) {
-      if (passwordInput.confirmPassword !== passwordInput.password) {
+      if (confirmPassword !== password) {
         setConfirmPasswordError("Le mot de passe n'est pas identique");
       } else {
         setConfirmPasswordError("");
+        setErrorsPassword(false);
       }
     }
   };
@@ -70,16 +71,16 @@ export default function PasswordAndConfirmPasswordRegistration() {
     <div>
       <div>
         <PasswordInputField
-          handlePasswordChange={handlePasswordChange}
+          password={password}
+          setPassword={setPassword}
           handleValidation={handleValidation}
-          passwordValue={passwordInput.password}
           passwordError={passwordError}
         />
         <ConfirmPasswordInputField
-          handlePasswordChange={handlePasswordChange}
           handleValidation={handleValidation}
-          confirmPasswordValue={passwordInput.confirmPassword}
           confirmPasswordError={confirmPasswordError}
+          confirmPassword={confirmPassword}
+          setConfirmPassword={setConfirmPassword}
         />
       </div>
     </div>

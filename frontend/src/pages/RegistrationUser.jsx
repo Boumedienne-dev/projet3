@@ -5,24 +5,30 @@ import axios from "axios";
 import PasswordAndConfirmPasswordRegistration from "../components/PasswordAndConfirmPasswordRegistration";
 
 export default function RegistrationUser() {
+  const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
+  const [errorsPassword, setErrorsPassword] = useState(false);
   const [user, setUser] = useState({
     last_name: "",
     first_name: "",
     mail: "",
-    password: "",
     picture: "",
   });
 
+  console.log(errorsPassword);
+
   const postUser = () => {
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/users`, {
-        ...user,
-      })
-      .then((res) => {
-        console.error(res);
-        console.error(res.data);
-      });
+    if (!errorsPassword) {
+      axios
+        .post(`${import.meta.env.VITE_BACKEND_URL}/users`, {
+          ...user,
+          password,
+        })
+        .then((res) => {
+          console.error(res);
+          console.error(res.data);
+        });
+    }
   };
 
   const uploadImage = () => {
@@ -46,9 +52,6 @@ export default function RegistrationUser() {
     setUser({ ...user, picture: e.target.value });
   }
 
-  function handlePassword(e) {
-    setUser({ password: e.target.value });
-  }
   return (
     <div className="">
       <h3 className="title-registration">
@@ -113,7 +116,10 @@ export default function RegistrationUser() {
         <div className="form-container">
           <label htmlFor="password">Mot de passe:*</label>
           <PasswordAndConfirmPasswordRegistration
-            onChange={(e) => handlePassword(e)}
+            password={password}
+            setPassword={setPassword}
+            errorsPassword={errorsPassword}
+            setErrorsPassword={setErrorsPassword}
           />
         </div>
         <div className="form-container">
