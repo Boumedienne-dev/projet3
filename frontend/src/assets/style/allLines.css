@@ -66,21 +66,19 @@
 
   .lineposflex {
     display: flex;
-    justify-content: center;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 10%;
-    padding: 0% 10%;
   }
   .lineflex {
     margin-top: 10%;
     margin-bottom: 5%;
-    margin-top: 20%;
+
   }
 
   .line-map-img {
-    width: 380px;
+    width: 260px;
     height: 150px;
     object-fit: fill;
     border-radius: 15px;
