@@ -6,6 +6,7 @@ const itemControllers = require("./controllers/itemControllers");
 
 const lineControllers = require("./controllers/lineControllers");
 const regionControllers = require("./controllers/regionControllers");
+const activityControllers = require("./controllers/activityControllers");
 
 const userRegistrationControllers = require("./controllers/userRegistrationControllers");
 
@@ -32,5 +33,7 @@ router.get("/users/:id", userRegistrationControllers.read);
 router.put("/users/:id", userRegistrationControllers.edit);
 router.post("/users", userRegistrationControllers.add);
 router.delete("/users/:id", userRegistrationControllers.destroy);
+
+router.get("/city/:id/activity", activityControllers.getActivityWithCityId);
 
 module.exports = router;
