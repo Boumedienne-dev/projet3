@@ -7,13 +7,15 @@ import PasswordAndConfirmPasswordRegistration from "../components/PasswordAndCon
 export default function RegistrationUser() {
   const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
-  const [errorsPassword, setErrorsPassword] = useState("");
+  const [errorsPassword, setErrorsPassword] = useState(false);
   const [user, setUser] = useState({
     last_name: "",
     first_name: "",
     mail: "",
     picture: "",
   });
+
+  console.log(errorsPassword);
 
   const postUser = () => {
     if (!errorsPassword) {

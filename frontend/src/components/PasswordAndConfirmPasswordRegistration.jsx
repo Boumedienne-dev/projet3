@@ -50,6 +50,7 @@ export default function PasswordAndConfirmPasswordRegistration({
         setErrorsPassword(true);
       } else {
         errMsg = "";
+        setErrorsPassword(false);
       }
       setPasswordError(errMsg);
     }
@@ -74,7 +75,6 @@ export default function PasswordAndConfirmPasswordRegistration({
           setPassword={setPassword}
           handleValidation={handleValidation}
           passwordError={passwordError}
-          setErrorsPassword={setErrorsPassword}
         />
         <ConfirmPasswordInputField
           handleValidation={handleValidation}
