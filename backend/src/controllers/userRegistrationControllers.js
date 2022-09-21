@@ -1,7 +1,7 @@
 const models = require("../models");
 
-const getAll = (req, res) => {
-  models.line
+const browse = (req, res) => {
+  models.user
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -12,8 +12,8 @@ const getAll = (req, res) => {
     });
 };
 
-const getById = (req, res) => {
-  models.line
+const read = (req, res) => {
+  models.user
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -28,27 +28,15 @@ const getById = (req, res) => {
     });
 };
 
-const getWithIdRegion = (req, res) => {
-  models.line
-    .findWithRegionId(req.params.id)
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
 const edit = (req, res) => {
-  const line = req.body;
+  const user = req.body;
 
   // TODO validations (length, format...)
 
-  line.id = parseInt(req.params.id, 10);
+  user.id = parseInt(req.params.id, 10);
 
-  models.line
-    .update(line)
+  models.user
+    .update(user)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -63,14 +51,14 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const line = req.body;
+  const user = req.body;
 
   // TODO validations (length, format...)
 
-  models.line
-    .insert(line)
+  models.user
+    .insert(user)
     .then(([result]) => {
-      res.location(`/lines/${result.insertId}`).sendStatus(201);
+      res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -79,7 +67,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.line
+  models.user
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -95,9 +83,8 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
-  getAll,
-  getById,
-  getWithIdRegion,
+  browse,
+  read,
   edit,
   add,
   destroy,

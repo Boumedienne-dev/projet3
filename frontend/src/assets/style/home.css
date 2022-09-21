@@ -1,0 +1,84 @@
+.homeDivMain {
+  margin-top: 5vh;
+  margin-bottom: 20vh;
+}
+
+.homeTitle {
+  margin-bottom: 5vh;
+}
+
+.homeDiv {
+  display: flex;
+  width: 100%;
+  flex-flow: wrap;
+  justify-content: space-around;
+  margin-bottom: 15vh;
+  margin-top: 5vh;
+}
+
+.homeRegionContainers {
+  font-size: 8px;
+  width: 40%;
+  height: 15vh;
+  margin-top: 10px;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 2vh;
+}
+
+.homeRegionImg {
+  z-index: -1;
+  position: relative;
+  width: 300px;
+  height: 10vh;
+  right: 75px;
+  bottom: 5px;
+  object-fit: cover;
+}
+
+.homeRegionTitle {
+  position: relative;
+  top: 95px;
+}
+
+@media screen and (min-width: 800px) {
+  .homeRegionContainers {
+    font-size: 14px;
+    width: 20%;
+    height: 25vh;
+    margin-right: 1%;
+  }
+
+  .homeRegionImg {
+    width: 400px;
+    height: 18vh;
+  }
+
+  .homeRegionTitle {
+    position: relative;
+    top: 120px;
+  }
+}
+
+@media screen and (min-width: 1285px) {
+  .homeRegionContainersParent {
+    font-size: 14px;
+    width: 30%;
+    height: 25vh;
+  }
+
+  .homeRegionContainersChild {
+    margin-left: 25%;
+  }
+
+  .homeRegionImg {
+    width: 400px;
+    height: 18vh;
+  }
+
+  .homeRegionTitle {
+    position: relative;
+    top: 185px;
+    right: 50px;
+  }
+}
