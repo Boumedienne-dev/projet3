@@ -73,7 +73,7 @@
   color: #000000;
 }
 
-input {
+.inputName {
   box-sizing: border-box;
   position: absolute;
   left: 6.92%;

@@ -1,0 +1,233 @@
+.adminAccount {
+  position: absolute;
+  left: 30%;
+  top: 7.94%;
+  bottom: 85.31%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #000000;
+}
+
+.multipleUsers {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
+  position: absolute;
+  width: 257px;
+  height: 63px;
+  left: 10px;
+  top: 145px;
+}
+/* input Admin Co */
+.inputAdmin {
+  position: absolute;
+  left: 5.38%;
+  right: 7.69%;
+  top: 22.16%;
+  bottom: 74.53%;
+  background: #d9d9d9;
+  background-image: url("../image/userCO.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+/* utilisateur CO 1 */
+
+.userCo {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  left: 21px;
+  top: 187px;
+  background: url("../image/userCO.png");
+}
+
+.addUser {
+  position: absolute;
+  width: 190px;
+  height: 30px;
+  left: 54px;
+  top: 270px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.plusIconB {
+  position: absolute;
+  width: 25px;
+  height: 29px;
+  left: 10px;
+}
+
+.lineActivity {
+  position: absolute;
+  width: 367px;
+  height: 0px;
+  left: 11px;
+  top: 260px;
+  border: 1px solid #000000;
+}
+
+.addActivity {
+  position: absolute;
+  left: 38px;
+  height: 25px;
+  top: 5px;
+  border: none;
+  background-color: white;
+}
+
+/* Choice regions */
+.regions {
+  position: absolute;
+  width: 248px;
+  height: 26px;
+  left: 62px;
+  top: 300px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* choice themes */
+.themes {
+  position: absolute;
+  width: 248px;
+  height: 25px;
+  left: 62px;
+  top: 460px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Choice lines */
+.lines {
+  position: absolute;
+  width: 248px;
+  height: 25px;
+  left: 62px;
+  top: 345px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Choice city */
+.city {
+  position: absolute;
+  width: 248px;
+  height: 25px;
+  left: 62px;
+  top: 385px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/*Add Activity */
+.plusActivity {
+  position: absolute;
+  width: 143px;
+  height: 19px;
+  left: 114px;
+  top: 425px;
+  font-weight: 700;
+  /* identical to box height */
+  color: #000000;
+  border: none;
+  background-color: white;
+}
+
+/* Description */
+.description {
+  position: absolute;
+  width: 248px;
+  height: 73px;
+  left: 62px;
+  top: 500px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Adress */
+.adress {
+  position: absolute;
+  width: 248px;
+  height: 56px;
+  left: 62px;
+  top: 590px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Insert a picture */
+.insertPicture {
+  position: absolute;
+  width: 248px;
+  height: 25px;
+  left: 61px;
+  top: 660px;
+  background: #d9d9d9;
+  border: none;
+  border-radius: 10px;
+}
+
+.insertPictureB {
+  position: absolute;
+  width: 107px;
+  height: 19px;
+  left: 131px;
+  top: 702px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.pictureAdmin {
+  position: absolute;
+  width: 120px;
+  height: 65px;
+  left: 25px;
+  top: 725px;
+}
+
+/* Button Validate of admin account */
+.validateAdmin {
+  position: absolute;
+  width: 192px;
+  height: 39px;
+  left: 186px;
+  top: 740px;
+  border: none;
+}
+
+.validateAdminB {
+  width: 120px;
+  cursor: pointer;
+}
+
+.buttonAdmin {
+  background-color: white;
+  border: none;
+}
