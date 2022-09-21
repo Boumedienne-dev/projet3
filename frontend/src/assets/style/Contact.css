@@ -73,7 +73,7 @@
   color: #000000;
 }
 
-input {
+.FormContainer input {
   box-sizing: border-box;
   position: absolute;
   left: 6.92%;
@@ -84,7 +84,7 @@ input {
   border: 1px solid #000000;
   border-radius: 9px;
   padding-left: 10px;
-}
+} */
 
 /* Firstname : */
 .firstName {
