@@ -6,6 +6,7 @@ const itemControllers = require("./controllers/itemControllers");
 
 const lineControllers = require("./controllers/lineControllers");
 const regionControllers = require("./controllers/regionControllers");
+const cityControllers = require("./controllers/cityControllers");
 const activityControllers = require("./controllers/activityControllers");
 
 const userRegistrationControllers = require("./controllers/userRegistrationControllers");
@@ -15,6 +16,8 @@ router.get("/items/:id", itemControllers.read);
 router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
+
+router.get("/lines/:id/city", cityControllers.getWithIdLine);
 
 router.get("/lines", lineControllers.getAll);
 router.get("/lines/:id", lineControllers.getById);
