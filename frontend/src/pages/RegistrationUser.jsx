@@ -15,8 +15,6 @@ export default function RegistrationUser() {
     picture: "",
   });
 
-  console.log(errorsPassword);
-
   const postUser = () => {
     if (!errorsPassword) {
       axios

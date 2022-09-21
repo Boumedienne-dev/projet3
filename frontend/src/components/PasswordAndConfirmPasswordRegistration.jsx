@@ -7,6 +7,7 @@ export default function PasswordAndConfirmPasswordRegistration({
   password,
   setPassword,
   setErrorsPassword,
+  errorsPassword,
 }) {
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
@@ -50,6 +51,7 @@ export default function PasswordAndConfirmPasswordRegistration({
         setErrorsPassword(true);
       } else {
         errMsg = "";
+        //console.log("ca passe a false");
         setErrorsPassword(false);
       }
       setPasswordError(errMsg);
@@ -61,12 +63,14 @@ export default function PasswordAndConfirmPasswordRegistration({
     ) {
       if (confirmPassword !== password) {
         setConfirmPasswordError("Le mot de passe n'est pas identique");
+        setErrorsPassword(true);
       } else {
         setConfirmPasswordError("");
         setErrorsPassword(false);
       }
     }
   };
+  //console.log(errorsPassword);
   return (
     <div>
       <div>
