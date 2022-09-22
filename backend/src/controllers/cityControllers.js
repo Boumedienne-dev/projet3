@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const getAll = (req, res) => {
-  models.line
+  models.city
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,7 +13,7 @@ const getAll = (req, res) => {
 };
 
 const getById = (req, res) => {
-  models.line
+  models.city
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -28,9 +28,9 @@ const getById = (req, res) => {
     });
 };
 
-const getWithIdRegion = (req, res) => {
-  models.line
-    .findWithRegionId(req.params.id)
+const getWithIdLine = (req, res) => {
+  models.city
+    .findWithLineId(req.params.id)
     .then(([rows]) => {
       res.send(rows);
     })
@@ -41,14 +41,14 @@ const getWithIdRegion = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const line = req.body;
+  const city = req.body;
 
   // TODO validations (length, format...)
 
-  line.id = parseInt(req.params.id, 10);
+  city.id = parseInt(req.params.id, 10);
 
-  models.line
-    .update(line)
+  models.city
+    .update(city)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -63,12 +63,12 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const line = req.body;
+  const city = req.body;
 
   // TODO validations (length, format...)
 
-  models.line
-    .insert(line)
+  models.city
+    .insert(city)
     .then(([result]) => {
       res.location(`/lines/${result.insertId}`).sendStatus(201);
     })
@@ -79,7 +79,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.line
+  models.city
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -97,7 +97,7 @@ const destroy = (req, res) => {
 module.exports = {
   getAll,
   getById,
-  getWithIdRegion,
+  getWithIdLine,
   edit,
   add,
   destroy,

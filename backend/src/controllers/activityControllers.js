@@ -1,7 +1,7 @@
 const models = require("../models");
 
-const getAll = (req, res) => {
-  models.line
+const browse = (req, res) => {
+  models.activity
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -12,8 +12,8 @@ const getAll = (req, res) => {
     });
 };
 
-const getById = (req, res) => {
-  models.line
+const read = (req, res) => {
+  models.activity
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -27,10 +27,12 @@ const getById = (req, res) => {
       res.sendStatus(500);
     });
 };
-
-const getWithIdRegion = (req, res) => {
-  models.line
-    .findWithRegionId(req.params.id)
+// 2 method a appeler dans rooter
+const getActivityWithCityId = (req, res) => {
+  models.activity
+    // findActivityWithCityId est la method utiliser en manager
+    // req params id fait appel a une id
+    .findActivityWithCityId(req.params.id)
     .then(([rows]) => {
       res.send(rows);
     })
@@ -41,14 +43,14 @@ const getWithIdRegion = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const line = req.body;
+  const activity = req.body;
 
   // TODO validations (length, format...)
 
-  line.id = parseInt(req.params.id, 10);
+  activity.id = parseInt(req.params.id, 10);
 
-  models.line
-    .update(line)
+  models.activity
+    .update(activity)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -63,14 +65,14 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const line = req.body;
+  const activity = req.body;
 
   // TODO validations (length, format...)
 
-  models.line
-    .insert(line)
+  models.activity
+    .insert(activity)
     .then(([result]) => {
-      res.location(`/lines/${result.insertId}`).sendStatus(201);
+      res.location(`/activitys/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -79,7 +81,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.line
+  models.activity
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -95,9 +97,9 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
-  getAll,
-  getById,
-  getWithIdRegion,
+  browse,
+  read,
+  getActivityWithCityId,
   edit,
   add,
   destroy,
