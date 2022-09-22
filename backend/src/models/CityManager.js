@@ -14,17 +14,17 @@ class CityManager extends AbstractManager {
     );
   }
 
-  insert(line) {
+  insert(city) {
     return this.connection.query(
       `insert into ${this.table} (city_name, description, picture) values (?, ?, ?)`,
-      [line.city_name, line.description, line.picture]
+      [city.city_name, city.description, city.picture]
     );
   }
 
-  update(line) {
+  update(city) {
     return this.connection.query(
       `update ${this.table} set city_name = ?, descritpion = ?, picture = ? where id = ?`,
-      [line.city_name, line.description, line.picture, line.id]
+      [city.city_name, city.description, city.picture, city.id]
     );
   }
 }
