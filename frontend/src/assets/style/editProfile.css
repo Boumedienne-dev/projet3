@@ -1,0 +1,118 @@
+.editProfileDivPrincipal {
+  display: flex;
+  border-bottom: 2px solid black;
+  margin-top: 5vh;
+}
+
+.editProfileDivImg {
+  width: 40%;
+  height: 50vh;
+}
+
+.editProfileImg {
+  width: 100%;
+  height: 60%;
+  object-fit: contain;
+  position: relative;
+  top: 25px;
+}
+
+.editProfileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin-top: 2vh;
+}
+
+#firstname {
+  border-radius: 5px;
+  background-color: rgb(215, 211, 211);
+  height: 20px;
+  width: 90%;
+  margin-right: 5%;
+}
+
+#lastname {
+  border-radius: 5px;
+  background-color: rgb(215, 211, 211);
+  height: 20px;
+  width: 90%;
+  margin-right: 5%;
+}
+
+#mail {
+  border-radius: 5px;
+  background-color: rgb(215, 211, 211);
+  width: 200px;
+  height: 20px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+}
+
+.editProfileDivUploadImg {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 5px;
+}
+
+.editProfileDivUploadImgbtn {
+  display: block;
+  position: relative;
+  width: 14em;
+  height: 1.5em;
+  border-radius: 1em;
+  background: #8de8fe;
+  cursor: pointer;
+  font-size: 15px;
+  top: 40px;
+  right: 60px;
+}
+
+.editProfileDivUploadImgbtn:before {
+  content: "";
+  display: block;
+  width: 1.2em;
+  height: 1.1em;
+  border-radius: 1em;
+  background: #0c131f;
+  position: absolute;
+  left: 0.3em;
+  top: 0.1em;
+}
+
+.editProfileupdateBtn {
+  display: block;
+  position: relative;
+  width: 12em;
+  height: 1.5em;
+  border-radius: 1em;
+  background: #0c131f;
+  cursor: pointer;
+  top: 50px;
+  right: 70px;
+}
+
+.editProfileupdateBtn:before {
+  content: "";
+  display: block;
+  width: 1.2em;
+  height: 1.1em;
+  border-radius: 1em;
+  background: #8de8fe;
+  position: absolute;
+}
+
+.text-btn-white {
+  align-content: center;
+  padding-right: 15px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.text-btn-black {
+  align-content: center;
+  padding-left: 15px;
+  font-size: 14px;
+}

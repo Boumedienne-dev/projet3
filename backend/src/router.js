@@ -30,10 +30,10 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
-router.post("/users", userRegistrationControllers.add);
 router.get("/users", userRegistrationControllers.browse);
 router.get("/users/:id", userRegistrationControllers.read);
-router.put("/users/:id", userRegistrationControllers.edit);
+// router.put("/users/:id", userRegistrationControllers.edit);
+router.put("/users/:id", userRegistrationControllers.editWithoutPass);
 router.post("/users", userRegistrationControllers.add);
 router.delete("/users/:id", userRegistrationControllers.destroy);
 
