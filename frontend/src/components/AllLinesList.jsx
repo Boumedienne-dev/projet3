@@ -4,7 +4,7 @@ import "../assets/style/allLines.css";
 function AllLinesList({ line }) {
   return (
     <div className="">
-      <div className="line-map">
+      <li className="line-map">
         <div>
           <Link to={`/les_villes/${line.id}`}>
             <div className="lineposflex">
@@ -17,11 +17,11 @@ function AllLinesList({ line }) {
               ) : (
                 ""
               )}
+              <p className="line-text">{line.line_name}</p>
             </div>
           </Link>
         </div>
-        <p>{line.line_name}</p>
-      </div>
+      </li>
     </div>
   );
 }
