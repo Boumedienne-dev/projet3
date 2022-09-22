@@ -1,7 +1,7 @@
-import { useState } from "react";
+import plusIcon from "../assets/image/icone_plus.png";
 import buttonAdmin from "../assets/image/Btnvalider.png";
 import "../assets/style/AdminAccount.css";
-import plusIcon from "../assets/image/icone_plus.png";
+import { useState } from "react";
 
 export default function AdminAccount() {
   const [image, setImage] = useState("");
@@ -10,8 +10,8 @@ export default function AdminAccount() {
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "sncf-exploration");
-    data.append("cloud_name", "otire82");
-    fetch("  https://api.cloudinary.com/v1_1/otire82/image/upload", {
+    data.append("cloud_name", "boumdev");
+    fetch("  https://api.cloudinary.com/v1_1/boumdev/image/upload", {
       method: "post",
       body: data,
     })
@@ -27,7 +27,6 @@ export default function AdminAccount() {
         <h2 className="adminAccount">COMPTE ADMIN</h2>
         <h3 className="multipleUsers">Utilisateurs multiples</h3>
       </div>
-
       <form>
         <label>
           <input
@@ -63,7 +62,6 @@ export default function AdminAccount() {
           </select>
         </form>
       </div>
-
       <div>
         <form action="#">
           <select className="lines" name="destination">
@@ -78,7 +76,6 @@ export default function AdminAccount() {
           </select>
         </form>
       </div>
-
       <div>
         <form action="#">
           <select className="city" name="destination">
@@ -125,7 +122,7 @@ export default function AdminAccount() {
           </button>
         </div>
         <div>
-          <img className="pictureAdmin" src={url} alt="administrateur" />
+          <img className="pictureAdmin" src={url} alt="admin" />
         </div>
         <div className="validateAdmin">
           <button type="submit" className="buttonAdmin">
