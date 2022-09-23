@@ -50,7 +50,6 @@ export default function PasswordAndConfirmPasswordRegistration({
         setErrorsPassword(true);
       } else {
         errMsg = "";
-        // console.log("ca passe a false");
         setErrorsPassword(false);
       }
       setPasswordError(errMsg);
@@ -67,7 +66,6 @@ export default function PasswordAndConfirmPasswordRegistration({
       }
     }
   };
-  // console.log(errorsPassword);
   return (
     <div>
       <div>

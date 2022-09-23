@@ -130,7 +130,5 @@ module.exports = {
   editWithoutPass,
   add,
   destroy,
-  add,
-  destroy,
   getUserByEmailWithPasswordAndPassToNext,
 };

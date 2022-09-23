@@ -1,6 +1,5 @@
 const AbstractManager = require("./AbstractManager");
 
-
 class userControllers extends AbstractManager {
   constructor() {
     super({ table: "user" });
@@ -8,7 +7,7 @@ class userControllers extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-    `insert into ${this.table} (last_name, first_name, mail, hashedPassword, picture) values (?,?,?,?,?)`,
+      `insert into ${this.table} (last_name, first_name, mail, hashedPassword, picture) values (?,?,?,?,?)`,
       [
         user.last_name,
         user.first_name,
