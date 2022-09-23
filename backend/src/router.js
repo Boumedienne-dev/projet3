@@ -9,7 +9,8 @@ const regionControllers = require("./controllers/regionControllers");
 const cityControllers = require("./controllers/cityControllers");
 const activityControllers = require("./controllers/activityControllers");
 
-const userRegistrationControllers = require("./controllers/userRegistrationControllers");
+const userControllers = require("./controllers/userControllers");
+const { hashPassword, verifyPassword, verifyToken } = require("./Auth");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -30,13 +31,23 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
-router.post("/users", userRegistrationControllers.add);
-router.get("/users", userRegistrationControllers.browse);
-router.get("/users/:id", userRegistrationControllers.read);
-router.put("/users/:id", userRegistrationControllers.edit);
-router.post("/users", userRegistrationControllers.add);
-router.delete("/users/:id", userRegistrationControllers.destroy);
+router.post("/users", hashPassword, userControllers.add);
+router.post(
+  "/login",
+  userControllers.getUserByEmailWithPasswordAndPassToNext,
+  verifyPassword
+);
+
+router.get("/users/:id", userControllers.read);
+router.put("/users/:id", userControllers.edit);
+router.post("/users", userControllers.add);
+router.delete("/users/:id", userControllers.destroy);
 
 router.get("/city/:id/activity", activityControllers.getActivityWithCityId);
+
+// MUR
+router.use(verifyToken);
+
+router.get("/users", userControllers.browse);
 
 module.exports = router;
