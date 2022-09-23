@@ -9,7 +9,7 @@ const regionControllers = require("./controllers/regionControllers");
 const cityControllers = require("./controllers/cityControllers");
 const activityControllers = require("./controllers/activityControllers");
 
-const userRegistrationControllers = require("./controllers/userRegistrationControllers");
+const userControllers = require("./controllers/userControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -30,12 +30,12 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
-router.get("/users", userRegistrationControllers.browse);
-router.get("/users/:id", userRegistrationControllers.read);
-// router.put("/users/:id", userRegistrationControllers.edit);
-router.put("/users/:id", userRegistrationControllers.editWithoutPass);
-router.post("/users", userRegistrationControllers.add);
-router.delete("/users/:id", userRegistrationControllers.destroy);
+router.get("/users", userControllers.browse);
+router.get("/users/:id", userControllers.read);
+// router.put("/users/:id", userControllers.edit);
+router.put("/users/:id", userControllers.editWithoutPass);
+router.post("/users", userControllers.add);
+router.delete("/users/:id", userControllers.destroy);
 
 router.get("/city/:id/activity", activityControllers.getActivityWithCityId);
 
