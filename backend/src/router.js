@@ -10,6 +10,7 @@ const cityControllers = require("./controllers/cityControllers");
 const activityControllers = require("./controllers/activityControllers");
 
 const userControllers = require("./controllers/userControllers");
+
 const { hashPassword, verifyPassword, verifyToken } = require("./Auth");
 
 router.get("/items", itemControllers.browse);
@@ -31,6 +32,8 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
+router.get("/users/:id", userControllers.read);
+router.put("/users/:id", userControllers.editWithoutPass);
 router.post("/users", hashPassword, userControllers.add);
 router.post(
   "/login",
@@ -39,8 +42,6 @@ router.post(
 );
 
 router.get("/users/:id", userControllers.read);
-router.put("/users/:id", userControllers.edit);
-router.post("/users", userControllers.add);
 router.delete("/users/:id", userControllers.destroy);
 
 router.get("/city/:id/activity", activityControllers.getActivityWithCityId);
