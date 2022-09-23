@@ -7,9 +7,9 @@ class CityManager extends AbstractManager {
 
   findWithLineId(id) {
     return this.connection.query(
-      `select city_name from ${this.table} 
-      inner join line_city on line_city.id_city=city.id
-      inner join line on line_city.id_line=line.id WHERE line.id = ?`,
+      `select c.city_name, c.picture from ${this.table} as c
+      inner join line_city on line_city.id_city=c.id
+      inner join line as l on line_city.id_line=l.id WHERE l.id = ?`,
       [id]
     );
   }
