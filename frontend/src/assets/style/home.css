@@ -1,9 +1,10 @@
 .homeDivMain {
-  margin: 55px 10px 5vh 10px;
+  margin: 0px 10px 5vh 10px;
 }
 
 .homeTitle {
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
+  padding-top: 14%;
 }
 
 .homeDiv {

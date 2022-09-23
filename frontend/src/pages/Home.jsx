@@ -15,15 +15,13 @@ export default function Home() {
   }, []);
   return (
     <div className="homeDivMain">
-      <header>
-        <h2 className="homeTitle">
-          Bienvenue sur l'application Sncf Exploration
-        </h2>
-        <p>
-          Vous voulez trouver une activité proche de nos gare TER? Vous êtes au
-          bon endroit
-        </p>
-      </header>
+      <h2 className="homeTitle">
+        Bienvenue sur l'application Sncf Exploration
+      </h2>
+      <p>
+        Vous voulez trouver une activité proche de nos gare TER? Vous êtes au
+        bon endroit
+      </p>
       <div className="homeDiv">
         {getRegion &&
           getRegion.map((region) => (
