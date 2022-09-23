@@ -104,6 +104,25 @@ const destroy = (req, res) => {
     });
 };
 
+const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
+  const { mail } = req.body;
+  models.user
+    .findUserByEmail(mail)
+    .then(([user]) => {
+      if (user[0] != null) {
+        [req.user] = [user[0]];
+        // req.user = [user[0]; juste passage push
+        next();
+      } else {
+        res.sendStatus(401);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   browse,
   read,
@@ -111,4 +130,7 @@ module.exports = {
   editWithoutPass,
   add,
   destroy,
+  add,
+  destroy,
+  getUserByEmailWithPasswordAndPassToNext,
 };
