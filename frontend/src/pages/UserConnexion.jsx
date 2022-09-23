@@ -17,8 +17,8 @@ function UserProfile() {
 
   const login = (details) => {
     if (
-      details.mail == database.mail &&
-      details.password == database.password
+      details.mail === database.mail &&
+      details.password === database.password
     ) {
       setUser({
         mail: details.mail,
@@ -34,12 +34,14 @@ function UserProfile() {
 
   return (
     <div>
-      {user.mail != "" ? (
+      {user.mail !== "" ? (
         <div>
           <h2>
             Welcome,<span>{user.name}</span>
           </h2>
-          <button onClick={logout}>logout</button>
+          <button type="submit" onClick={logout}>
+            logout
+          </button>
         </div>
       ) : (
         <LoginForm login={login} error={error} />
@@ -49,5 +51,3 @@ function UserProfile() {
 }
 
 export default UserProfile;
-
-//

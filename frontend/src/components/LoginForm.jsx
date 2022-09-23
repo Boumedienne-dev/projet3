@@ -15,7 +15,7 @@ function LoginForm({ login, error }) {
         <h1 className="userCoTitle">
           Bienvenue sur la page de connexion à votre profil.
         </h1>
-        {error != "" ? <div className="error">{error}</div> : ""}
+        {error !== "" ? <div className="error">{error}</div> : ""}
         <div className="userCoInput-containerUser">
           <label className="userCoApp" htmlFor="mail">
             mail:{" "}
@@ -47,7 +47,6 @@ function LoginForm({ login, error }) {
             className="pictureT-UserConnexion"
             src="https://res.cloudinary.com/otire82/image/upload/v1662624134/image/train-jaune.jpg"
             alt="train touristique"
-            srcset=""
           />
         </div>
         <div className="posBtnCo">
