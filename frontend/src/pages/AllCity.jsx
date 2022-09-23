@@ -23,13 +23,27 @@ export default function AllCity() {
 
   return (
     <div>
-      <h2>{getLine.line_name}</h2>
-      {getCity &&
-        getCity.map((city) => (
-          <div key={city.id}>
-            <h4>{city.city_name}</h4>
-          </div>
-        ))}
+      <li className="line-map">
+        <img
+          className="AllLinesRegionImg"
+          src={getLine.picture}
+          alt={getLine.name}
+        />
+        <h2 className="line-h1">{getLine.line_name}</h2>
+        <nav className="nav-all-lines">
+          {getCity &&
+            getCity.map((city) => (
+              <div className="lineposflex" key={city.id}>
+                <img
+                  className="line-map-img"
+                  src={city.picture}
+                  alt={city.city_name}
+                />
+                <p className="line-text">{city.city_name}</p>
+              </div>
+            ))}
+        </nav>
+      </li>
     </div>
   );
 }

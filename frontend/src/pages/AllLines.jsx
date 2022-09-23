@@ -32,7 +32,7 @@ export default function AllLines() {
       />
       <p className="AllLinesRegionText">{getRegion.description}</p>
       {getRegion.id === 1 ? (
-        <h1 className="line-h1">DE LYON PART DIEU</h1>
+        <h2 className="line-h1">DE LYON PART DIEU</h2>
       ) : (
         <h2>Page en cours de construction</h2>
       )}
