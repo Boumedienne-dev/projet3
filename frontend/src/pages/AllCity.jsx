@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import AllCityList from "../components/AllCityList";
+import "../assets/style/allLines.css";
 
 export default function AllCity() {
   const [getCity, setGetCity] = useState("");
@@ -16,34 +18,28 @@ export default function AllCity() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/lines/${id}/city`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/lines/${id}/citys`)
       .then((response) => response.data)
       .then((data) => setGetCity(data));
   }, []);
 
   return (
     <div>
-      <li className="line-map">
-        <img
-          className="AllLinesRegionImg"
-          src={getLine.picture}
-          alt={getLine.name}
-        />
-        <h2 className="line-h1">{getLine.line_name}</h2>
-        <nav className="nav-all-lines">
-          {getCity &&
-            getCity.map((city) => (
-              <div className="lineposflex" key={city.id}>
-                <img
-                  className="line-map-img"
-                  src={city.picture}
-                  alt={city.city_name}
-                />
-                <p className="line-text">{city.city_name}</p>
-              </div>
-            ))}
-        </nav>
-      </li>
+      <img
+        className="AllLinesRegionImg"
+        src={getLine.picture}
+        alt={getLine.name}
+      />
+      <p className="AllLinesRegionText">{getLine.description}</p>
+      {getLine.id ? (
+        <h2 className="line-h1">{getCity.city_name}</h2>
+      ) : (
+        <h2>Page en cours de construction</h2>
+      )}
+      <nav className="nav-all-lines">
+        {getCity &&
+          getCity.map((city) => <AllCityList key={city.id} city={city} />)}
+      </nav>
     </div>
   );
 }
