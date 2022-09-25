@@ -1,3 +1,6 @@
+## Projet P3 Wild
+Projet qui sert uniquement à la formation aucune bases de données ne contient d'information secrete, se ne sont que de fausses informations que nous rentrons manuellement dans ce projet. Cette application ne sera pas déployé. 
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
