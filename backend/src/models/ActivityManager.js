@@ -11,7 +11,7 @@ class ActivityManager extends AbstractManager {
       // INNER JOIN ce joint a city alias c ON a condition que city.id= activity.id_city
       // INNER JOIN ce joint a theme AS alias t ON a condition que t.id=a.id_theme WHERE quand l'id de city = ?
 
-      `select a.activity_name, a.adress, a.description, a.picture, t.picture FROM ${this.table} AS a
+      `select a.activity_name, a.adress, a.description, a.picture, t.theme_name, t.image FROM ${this.table} AS a
     INNER JOIN city AS c ON c.id=a.id_city
     INNER JOIN theme AS t ON t.id=a.id_theme WHERE c.id=?`,
       [id]
