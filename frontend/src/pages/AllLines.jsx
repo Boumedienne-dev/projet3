@@ -30,16 +30,16 @@ export default function AllLines() {
         src={getRegion.picture}
         alt={getRegion.name}
       />
-      <p>{getRegion.description}</p>
+      <p className="AllLinesRegionText">{getRegion.description}</p>
       {getRegion.id === 1 ? (
-        <h1 className="line-h1">DE LYON PART DIEU</h1>
+        <h2 className="line-h1">DE LYON PART DIEU</h2>
       ) : (
         <h2>Page en cours de construction</h2>
       )}
-      <div className="lineposflex">
+      <nav className="nav-all-lines">
         {getLines &&
           getLines.map((line) => <AllLinesList key={line.id} line={line} />)}
-      </div>
+      </nav>
     </div>
   );
 }

@@ -4,33 +4,36 @@ import Fb from "../assets/image/facebook.png";
 import Insta from "../assets/image/instagram1.png";
 import Twitter from "../assets/image/twitter.png";
 import Pinterest from "../assets/image/pinterest.png";
+import "../assets/style/Footer.css";
 
 export default function Footerb() {
   return (
     <div className="footer_css">
       <div className="menu">
-        <ul className="menu">
-          <li className="plan-du-site">
-            <Link to="plandusite">Plan du Site</Link>
+        <ul className="planForSite">
+          <li>
+            <p>Plan du Site</p>
           </li>
           <li>
-            <Link to="/home">accueil</Link>
+            <Link to="/">accueil</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/accountuser">Mon Compte</Link>
+            <Link to="/connexion">Mon Compte</Link>
           </li>
         </ul>
       </div>
       <div className="sncf-connect-logo">
-        <img
-          src="https://res.cloudinary.com/otire82/image/upload/v1662553361/logo/SNCFConnectLogo_x5eclf.svg"
-          alt="logo de sncf exploration"
-        />
+        <a href="https://www.sncf-connect.com/">
+          <img
+            src="https://res.cloudinary.com/otire82/image/upload/v1662553361/logo/SNCFConnectLogo_x5eclf.svg"
+            alt="sncf connect"
+          />
+        </a>
       </div>
-      <div className="social-network">
+      <div>
         <ul className="social-networks">
           <li>
             <a href="https://www.instagram.com/sncfconnect/?hl=fr">
@@ -43,12 +46,12 @@ export default function Footerb() {
             </a>
           </li>
           <li>
-            <a href="www.google.com">
+            <a href="https://www.facebook.com/SNCFConnect/">
               <img src={Fb} alt="logo de facebook" />
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/SNCFConnect?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+            <a href="https://twitter.com/sncfconnect">
               <img src={Twitter} alt="logo de twitter" />
             </a>
           </li>

@@ -7,24 +7,25 @@ class CityManager extends AbstractManager {
 
   findWithLineId(id) {
     return this.connection.query(
-      `select city.id, city_name from ${this.table} 
-      inner join line_city on line_city.id_city=city.id
-      inner join line on line_city.id_line=line.id WHERE line.id = ?`,
+      `select c.city_name, c.picture from ${this.table} as c
+      inner join line_city on line_city.id_city=c.id
+      inner join line as l on line_city.id_line=l.id WHERE l.id = ?`,
+
       [id]
     );
   }
 
-  insert(line) {
+  insert(city) {
     return this.connection.query(
       `insert into ${this.table} (city_name, description, picture) values (?, ?, ?)`,
-      [line.city_name, line.description, line.picture]
+      [city.city_name, city.description, city.picture]
     );
   }
 
-  update(line) {
+  update(city) {
     return this.connection.query(
       `update ${this.table} set city_name = ?, descritpion = ?, picture = ? where id = ?`,
-      [line.city_name, line.description, line.picture, line.id]
+      [city.city_name, city.description, city.picture, city.id]
     );
   }
 }

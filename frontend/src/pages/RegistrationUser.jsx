@@ -15,8 +15,6 @@ export default function RegistrationUser() {
     picture: "",
   });
 
-  // console.log(errorsPassword);
-
   const postUser = () => {
     if (!errorsPassword) {
       axios
@@ -58,8 +56,8 @@ export default function RegistrationUser() {
         Bienvenue sur le formulaire d'inscription:
       </h3>
       <p className="text-registration">
-        En tant qu’utilisateur, tu pourras retrouver facilement- retrouver les
-        activités que tu as ajoutées en favoris.
+        En tant qu’utilisateur, tu pourras retrouver facilement les activités
+        que tu as ajoutées en favoris.
       </p>
       <p className="text-require">* Champs obligatoires.</p>
       <form

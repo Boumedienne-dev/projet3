@@ -8,7 +8,7 @@ export default function Header() {
       <div className="navbarmain">
         <ul className="navbar">
           <li className="liWithName">
-            <Link to="/accueil">
+            <Link to="/">
               <img
                 className="sncf-explo-logo"
                 src="https://res.cloudinary.com/otire82/image/upload/v1662557593/logo/sncfexplowhite_wxzckg.png"

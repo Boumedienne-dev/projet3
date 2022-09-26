@@ -1,28 +1,31 @@
 * {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   text-decoration: none;
   color: black;
 }
-
+.navbarmain ul {
+  position: fixed;
+}
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #0c131f;
+  width: 100%;
 }
 
 .sncf-explo-logo {
   width: 100%;
   height: auto;
   margin: 10px 10px;
+  max-width: 220px;
 }
 
 .user-account-logo {
   width: 30%;
   height: auto;
   margin: 10px 0 0 50px;
+  max-width: 64px;
 }
 .navbar li {
   width: 25%;

@@ -23,13 +23,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/region" element={<AllLines />} />
-          <Route path="/accueil" element={<Home />} />
           <Route path="/les_villes/:id" element={<AllCity />} />
           <Route path="/compte_utilisateur" element={<AccountUser />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/les_lignes/:id" element={<AllLines />} />
-          <Route path="/ligne" element={<AllLines />} />
           <Route path="/ville" element={<City />} />
           <Route path="/acces_compte" element={<User />} />
           <Route path="/connexion" element={<UserConnexion />} />

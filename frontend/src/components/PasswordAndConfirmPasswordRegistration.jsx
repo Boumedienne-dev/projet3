@@ -63,7 +63,6 @@ export default function PasswordAndConfirmPasswordRegistration({
         setConfirmPasswordError("Le mot de passe n'est pas identique");
       } else {
         setConfirmPasswordError("");
-        setErrorsPassword(false);
       }
     }
   };
