@@ -1,26 +1,23 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../assets/style/editProfile.css";
+import { useNavigate } from "react-router-dom";
 
 export default function EditProfile() {
-  const [image, setImage] = useState("");
   const [getUser, setGetUser] = useState("");
-  const [user, setUser] = useState({
-    last_name: "",
-    first_name: "",
-    mail: "",
-    picture: "",
-  });
+
+  const navigate = useNavigate();
 
   function updateProfile() {
     axios
       .put(`${import.meta.env.VITE_BACKEND_URL}/users/55`, {
-        ...user,
+        ...getUser,
       })
       .then((res) => {
         console.error(res);
         console.error(res.data);
-      });
+      })
+      .then(() => navigate("/compte_utilisateur"));
   }
 
   useEffect(() => {
@@ -30,9 +27,9 @@ export default function EditProfile() {
       .then((data) => setGetUser(data));
   }, []);
 
-  const uploadImage = () => {
+  const uploadImage = (e) => {
     const data = new FormData();
-    data.append("file", image);
+    data.append("file", e.target.files[0]);
     data.append("upload_preset", "sncf-exploration");
     data.append("cloud_name", "otire82");
     fetch("  https://api.cloudinary.com/v1_1/otire82/image/upload", {
@@ -41,15 +38,10 @@ export default function EditProfile() {
     })
       .then((res) => res.json())
       .then((data1) => {
-        setUser({ ...user, picture: data1.url });
+        setGetUser({ ...getUser, picture: data1.url });
       })
       .catch((err) => console.error(err));
   };
-
-  function handleUpdateProfile(e) {
-    setImage(e.target.files[0]);
-    setUser({ ...user, picture: e.target.value });
-  }
 
   return (
     <div className="editProfileDivPrincipal">
@@ -63,17 +55,18 @@ export default function EditProfile() {
           updateProfile();
         }}
       >
-        <section className="editProfileContainers">
+        <section className="editProfileSectionContainer1">
           <div className="editProfileContainer1">
             <label htmlFor="lastname">Votre nom</label>
             <input
+              className="editProfileLastname"
               type="text"
               name="lastname"
               id="lastname"
-              placeholder={getUser.last_name}
+              value={getUser.last_name}
               onChange={(e) => {
-                setUser({
-                  ...user,
+                setGetUser({
+                  ...getUser,
                   last_name: e.target.value,
                 });
               }}
@@ -82,31 +75,33 @@ export default function EditProfile() {
           <div className="editProfileContainer2">
             <label htmlFor="firstname">Votre Prenom</label>
             <input
+              className="editProfileFirstname"
               type="text"
               name="firstname"
               id="firstname"
-              placeholder={getUser.first_name}
+              value={getUser.first_name}
               onChange={(e) => {
-                setUser({
-                  ...user,
+                setGetUser({
+                  ...getUser,
                   first_name: e.target.value,
                 });
               }}
             />
           </div>
         </section>
-        <section className="editProfileContainers">
+        <section className="editProfileSectionContainer2">
           <div>
             <label htmlFor="mail">Votre email</label>
             <br />
             <input
+              className="editProfileMail"
               type="email"
               name="mail"
               id="mail"
-              placeholder={getUser.mail}
+              value={getUser.mail}
               onChange={(e) => {
-                setUser({
-                  ...user,
+                setGetUser({
+                  ...getUser,
                   mail: e.target.value,
                 });
               }}
@@ -126,24 +121,21 @@ export default function EditProfile() {
         <div className="editProfileDivUploadImg">
           <label htmlFor="file">Modifier votre photo:</label>
           <input
+            className="editProfileInputImg"
             type="file"
             name="file"
             id="file"
             alt="Profil"
             accept="image/*"
-            onChange={(e) => handleUpdateProfile(e)}
+            onChange={(e) => uploadImage(e)}
           />
-          <button
-            className="editProfileDivUploadImgbtn"
-            type="button"
-            onClick={uploadImage}
-          >
-            Charger votre photo
-          </button>
         </div>
-        <div className="editProfile-toggle-pill-dark">
-          <button className="editProfileupdateBtn" type="submit" value="submit">
+        <div className="editProfileDivButtons">
+          <button className="editProfileUpdateBtn" type="submit" value="submit">
             <span className="text-btn-white">Mettre a jour</span>
+          </button>
+          <button className="editProfileDeconnexionbtn" type="button">
+            Deconnexion
           </button>
         </div>
       </form>
