@@ -1,11 +1,40 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import plusIcon from "../assets/image/icone_plus.png";
-import buttonAdmin from "../assets/image/Btnvalider.png";
+import AdminInput from "../components/AdminInput";
 import "../assets/style/AdminAccount.css";
-import { useState } from "react";
+import RegionsListAdmin from "../components/RegionsListAdmin";
+import AllLinesListAdmin from "../components/AllLinesListAdmin";
+import AllCityAdmin from "../components/AllCityAdmin";
+import AllActivityAdmin from "../components/AllActivityAdmin";
 
 export default function AdminAccount() {
+  const [user, setUser] = useState("");
+  const params = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`)
+      .then((response) => response.data)
+      .then((data) => setUser(data));
+  }, []);
+
+  const [regions, setRegions] = useState("");
+  const [selectedRegionId, setSelectedRegionId] = useState(1);
+  const [selectedLineId, setSelectedLineId] = useState(1);
+  const [selectedCityId, setSelectedCityId] = useState(1);
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/regions`)
+      .then((response) => response.data)
+      .then((data) => setRegions(data));
+  }, []);
+
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
+
   const uploadImage = () => {
     const data = new FormData();
     data.append("file", image);
@@ -29,12 +58,14 @@ export default function AdminAccount() {
       </div>
       <form>
         <label>
-          <input
-            className="inputAdmin"
-            type="text"
-            placeholder="Moi (administrateur)"
-            name="name"
-          />
+          {user && (
+            <AdminInput
+              input
+              type="text"
+              placeholder="Moi (administrateur)"
+              admin={user}
+            />
+          )}
         </label>
       </form>
       <div className="lineActivity">
@@ -45,56 +76,35 @@ export default function AdminAccount() {
       </div>
       <div>
         <form action="#">
-          <select className="regions" name="destination">
-            <option selected="selected">Auvergne-Rhône-Alpes</option>
-            <option>Bourgogne-Franche-comté</option>
-            <option>Grand-Est</option>
-            <option>Hauts-de-France</option>
-            <option>Île-De-France</option>
-            <option>Normandie</option>
-            <option>Centre-Val-De-Loire</option>
-            <option>Les Pays De La Loire</option>
-            <option>Provence-Alpes-Côte d'Azur</option>
-            <option>Corse</option>
-            <option>Bretagne</option>
-            <option>Nouvelle Aquitaine</option>
-            <option>Occitanie</option>
-          </select>
+          <RegionsListAdmin
+            regions={regions}
+            setSelectedRegionId={setSelectedRegionId}
+          />
         </form>
       </div>
       <div>
         <form action="#">
-          <select className="lines" name="destination">
-            <option selected="selected">Ligne 1</option>
-            <option>Ligne 2</option>
-            <option>Ligne 3</option>
-            <option>Ligne 4</option>
-            <option>Ligne 5</option>
-            <option>Ligne 6</option>
-            <option>Ligne 7</option>
-            <option>Ligne 8</option>
-          </select>
+          <AllLinesListAdmin
+            selectedRegionId={selectedRegionId}
+            setSelectedLineId={setSelectedLineId}
+          />
         </form>
       </div>
       <div>
         <form action="#">
-          <select className="city" name="destination">
-            <option selected="selected">Amberieu</option>
-            <option>Villefranche-sur-Saône</option>
-            <option>Roanne</option>
-            <option>Vienne</option>
-          </select>
+          <AllCityAdmin
+            selectedLineId={selectedLineId}
+            setSelectedCityId={setSelectedCityId}
+          />
         </form>
-        <input
-          className="plusActivity"
-          type="submit"
-          value="Ajouter une activité"
-        />
+        <form action="#">
+          <AllActivityAdmin selectedCityId={selectedCityId} />
+        </form>
       </div>
       <div>
         <form action="#">
           <select className="themes" name="theme">
-            <option selected="selected">Sport</option>
+            <option>Sport</option>
             <option>Restaurant</option>
             <option>Monuments</option>
           </select>
@@ -124,9 +134,9 @@ export default function AdminAccount() {
         <div>
           <img className="pictureAdmin" src={url} alt="admin" />
         </div>
-        <div className="validateAdmin">
-          <button type="submit" className="buttonAdmin">
-            <img className="validateAdminB" src={buttonAdmin} alt="valider" />
+        <div className="toggle-blue">
+          <button type="submit" value="Submit">
+            <span className="text-btn-black">Valider</span>
           </button>
         </div>
       </div>

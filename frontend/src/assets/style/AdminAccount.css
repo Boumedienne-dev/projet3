@@ -33,7 +33,6 @@
   top: 22.16%;
   bottom: 74.53%;
   background: #d9d9d9;
-  background-image: url("../image/userCO.png");
   background-size: contain;
   background-repeat: no-repeat;
   text-align: center;
@@ -114,7 +113,7 @@
 }
 
 /* Choice lines */
-.lines {
+.destination {
   position: absolute;
   width: 248px;
   height: 25px;
@@ -140,15 +139,15 @@
 /*Add Activity */
 .plusActivity {
   position: absolute;
-  width: 143px;
-  height: 19px;
-  left: 114px;
+  width: 248px;
+  height: 25px;
+  left: 62px;
   top: 425px;
   font-weight: 700;
   /* identical to box height */
-  color: #000000;
-  border: none;
-  background-color: white;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
 }
 
 /* Description */

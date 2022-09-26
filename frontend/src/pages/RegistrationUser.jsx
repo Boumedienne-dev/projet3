@@ -15,7 +15,7 @@ export default function RegistrationUser() {
     picture: "",
   });
 
-  console.log(errorsPassword);
+  // console.log(errorsPassword);
 
   const postUser = () => {
     if (!errorsPassword) {
