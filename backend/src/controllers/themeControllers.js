@@ -1,10 +1,17 @@
 const models = require("../models");
 
 const getAll = (req, res) => {
-  models.city
+  models.theme
     .findAll()
     .then(([rows]) => {
-      res.send(rows);
+      const themes = [];
+      rows.map((row) =>
+        themes.push({
+          value: row.id,
+          label: row.theme_name,
+        })
+      );
+      res.send(themes);
     })
     .catch((err) => {
       console.error(err);
@@ -13,7 +20,7 @@ const getAll = (req, res) => {
 };
 
 const getById = (req, res) => {
-  models.city
+  models.theme
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -28,27 +35,15 @@ const getById = (req, res) => {
     });
 };
 
-const getWithIdLine = (req, res) => {
-  models.city
-    .findWithLineId(req.params.id)
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const edit = (req, res) => {
-  const city = req.body;
+const update = (req, res) => {
+  const theme = req.body;
 
   // TODO validations (length, format...)
 
-  city.id = parseInt(req.params.id, 10);
+  theme.id = parseInt(req.params.id, 10);
 
-  models.city
-    .update(city)
+  models.theme
+    .update(theme)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -62,15 +57,15 @@ const edit = (req, res) => {
     });
 };
 
-const add = (req, res) => {
-  const city = req.body;
+const post = (req, res) => {
+  const theme = req.body;
 
   // TODO validations (length, format...)
 
-  models.city
-    .insert(city)
+  models.theme
+    .insert(theme)
     .then(([result]) => {
-      res.location(`/cities/${result.insertId}`).sendStatus(201);
+      res.location(`/theme/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -79,7 +74,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.city
+  models.theme
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -97,8 +92,7 @@ const destroy = (req, res) => {
 module.exports = {
   getAll,
   getById,
-  getWithIdLine,
-  edit,
-  add,
+  update,
+  post,
   destroy,
 };
