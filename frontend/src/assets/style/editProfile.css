@@ -2,9 +2,10 @@
   display: flex;
   border-bottom: 2px solid black;
   margin-top: 2vh;
+  height: 50vh;
 }
 
-.editProfileSectionContainer2{
+.editProfileSectionContainer2 {
   width: 100%;
 }
 
@@ -110,7 +111,7 @@
   border-radius: 1em;
   background: #8de8fe;
   position: absolute;
-  left:0.3em ;
+  left: 0.3em;
 }
 
 .text-btn-white {
@@ -143,20 +144,19 @@
 
   .editProfileImg {
     height: 90%;
-    width:70%;
+    width: 70%;
     margin-left: 30%;
   }
 
   .editProfileSectionContainer1 {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
   }
 
   .editProfileFirstname {
     width: 90%;
-
   }
-  
+
   .editProfileLastname {
     width: 90%;
   }
@@ -166,21 +166,21 @@
   }
 
   .editProfileDivUploadImg {
-  display: flex;
-  justify-content: center;
-  margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 30%;
   }
 
   .editProfileSectionContainer2 {
-   margin-top: 5vh;
+    margin-top: 5vh;
   }
 
-  .editProfileDivButtons{
-margin-left: 15%;
+  .editProfileDivButtons {
+    margin-left: 15%;
   }
 
   .editProfileUpdateBtn {
@@ -194,7 +194,7 @@ margin-left: 15%;
     top: 50px;
     right: 70px;
   }
-  
+
   .editProfileUpdateBtn:before {
     content: "";
     display: block;
@@ -203,6 +203,6 @@ margin-left: 15%;
     border-radius: 1em;
     background: #8de8fe;
     position: absolute;
-    left:0.3em ;
+    left: 0.3em;
   }
 }
