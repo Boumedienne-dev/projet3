@@ -19,14 +19,19 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
-router.get("/lines/:id/city", cityControllers.getWithIdLine);
-
 router.get("/lines", lineControllers.getAll);
 router.get("/lines/:id", lineControllers.getById);
 router.get("/regions/:id/lines", lineControllers.getWithIdRegion);
 router.put("/lines/:id", lineControllers.edit);
 router.post("/lines", lineControllers.add);
 router.delete("/lines/:id", lineControllers.destroy);
+
+router.get("/citys", cityControllers.getAll);
+router.get("/citys/:id", cityControllers.getById);
+router.get("/lines/:id/citys", cityControllers.getWithIdLine);
+router.put("/citys/:id", cityControllers.edit);
+router.post("/citys", cityControllers.add);
+router.delete("/citys/:id", cityControllers.destroy);
 
 router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
