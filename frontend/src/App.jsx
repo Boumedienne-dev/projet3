@@ -31,7 +31,8 @@ function App() {
           <Route path="/acces_compte" element={<User />} />
           <Route path="/connexion" element={<UserConnexion />} />
           <Route path="/inscription" element={<RegistrationUser />} />
-          <Route path="/administrateur" element={<AdminAccount />} />
+          <Route path="/administrateur/" element={<AdminAccount />} />
+          <Route path="/administrateur/:id" element={<AdminAccount />} />
         </Routes>
         <Footerb />
       </div>

@@ -15,7 +15,7 @@ export default function Contact() {
         <label className="name" htmlFor="Nom" placeholder="Doe">
           Nom*
         </label>
-        <input type="text" name="name" />
+        <input className="inputName" type="text" name="name" />
         <label className="firstName" htmlFor="prenom" placeholder="Jhon">
           Prenom*
         </label>

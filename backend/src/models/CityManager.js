@@ -10,6 +10,7 @@ class CityManager extends AbstractManager {
       `select c.city_name, c.picture from ${this.table} as c
       inner join line_city on line_city.id_city=c.id
       inner join line as l on line_city.id_line=l.id WHERE l.id = ?`,
+
       [id]
     );
   }
