@@ -44,7 +44,7 @@ router.post(
 router.get("/users/:id", userControllers.read);
 router.delete("/users/:id", userControllers.destroy);
 
-router.get("/city/:id/activity", activityControllers.getActivityWithCityId);
+router.get("/cities/:id/activities", activityControllers.getActivityWithCityId);
 
 // MUR
 router.use(verifyToken);

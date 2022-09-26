@@ -95,7 +95,7 @@ export default function EditProfile() {
             />
           </div>
         </section>
-        <section className="">
+        <section className="editProfileContainers">
           <div>
             <label htmlFor="mail">Votre email</label>
             <br />
