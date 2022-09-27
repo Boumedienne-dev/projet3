@@ -1,11 +1,12 @@
-.userCoTitle {
+h1.userCoTitle {
   text-align: center;
   font-size: 20px;
-  margin-top: 12%;
-  margin-bottom: 15%;
-  padding: 0 30px;
   font-weight: bold;
+  padding-top: 65px;
+  padding-bottom: 10%;
 }
+
+
 
 .userCoInput-containerUser {
   display: flex;
@@ -41,8 +42,8 @@
 }
 
 .pictureP-UserConnexion {
-  margin-top: 20%;
-  margin-bottom: 17%;
+  padding-top: 20%;
+  padding-bottom: 17%;
   display: flex;
   align-items: center;
   justify-content: center;

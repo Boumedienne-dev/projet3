@@ -35,7 +35,7 @@ function UserProfile() {
   return (
     <div>
       {user.mail !== "" ? (
-        <div>
+        <div className="userCo">
           <h2>
             Welcome,<span>{user.name}</span>
           </h2>

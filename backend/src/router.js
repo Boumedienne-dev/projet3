@@ -44,16 +44,12 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
-router.get("/users/:id", userControllers.read);
 router.put("/users/:id", userControllers.editWithoutPass);
 router.post("/users", hashPassword, userControllers.add);
-
-router.get("/users/:id", userControllers.read);
 router.delete("/users/:id", userControllers.destroy);
 
 router.get("/cities/:id/activities", activityControllers.getActivityWithCityId);
 
-router.get("/users", userControllers.browse);
 router.post(
   "/login",
   userControllers.getUserByEmailWithPasswordAndPassToNext,
@@ -61,5 +57,8 @@ router.post(
 );
 // MUR
 router.use(verifyToken);
+
+router.get("/users/:id", userControllers.read);
+router.get("/users", userControllers.browse);
 
 module.exports = router;
