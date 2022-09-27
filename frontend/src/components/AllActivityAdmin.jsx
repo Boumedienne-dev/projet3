@@ -7,7 +7,9 @@ export default function AllActivityAdmin({ selectedCityId }) {
   useEffect(() => {
     axios
       .get(
-        `${import.meta.env.VITE_BACKEND_URL}/city/${selectedCityId}/activity`
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/cities/${selectedCityId}/activities`
       )
       .then((response) => response.data)
       .then((data) => setactivities(data));
