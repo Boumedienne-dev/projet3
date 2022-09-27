@@ -54,7 +54,7 @@ export default function AdminAccount() {
     <div>
       <div>
         <h2 className="adminAccount">COMPTE ADMIN</h2>
-        <h3 className="multipleUsers">Utilisateurs multiples</h3>
+        <h3 className="multipleUsers">Utilisateur</h3>
       </div>
       <form>
         <label>

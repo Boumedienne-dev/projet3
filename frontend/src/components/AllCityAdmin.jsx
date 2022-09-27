@@ -6,7 +6,7 @@ export default function AllCityAdmin({ selectedLineId, setSelectedCityId }) {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/lines/${selectedLineId}/city`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/lines/${selectedLineId}/cities`)
       .then((response) => response.data)
       .then((data) => setCities(data));
   }, [selectedLineId]);
