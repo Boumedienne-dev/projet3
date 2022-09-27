@@ -1,12 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import "../assets/style/editProfile.css";
 import { useNavigate } from "react-router-dom";
+import AuthApi from "../services/AuthApi";
+import AuthContext from "../context/AuthContext";
 
 export default function EditProfile() {
   const [getUser, setGetUser] = useState("");
 
+  const { setIsAuthenticated } = useContext(AuthContext);
+
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    AuthApi.logout();
+    setIsAuthenticated(false);
+    navigate("/");
+  };
 
   function updateProfile() {
     axios
@@ -134,7 +144,11 @@ export default function EditProfile() {
           <button className="editProfileUpdateBtn" type="submit" value="submit">
             <span className="text-btn-white">Mettre a jour</span>
           </button>
-          <button className="editProfileDeconnexionbtn" type="button">
+          <button
+            className="editProfileDeconnexionbtn"
+            type="button"
+            onClick={() => handleLogout()}
+          >
             Deconnexion
           </button>
         </div>

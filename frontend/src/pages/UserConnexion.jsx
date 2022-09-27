@@ -1,53 +1,76 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
-import LoginForm from "../components/LoginForm";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
+
 import "../assets/style/userConnexion.css";
+import AuthApi from "../services/AuthApi";
 
-function UserProfile() {
-  const [database, setDatabase] = useState([]);
-  const [user, setUser] = useState({ mail: "" });
-  const [error, setError] = useState("");
+export default function UserConnexion() {
+  const [user, setUser] = useState({
+    mail: "",
+    password: "",
+  });
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/users`)
-      .then((response) => response.data)
-      .then((data) => setDatabase(data));
-  }, []);
+  const { setIsAuthenticated } = useContext(AuthContext);
 
-  const login = (details) => {
-    if (
-      details.mail === database.mail &&
-      details.password === database.password
-    ) {
-      setUser({
-        mail: details.mail,
-      });
-    } else {
-      setError("Details do not match!");
-    }
+  const handleLogout = () => {
+    AuthApi.logout();
+    setIsAuthenticated(false);
   };
+  const navigate = useNavigate();
 
-  const logout = () => {
-    setUser({ mail: "" });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/login`, {
+        ...user,
+      })
+      .then((response) => response.data)
+      .then((data) => {
+        window.localStorage.setItem("authToken", data.token);
+        axios.defaults.headers.Authorization = `Bearer ${data.token}`;
+      })
+      .then(() => {
+        setIsAuthenticated(true);
+        navigate("/compte_utilisateur");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (
     <div>
-      {user.mail !== "" ? (
-        <div className="userCo">
-          <h2>
-            Welcome,<span>{user.name}</span>
-          </h2>
-          <button type="submit" onClick={logout}>
-            logout
-          </button>
-        </div>
-      ) : (
-        <LoginForm login={login} error={error} />
-      )}
+      <div className="userCoTitle">
+        <h1>Formulaire de connexion</h1>
+        <form onSubmit={(event) => handleSubmit(event)}>
+          <input
+            className="userCoInput"
+            type="email"
+            value={user.mail}
+            onChange={(e) =>
+              setUser({
+                ...user,
+                mail: e.target.value,
+              })
+            }
+            placeholder="Email"
+          />
+          <input
+            className="userCoInput"
+            type="password"
+            placeholder="Mot de passe"
+            value={user.password}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
+          />
+          <input type="submit" />
+        </form>
+      </div>
+      <button type="button" onClick={() => handleLogout()}>
+        DeconnnneeeezzzzziiiiiiiioooNNNNN!!!!
+      </button>
     </div>
   );
 }
-
-export default UserProfile;

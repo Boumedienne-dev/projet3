@@ -55,10 +55,10 @@ router.post(
   userControllers.getUserByEmailWithPasswordAndPassToNext,
   verifyPassword
 );
-// MUR
-router.use(verifyToken);
-
 router.get("/users/:id", userControllers.read);
 router.get("/users", userControllers.browse);
+
+// MUR
+router.use(verifyToken);
 
 module.exports = router;

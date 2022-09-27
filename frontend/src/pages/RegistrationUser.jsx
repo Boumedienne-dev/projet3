@@ -1,10 +1,11 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
 import "../assets/style/RegistrationUser.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import PasswordAndConfirmPasswordRegistration from "../components/PasswordAndConfirmPasswordRegistration";
 
 export default function RegistrationUser() {
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
   const [errorsPassword, setErrorsPassword] = useState(false);
@@ -25,7 +26,8 @@ export default function RegistrationUser() {
         .then((res) => {
           console.error(res);
           console.error(res.data);
-        });
+        })
+        .then(() => navigate("/connexion"));
     }
   };
 
