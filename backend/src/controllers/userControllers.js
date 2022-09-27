@@ -110,7 +110,7 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     .findUserByEmail(mail)
     .then(([user]) => {
       if (user[0] != null) {
-        req.user = user[0];
+        [req.user] = [user[0]];
         // req.user = [user[0]; juste passage push
         next();
       } else {
