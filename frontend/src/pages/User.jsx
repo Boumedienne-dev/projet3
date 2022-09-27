@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import trainTrack from "../assets/image/train-track.webp";
 import "../assets/style/User.css";
 
-export default function ConnexionUser() {
+export default function User() {
   return (
     <div className="">
       <p className="welcomeConnexionUser">

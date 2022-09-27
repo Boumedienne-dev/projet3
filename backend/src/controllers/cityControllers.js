@@ -70,7 +70,7 @@ const add = (req, res) => {
   models.city
     .insert(city)
     .then(([result]) => {
-      res.location(`/lines/${result.insertId}`).sendStatus(201);
+      res.location(`/cities/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
