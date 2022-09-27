@@ -18,7 +18,7 @@ export default function AllCity() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/lines/${id}/citys`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/lines/${id}/cities`)
       .then((response) => response.data)
       .then((data) => setGetCity(data));
   }, []);
