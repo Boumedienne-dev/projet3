@@ -1,8 +1,12 @@
+.accountuserDivPrincipal {
+  padding-top: 55px;
+  width: 90%;
+}
+
 .editProfileDivPrincipal {
   display: flex;
   border-bottom: 2px solid black;
-  margin-top: 2vh;
-  height: 50vh;
+  height: auto;
 }
 
 .editProfileSectionContainer2 {
@@ -20,10 +24,19 @@
 
 .editProfileImg {
   width: 100%;
-  height: 55%;
+  height: 45%;
   object-fit: contain;
   position: relative;
   top: 25px;
+}
+
+.buttonAccessAdmin {
+  margin-top: 20px;
+  padding: 5px;
+  background-color: blue;
+  color: #ffffff;
+  border: solid 3px red;
+  cursor: pointer;
 }
 
 .editProfileForm {
@@ -39,7 +52,7 @@
   background-color: rgb(215, 211, 211);
   height: 20px;
   width: 90%;
-  margin-right: 5%;
+  text-align: center;
 }
 
 .editProfileLastname {
@@ -47,7 +60,7 @@
   background-color: rgb(215, 211, 211);
   height: 20px;
   width: 90%;
-  margin-right: 5%;
+  text-align: center;
 }
 
 .editProfileMail {
@@ -55,46 +68,50 @@
   background-color: rgb(215, 211, 211);
   width: 90%;
   height: 20px;
-  margin-bottom: 15px;
-  margin-right: 5%;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 .editProfileDivUploadImg {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-right: 5px;
 }
-
+.editProfileDivButtons {
+  display: flex;
+  width: auto;
+}
 .editProfileDeconnexionbtn {
   display: block;
   position: relative;
-  width: 14em;
-  height: 1.6em;
+  text-align: center;
+  width: 8em;
+  height: 1.8em;
   border-radius: 1em;
   background: #8de8fe;
   cursor: pointer;
   font-size: 15px;
-  top: 55px;
-  right: 68px;
+  top: 50px;
+  right: 70px;
+  margin-left: 35px;
 }
 
 .editProfileDeconnexionbtn:before {
   content: "";
-  display: block;
   width: 1.2em;
   height: 1.2em;
   border-radius: 1em;
   background: #0c131f;
   position: absolute;
-  left: 0.3em;
-  top: 0.1em;
+  left: 0.2em;
+  top: 0.2em;
 }
 
 .editProfileUpdateBtn {
   display: block;
   position: relative;
-  width: 12em;
+  text-align: center;
+  width: 7.6em;
   height: 1.5em;
   border-radius: 1em;
   background: #0c131f;
@@ -105,25 +122,23 @@
 
 .editProfileUpdateBtn:before {
   content: "";
-  display: block;
-  width: 1.1em;
-  height: 1.1em;
+  width: 1em;
+  height: 1em;
   border-radius: 1em;
   background: #8de8fe;
   position: absolute;
-  left: 0.3em;
+  right: 0.2em;
+  top: 0.2em;
 }
 
-.text-btn-white {
-  align-content: center;
+.text-btn-white-user {
   padding-right: 15px;
   color: #ffffff;
   font-size: 14px;
 }
 
-.text-btn-black {
-  align-content: center;
-  padding-left: 15px;
+.text-btn-black-user {
+  padding-left: 18px;
   font-size: 14px;
 }
 

@@ -17,6 +17,9 @@ import AllCity from "./pages/AllCity";
 import AuthContext from "./context/AuthContext";
 import AuthApi from "./services/AuthApi";
 import PrivateRoute from "./components/PrivateRoute";
+import AdminRoute from "./components/AdminRoute";
+import CurrentUserContext from "./context/CurrentUserContext";
+import UnauthorizedPage from "./pages/UnauthorizedPage";
 
 import "./App.css";
 import "./assets/style/Footer.css";
@@ -28,48 +31,52 @@ function App() {
     AuthApi.isAuthenticated
   );
 
+  const [currentUser, setCurrentUser] = useState(AuthApi.isCurrentUser);
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-      <Router>
-        <div className="App">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/les_villes/:id" element={<AllCity />} />
-            <Route
-              path="/compte_utilisateur"
-              element={
-                <PrivateRoute>
-                  <AccountUser />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/les_lignes/:id" element={<AllLines />} />
-            <Route path="/ville" element={<City />} />
-            <Route path="/acces_compte" element={<User />} />
-            <Route path="/connexion" element={<UserConnexion />} />
-            <Route path="/inscription" element={<RegistrationUser />} />
-            <Route
-              path="/administrateur/"
-              element={
-                <PrivateRoute>
-                  <AdminAccount />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/administrateur/:id"
-              element={
-                <PrivateRoute>
-                  <AdminAccount />
-                </PrivateRoute>
-              }
-            />
-          </Routes>
-          <Footerb />
-        </div>
-      </Router>
+      <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
+        <Router>
+          <div className="App">
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/les_villes/:id" element={<AllCity />} />
+              <Route
+                path="/compte_utilisateur"
+                element={
+                  <PrivateRoute>
+                    <AccountUser />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/les_lignes/:id" element={<AllLines />} />
+              <Route path="/ville" element={<City />} />
+              <Route path="/acces_compte" element={<User />} />
+              <Route path="/connexion" element={<UserConnexion />} />
+              <Route path="/inscription" element={<RegistrationUser />} />
+              <Route
+                path="/administrateur/"
+                element={
+                  <AdminRoute>
+                    <AdminAccount />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/administrateur/:id"
+                element={
+                  <AdminRoute>
+                    <AdminAccount />
+                  </AdminRoute>
+                }
+              />
+              <Route path="/acces_refuse" element={<UnauthorizedPage />} />
+            </Routes>
+            <Footerb />
+          </div>
+        </Router>
+      </CurrentUserContext.Provider>
     </AuthContext.Provider>
   );
 }

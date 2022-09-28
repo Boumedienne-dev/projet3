@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 import AuthContext from "../context/AuthContext";
+import AuthApi from "../services/AuthApi";
+import CurrentUserContext from "../context/CurrentUserContext";
 
 import "../assets/style/userConnexion.css";
-import AuthApi from "../services/AuthApi";
 
 export default function UserConnexion() {
   const [user, setUser] = useState({
@@ -12,13 +14,14 @@ export default function UserConnexion() {
     password: "",
   });
 
+  const navigate = useNavigate();
   const { setIsAuthenticated } = useContext(AuthContext);
+  const { setCurrentUser } = useContext(CurrentUserContext);
 
   const handleLogout = () => {
     AuthApi.logout();
     setIsAuthenticated(false);
   };
-  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,10 +34,13 @@ export default function UserConnexion() {
       .then((data) => {
         window.localStorage.setItem("authToken", data.token);
         axios.defaults.headers.Authorization = `Bearer ${data.token}`;
+        setCurrentUser(jwtDecode(data.token));
       })
       .then(() => {
         setIsAuthenticated(true);
-        navigate("/compte_utilisateur");
+        setTimeout(() => {
+          navigate("/compte_utilisateur");
+        }, 1000);
       })
       .catch((err) => {
         console.error(err);

@@ -1,14 +1,17 @@
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import "../assets/style/editProfile.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import AuthApi from "../services/AuthApi";
 import AuthContext from "../context/AuthContext";
+import CurrentUserContext from "../context/CurrentUserContext";
 
 export default function EditProfile() {
-  const [getUser, setGetUser] = useState("");
-
+  const { currentUser } = useContext(CurrentUserContext);
   const { setIsAuthenticated } = useContext(AuthContext);
+
+  const [getUser, setGetUser] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -20,7 +23,7 @@ export default function EditProfile() {
 
   function updateProfile() {
     axios
-      .put(`${import.meta.env.VITE_BACKEND_URL}/users/55`, {
+      .put(`${import.meta.env.VITE_BACKEND_URL}/users/${currentUser.sub}`, {
         ...getUser,
       })
       .then((res) => {
@@ -32,10 +35,14 @@ export default function EditProfile() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users/55`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${currentUser.sub}`)
       .then((response) => response.data)
-      .then((data) => setGetUser(data));
-  }, []);
+      .then((data) => setGetUser(data), setLoading(false));
+  }, [currentUser]);
+
+  if (loading) {
+    return "En cours de chargement";
+  }
 
   const uploadImage = (e) => {
     const data = new FormData();
@@ -57,6 +64,15 @@ export default function EditProfile() {
     <div className="editProfileDivPrincipal">
       <div className="editProfileDivImg">
         <img className="editProfileImg" src={getUser.picture} alt="" />
+        {currentUser.isAdmin === 1 ? (
+          <Link to="/administrateur">
+            <button className="buttonAccessAdmin" type="button">
+              Accès Admin
+            </button>
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
       <form
         className="editProfileForm"
@@ -117,16 +133,17 @@ export default function EditProfile() {
               }}
             />
           </div>
-          {/* <div>
-              <label htmlFor="password">Mot de passe</label>
-              <br />
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Mot de passe"
-            />*
-            </div> */}
+          <div>
+            <label htmlFor="password">Mot de passe</label>
+            <br />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Mot de passe"
+            />
+            *
+          </div>
         </section>
         <div className="editProfileDivUploadImg">
           <label htmlFor="file">Modifier votre photo:</label>
@@ -142,30 +159,17 @@ export default function EditProfile() {
         </div>
         <div className="editProfileDivButtons">
           <button className="editProfileUpdateBtn" type="submit" value="submit">
-            <span className="text-btn-white">Mettre a jour</span>
+            <span className="text-btn-white-user">Mettre a jour</span>
           </button>
           <button
             className="editProfileDeconnexionbtn"
             type="button"
             onClick={() => handleLogout()}
           >
-            Deconnexion
+            <span className="text-btn-black-user">Deconnexion</span>
           </button>
         </div>
       </form>
     </div>
   );
 }
-
-/* <div className="accountUser-grid-container-user">
-          <div className="accountUser-toggle-pill-dark">
-            <button type="button">
-              <span className="text-btn-white">Editer</span>
-            </button>
-          </div>
-          <div className="accountUser-toggle-pill-blue">
-            <button type="button">
-              <span className="text-btn-black">Deconnexion</span>
-            </button>
-          </div>
-          </div> */
