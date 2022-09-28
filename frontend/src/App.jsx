@@ -32,7 +32,6 @@ function App() {
   );
 
   const [currentUser, setCurrentUser] = useState(AuthApi.isCurrentUser);
-
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>

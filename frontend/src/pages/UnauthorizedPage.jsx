@@ -11,7 +11,7 @@ export default function UnauthorizedPage() {
   }, []);
 
   return (
-    <div>
+    <div className="unauthorizedPage">
       <h3>Accès non autorisé</h3>
       <p>
         Votre profil n'est pas autorisé à accéder a cette page. Si vous avez des

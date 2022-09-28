@@ -8,6 +8,6 @@ export default function AdminRoute({ children }) {
   return currentUser && currentUser.isAdmin === 1 ? (
     children
   ) : (
-    <Navigate to="/unauthorized" />
+    <Navigate to="/acces_refuse" />
   );
 }

@@ -40,7 +40,7 @@ export default function UserConnexion() {
         setIsAuthenticated(true);
         setTimeout(() => {
           navigate("/compte_utilisateur");
-        }, 5000);
+        }, 1000);
       })
       .catch((err) => {
         console.error(err);

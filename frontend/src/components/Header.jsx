@@ -21,7 +21,7 @@ export default function Header() {
           </li>
           {isAuthenticated ? (
             <li className="liWithName">
-              <Link to="/acces_compte">
+              <Link to="/compte_utilisateur">
                 <img
                   className="user-account-logo"
                   src="https://res.cloudinary.com/otire82/image/upload/v1662558227/logo/userCO_urz833.png"
