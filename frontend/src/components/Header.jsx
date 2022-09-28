@@ -10,15 +10,15 @@ export default function Header() {
     <div>
       <div className="navbarmain">
         <ul className="navbar">
-          <Link to="/">
-            <li className="liWithName">
+          <li className="liWithName">
+            <Link to="/">
               <img
                 className="sncf-explo-logo"
                 src="https://res.cloudinary.com/otire82/image/upload/v1662557593/logo/sncfexplowhite_wxzckg.png"
                 alt="logo de sncf exploration"
               />
-            </li>
-          </Link>
+            </Link>
+          </li>
           {isAuthenticated ? (
             <li className="liWithName">
               <Link to="/acces_compte">
