@@ -79,3 +79,45 @@
   margin-bottom: 5px;
   color: red;
 }
+
+@media screen and (min-width: 600px) {
+  .title-registration{
+    padding-top: 10%;
+    font-size: 30px;
+  }
+
+  .text-require{
+    margin-left: 10%;
+  }
+
+  .review-picture img{
+    width: 20%;
+    height: 20%;
+    align-items: center;
+  }
+
+  .form-container input{
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .form-container{
+    font-size: 18px;
+  }
+
+  .btn-picture {
+    height: 30px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .toggle-blue{
+    position: relative;
+    left: 20%;
+    bottom: 10%
+  }
+
+  .review-picture img{
+    margin-bottom: 5%;
+  }
+}
