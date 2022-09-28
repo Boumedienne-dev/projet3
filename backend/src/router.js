@@ -49,6 +49,9 @@ router.post("/users", hashPassword, userControllers.add);
 router.delete("/users/:id", userControllers.destroy);
 
 router.get("/cities/:id/activities", activityControllers.getActivityWithCityId);
+router.put("/activities/:id", activityControllers.edit);
+router.post("/activities", activityControllers.add);
+router.delete("/activities/:id", activityControllers.destroy);
 
 router.post(
   "/login",
