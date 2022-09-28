@@ -1,29 +1,35 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+// import { useParams, useNavigate } from "react-router-dom";
 import plusIcon from "../assets/image/icone_plus.png";
-import AdminInput from "../components/AdminInput";
+// import AdminInput from "../components/AdminInput";
 import "../assets/style/AdminAccount.css";
 import RegionsListAdmin from "../components/RegionsListAdmin";
 import AllLinesListAdmin from "../components/AllLinesListAdmin";
 import AllCityAdmin from "../components/AllCityAdmin";
-import AllActivityAdmin from "../components/AllActivityAdmin";
+// import AllActivityAdmin from "../components/AllActivityAdmin";
+import ThemesAdmin from "../components/ThemesAdmin";
 
 export default function AdminAccount() {
-  const [user, setUser] = useState("");
-  const params = useParams();
+  // const params = useParams();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`)
-      .then((response) => response.data)
-      .then((data) => setUser(data));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`)
+  //     .then((response) => response.data)
+  //     .then((data) => setUser(data));
+  // }, []);
 
   const [regions, setRegions] = useState("");
   const [selectedRegionId, setSelectedRegionId] = useState(1);
   const [selectedLineId, setSelectedLineId] = useState(1);
   const [selectedCityId, setSelectedCityId] = useState(1);
+  const [selectedThemeId, setSelectedThemeId] = useState(1);
+  const [activityName, setActivityName] = useState("");
+  const [activityAddress, setActivityAddress] = useState("");
+  const [activityDescription, setActivityDescription] = useState("");
+  const [activityPicture, setActivityPicture] = useState("");
 
   useEffect(() => {
     axios
@@ -32,114 +38,112 @@ export default function AdminAccount() {
       .then((data) => setRegions(data));
   }, []);
 
-  const [image, setImage] = useState("");
-  const [url, setUrl] = useState("");
-
-  const uploadImage = () => {
+  const uploadImage = (e) => {
+    e.preventDefault();
     const data = new FormData();
-    data.append("file", image);
+    data.append("file", e.target.files[0]);
     data.append("upload_preset", "sncf-exploration");
-    data.append("cloud_name", "boumdev");
-    fetch("  https://api.cloudinary.com/v1_1/boumdev/image/upload", {
+    data.append("cloud_name", "otire82");
+    fetch("  https://api.cloudinary.com/v1_1/otire82/image/upload", {
       method: "post",
       body: data,
     })
       .then((res) => res.json())
       .then((data1) => {
-        setUrl({ ...url, picture: data1.url });
+        setActivityPicture(data1.url);
       })
       .catch((err) => console.error(err));
   };
+
+  const postActivity = () => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/activities`, {
+        city: selectedCityId,
+        theme: selectedThemeId,
+        name: activityName,
+        adress: activityAddress,
+        description: activityDescription,
+        picture: activityPicture,
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    // navigate("/admininistrateur/activities");
+  };
+
   return (
     <div>
+      <h2 className="adminAccount">COMPTE ADMIN</h2>
       <div>
-        <h2 className="adminAccount">COMPTE ADMIN</h2>
-        <h3 className="multipleUsers">Utilisateur</h3>
+        <h3 className="activitiesH3">Activités</h3>
+        <img className="plusIconB" src={plusIcon} alt="icone plus" />
       </div>
       <form>
-        <label>
-          {user && (
-            <AdminInput
-              input
-              type="text"
-              placeholder="Moi (administrateur)"
-              admin={user}
-            />
-          )}
-        </label>
-      </form>
-      <div className="lineActivity">
         <div>
-          <img className="plusIconB" src={plusIcon} alt="icone plus" />
-          <input className="addActivity" type="submit" value="Activites" />
-        </div>
-      </div>
-      <div>
-        <form action="#">
           <RegionsListAdmin
             regions={regions}
             setSelectedRegionId={setSelectedRegionId}
           />
-        </form>
-      </div>
-      <div>
-        <form action="#">
+        </div>
+        <div>
           <AllLinesListAdmin
             selectedRegionId={selectedRegionId}
             setSelectedLineId={setSelectedLineId}
           />
-        </form>
-      </div>
-      <div>
-        <form action="#">
+        </div>
+        <div>
           <AllCityAdmin
             selectedLineId={selectedLineId}
             setSelectedCityId={setSelectedCityId}
           />
-        </form>
-        <form action="#">
-          <AllActivityAdmin selectedCityId={selectedCityId} />
-        </form>
-      </div>
-      <div>
-        <form action="#">
-          <select className="themes" name="theme">
-            <option>Sport</option>
-            <option>Restaurant</option>
-            <option>Monuments</option>
-          </select>
-        </form>
-      </div>
-      <div>
-        <form>
-          <input className="description" type="text" placeholder="descriptif" />
-        </form>
-      </div>
-      <div>
-        <form>
+          {/* <form action="#">
+            <AllActivityAdmin selectedCityId={selectedCityId} />
+          </form> */}
+        </div>
+        <div>
+          <ThemesAdmin setSelectedThemeId={setSelectedThemeId} />
+        </div>
+        <div>
+          <input
+            className="nameActivity"
+            type="text"
+            value={activityName}
+            onChange={(e) => setActivityName(e.target.value)}
+            placeholder="Nom de l'activité"
+          />
+        </div>
+        <div>
+          <input
+            className="description"
+            type="text"
+            placeholder="descriptif"
+            value={activityDescription}
+            onChange={(e) => setActivityDescription(e.target.value)}
+          />
+        </div>
+        <div>
           <input
             className="adress"
             type="text"
             placeholder="Rue, Code Postal et Ville"
+            value={activityAddress}
+            onChange={(e) => setActivityAddress(e.target.value)}
           />
-        </form>
-      </div>
-      <div>
-        <div className="insertPicture">
-          <input type="file" onChange={(e) => setImage(e.target.files[0])} />
-          <button type="submit" onClick={uploadImage}>
-            Charger
-          </button>
         </div>
         <div>
-          <img className="pictureAdmin" src={url} alt="admin" />
+          <div className="insertPicture">
+            <input type="file" onChange={(e) => uploadImage(e)} />
+          </div>
+          <div>
+            <img className="pictureAdmin" src={activityPicture} alt="admin" />
+          </div>
+          <div className="toggle-blue">
+            <button type="submit" value="Submit" onClick={() => postActivity()}>
+              <span className="text-btn-black">Valider</span>
+            </button>
+          </div>
         </div>
-        <div className="toggle-blue">
-          <button type="submit" value="Submit">
-            <span className="text-btn-black">Valider</span>
-          </button>
-        </div>
-      </div>
+      </form>
     </div>
   );
 }
