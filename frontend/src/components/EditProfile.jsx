@@ -4,11 +4,14 @@ import "../assets/style/editProfile.css";
 import { useNavigate } from "react-router-dom";
 import AuthApi from "../services/AuthApi";
 import AuthContext from "../context/AuthContext";
+import CurrentUserContext from "../context/CurrentUserContext";
 
 export default function EditProfile() {
-  const [getUser, setGetUser] = useState("");
-
+  const { currentUser } = useContext(CurrentUserContext);
   const { setIsAuthenticated } = useContext(AuthContext);
+
+  const [getUser, setGetUser] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -20,7 +23,7 @@ export default function EditProfile() {
 
   function updateProfile() {
     axios
-      .put(`${import.meta.env.VITE_BACKEND_URL}/users/55`, {
+      .put(`${import.meta.env.VITE_BACKEND_URL}/users/${currentUser.sub}`, {
         ...getUser,
       })
       .then((res) => {
@@ -32,10 +35,14 @@ export default function EditProfile() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users/55`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${currentUser.sub}`)
       .then((response) => response.data)
-      .then((data) => setGetUser(data));
-  }, []);
+      .then((data) => setGetUser(data), setLoading(false));
+  }, [currentUser]);
+
+  if (loading) {
+    return "En cours de chargement";
+  }
 
   const uploadImage = (e) => {
     const data = new FormData();

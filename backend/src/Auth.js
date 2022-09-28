@@ -32,7 +32,7 @@ const verifyPassword = (req, res) => {
 
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
           // a changer en 1h il est en 1an pour developper sans devoir se reconnecter
-          expiresIn: "1an",
+          expiresIn: "365d",
         });
 
         delete req.user.hashedPassword;
