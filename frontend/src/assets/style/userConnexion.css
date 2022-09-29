@@ -1,9 +1,8 @@
-.userCoTitle {
+.userCoTitle h1 {
   text-align: center;
+  padding-top: 20%;
   font-size: 20px;
-  margin-top: 12%;
   margin-bottom: 15%;
-  padding: 0 30px;
   font-weight: bold;
 }
 

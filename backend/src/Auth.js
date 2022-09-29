@@ -28,10 +28,11 @@ const verifyPassword = (req, res) => {
     .verify(req.user.hashedPassword, req.body.password)
     .then((isVerified) => {
       if (isVerified) {
-        const payload = { sub: req.user.id };
+        const payload = { sub: req.user.id, isAdmin: req.user.isAdmin };
 
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
-          expiresIn: "1h",
+          // a changer en 1h il est en 1an pour developper sans devoir se reconnecter
+          expiresIn: "365d",
         });
 
         delete req.user.hashedPassword;

@@ -47,22 +47,25 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
-router.get("/users/:id", userControllers.read);
 router.put("/users/:id", userControllers.editWithoutPass);
 router.post("/users", hashPassword, userControllers.add);
-
 router.get("/users/:id", userControllers.read);
 router.get("/users/:id/activities", userControllers.getActivityByUserId);
 router.delete("/users/:id", userControllers.destroy);
 
 router.get("/cities/:id/activities", activityControllers.getActivityWithCityId);
+router.put("/activities/:id", activityControllers.edit);
+router.post("/activities", activityControllers.add);
+router.delete("/activities/:id", activityControllers.destroy);
 
-router.get("/users", userControllers.browse);
 router.post(
   "/login",
   userControllers.getUserByEmailWithPasswordAndPassToNext,
   verifyPassword
 );
+router.get("/users/:id", userControllers.read);
+router.get("/users", userControllers.browse);
+
 // MUR
 router.use(verifyToken);
 

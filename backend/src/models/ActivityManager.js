@@ -25,9 +25,17 @@ class ActivityManager extends AbstractManager {
   }
 
   insert(activity) {
-    return this.connection.query(`insert into ${this.table} () values (?)`, [
-      activity.title,
-    ]);
+    return this.connection.query(
+      `insert into ${this.table} (id_city, id_theme, activity_name, adress, description, picture) values (?, ?, ?, ?, ?, ?)`,
+      [
+        activity.city,
+        activity.theme,
+        activity.name,
+        activity.adress,
+        activity.description,
+        activity.picture,
+      ]
+    );
   }
 
   update(activity) {

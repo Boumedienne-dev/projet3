@@ -1,12 +1,12 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
 import "../assets/style/RegistrationUser.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import PasswordAndConfirmPasswordRegistration from "../components/PasswordAndConfirmPasswordRegistration";
 
 export default function RegistrationUser() {
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
-  const [image, setImage] = useState("");
   const [errorsPassword, setErrorsPassword] = useState(false);
   const [user, setUser] = useState({
     last_name: "",
@@ -25,13 +25,14 @@ export default function RegistrationUser() {
         .then((res) => {
           console.error(res);
           console.error(res.data);
-        });
+        })
+        .then(() => navigate("/connexion"));
     }
   };
 
-  const uploadImage = () => {
+  const uploadImage = (e) => {
     const data = new FormData();
-    data.append("file", image);
+    data.append("file", e.target.files[0]);
     data.append("upload_preset", "sncf-exploration");
     data.append("cloud_name", "otire82");
     fetch("  https://api.cloudinary.com/v1_1/otire82/image/upload", {
@@ -46,7 +47,7 @@ export default function RegistrationUser() {
   };
 
   function handleInputProfile(e) {
-    setImage(e.target.files[0]);
+    uploadImage(e);
     setUser({ ...user, picture: e.target.value });
   }
 
@@ -130,9 +131,6 @@ export default function RegistrationUser() {
             accept="image/*"
             onChange={(e) => handleInputProfile(e)}
           />
-          <button className="btn-picture" type="button" onClick={uploadImage}>
-            Charger votre photo
-          </button>
         </div>
         <div className="review-picture">
           <p>Prévualisation de votre avatar:</p>
