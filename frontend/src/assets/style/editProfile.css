@@ -1,7 +1,11 @@
+.accountuserDivPrincipal {
+  padding-top: 8vh;
+}
+
 .editProfileDivPrincipal {
   display: flex;
   border-bottom: 2px solid black;
-  margin-top: 2vh;
+  padding-top: 5vh;
   height: 50vh;
 }
 
@@ -16,6 +20,7 @@
 .editProfileDivImg {
   width: 40%;
   height: 45vh;
+  z-index: -5;
 }
 
 .editProfileImg {
@@ -128,6 +133,10 @@
 }
 
 @media screen and (min-width: 800px) {
+  .accountuserDivPrincipal {
+    padding-top: 20vh;
+  }
+
   .editProfileDivPrincipal {
     height: 70vh;
     margin-bottom: 200px;
