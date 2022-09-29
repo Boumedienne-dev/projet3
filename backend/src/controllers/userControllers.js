@@ -139,7 +139,7 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
 const getUserByEmail = (req, res, next) => {
   const { mail } = req.body;
   models.user
-    .getAllUserFromMail(mail)
+    .findUserByEmail(mail)
     .then(([users]) => {
       if (users[0] == null) {
         res.sendStatus(404);

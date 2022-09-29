@@ -71,9 +71,9 @@ router.post(
 );
 router.get("/users/:id", userControllers.read);
 router.get("/users", userControllers.browse);
-router.post("/api/mail", userControllers.getUserByEmail, modifyPassword);
+router.post("/mail", userControllers.getUserByEmail, modifyPassword);
 router.put(
-  "/api/mail/:token",
+  "/mail/:token",
   hashPasswordForReset,
   userControllers.updateUserForChangePassword
 );

@@ -6,7 +6,7 @@ const mailRecover = (data) => {
   const tokenModified = data.token.split(".").join("$");
   mailer.sendMail(
     {
-      from: process.env.MAIL,
+      from: "a.jeanne01@sncf.fr",
       to: data.mail,
       subject: "Reset du mot de passe de SNCF Exploration",
       text: "Voici le lien pour reset le mot de passe",

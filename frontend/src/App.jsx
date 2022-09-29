@@ -20,6 +20,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import AdminRoute from "./components/AdminRoute";
 import CurrentUserContext from "./context/CurrentUserContext";
 import UnauthorizedPage from "./pages/UnauthorizedPage";
+import ModifyPasswordPage from "./pages/ModifyPasswordPage";
+import ModifyPasswordPageBis from "./pages/ModifyPasswordPageBis";
 
 import "./App.css";
 import "./assets/style/Footer.css";
@@ -72,6 +74,11 @@ function App() {
                 }
               />
               <Route path="/acces_refuse" element={<UnauthorizedPage />} />
+              <Route
+                path="/modification/:token"
+                element={<ModifyPasswordPageBis />}
+              />
+              <Route path="/modification/" element={<ModifyPasswordPage />} />
             </Routes>
             <Footerb />
           </div>
