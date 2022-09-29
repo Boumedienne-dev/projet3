@@ -46,26 +46,51 @@ export default function UserConnexion() {
       <div className="userCoTitle">
         <h1>Formulaire de connexion</h1>
         <form onSubmit={(event) => handleSubmit(event)}>
-          <input
-            className="userCoInput"
-            type="email"
-            value={user.mail}
-            onChange={(e) =>
-              setUser({
-                ...user,
-                mail: e.target.value,
-              })
-            }
-            placeholder="Email"
-          />
-          <input
-            className="userCoInput"
-            type="password"
-            placeholder="Mot de passe"
-            value={user.password}
-            onChange={(e) => setUser({ ...user, password: e.target.value })}
-          />
-          <input type="submit" />
+          <div className="userCoInput-containerUser">
+            <label className="userCoApp" htmlFor="Email">
+              mail:
+            </label>
+            <input
+              className="userCoInput"
+              type="email"
+              value={user.mail}
+              onChange={(e) =>
+                setUser({
+                  ...user,
+                  mail: e.target.value,
+                })
+              }
+              placeholder="Email"
+            />
+          </div>
+          <div className="userCoInput-containerPass">
+            <label className="userCoApp" htmlFor="password">
+              password:
+            </label>
+            <input
+              className="userCoInput"
+              type="password"
+              placeholder="Mot de passe"
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+            />
+          </div>
+
+          <div className="pictureP-UserConnexion">
+            <img
+              className="pictureT-UserConnexion"
+              src="https://res.cloudinary.com/otire82/image/upload/v1662624134/image/train-jaune.jpg"
+              alt="train touristique"
+            />
+          </div>
+
+          <div className="posBtnCo">
+            <div className="toggle-pill-blueUserCo button">
+              <button type="submit">
+                <span className="text-btn-blackUserCo">Connexion</span>
+              </button>
+            </div>
+          </div>
           <div>
             <button
               type="button"

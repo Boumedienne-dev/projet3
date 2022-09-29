@@ -13,6 +13,18 @@ const browse = (req, res) => {
     });
 };
 
+const getActivityByUserId = (req, res) => {
+  models.user
+    .findActivityWithUserId(req.params.id)
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const read = (req, res) => {
   models.user
     .find(req.params.id)
@@ -165,6 +177,7 @@ const updateUserForChangePassword = (req, res) => {
 module.exports = {
   browse,
   read,
+  getActivityByUserId,
   edit,
   editWithoutPass,
   add,

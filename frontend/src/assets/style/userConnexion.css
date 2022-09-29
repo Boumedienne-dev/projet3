@@ -1,12 +1,84 @@
-.userCoTitle {
+.userCoTitle h1 {
   text-align: center;
+  padding-top: 20%;
   font-size: 20px;
+  margin-bottom: 15%;
   font-weight: bold;
-  padding-top: 105px;
-  padding-bottom: 10%;
 }
 
-.userCoInput {
+.userCoInput-containerUser {
   display: flex;
   flex-direction: column;
+}
+
+.userCoApp {
+  margin-bottom: 1%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.userCoInput-containerPass {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.userCoInput-containerUser input {
+  background-color: rgb(236, 233, 233);
+  width: 70%;
+  margin: auto;
+  height: 25px;
+  border-radius: 10px;
+}
+
+.userCoInput-containerPass input {
+  background-color: rgb(236, 233, 233);
+  width: 70%;
+  margin: auto;
+  height: 25px;
+  border-radius: 10px;
+}
+
+.pictureP-UserConnexion {
+  margin-top: 20%;
+  margin-bottom: 17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pictureT-UserConnexion {
+  width: 75%;
+}
+
+.posBtnCo {
+  margin-left: 60%;
+  margin-top: 30%;
+}
+
+.toggle-pill-blueUserCo button {
+  display: block;
+  position: relative;
+  width: 7.5em;
+  height: 2em;
+  border-radius: 1em;
+  background: #8de8fe;
+  cursor: pointer;
+}
+
+.toggle-pill-blueUserCo button:before {
+  content: "";
+  display: block;
+  width: 1.3em;
+  height: 1.4em;
+  border-radius: 1em;
+  background: #0c131f;
+  position: absolute;
+  left: 0.2em;
+  top: 0.2em;
+}
+
+.text-btn-blackUserCo {
+  align-content: center;
+  padding-left: 15px;
 }
