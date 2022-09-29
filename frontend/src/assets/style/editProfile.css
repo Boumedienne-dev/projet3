@@ -1,12 +1,13 @@
 .accountuserDivPrincipal {
-  padding-top: 55px;
+  padding-top: 8vh;
   width: 90%;
 }
 
 .editProfileDivPrincipal {
   display: flex;
   border-bottom: 2px solid black;
-  height: auto;
+  padding-top: 5vh;
+  height: 50vh;
 }
 
 .editProfileSectionContainer2 {
@@ -20,6 +21,7 @@
 .editProfileDivImg {
   width: 40%;
   height: 45vh;
+  z-index: -5;
 }
 
 .editProfileImg {
@@ -143,6 +145,10 @@
 }
 
 @media screen and (min-width: 800px) {
+  .accountuserDivPrincipal {
+    padding-top: 20vh;
+  }
+
   .editProfileDivPrincipal {
     height: 70vh;
     margin-bottom: 200px;
