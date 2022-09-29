@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const models = require("../models");
 
 const browse = (req, res) => {
@@ -123,6 +124,44 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     });
 };
 
+const getUserByEmail = (req, res, next) => {
+  const { mail } = req.body;
+  models.user
+    .getAllUserFromMail(mail)
+    .then(([users]) => {
+      if (users[0] == null) {
+        res.sendStatus(404);
+      } else {
+        req.user = users[0];
+        next();
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const updateUserForChangePassword = (req, res) => {
+  const user = req.body;
+  const id = req.payload.sub;
+
+  models.user
+    .updatePassword(user, id)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.status(404).send("Not Found");
+      } else {
+        res.send("success");
+        res.sendStatus(204).send("User password edited");
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error editing the user");
+    });
+};
+
 module.exports = {
   browse,
   read,
@@ -131,4 +170,6 @@ module.exports = {
   add,
   destroy,
   getUserByEmailWithPasswordAndPassToNext,
+  getUserByEmail,
+  updateUserForChangePassword,
 };

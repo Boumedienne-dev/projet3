@@ -12,7 +12,13 @@ const themeControllers = require("./controllers/themeControllers");
 
 const userControllers = require("./controllers/userControllers");
 
-const { hashPassword, verifyPassword, verifyToken } = require("./Auth");
+const {
+  hashPassword,
+  verifyPassword,
+  verifyToken,
+  modifyPassword,
+  hashPasswordForReset,
+} = require("./Auth");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -60,7 +66,12 @@ router.post(
 );
 router.get("/users/:id", userControllers.read);
 router.get("/users", userControllers.browse);
-
+router.post("/api/mail", userControllers.getUserByEmail, modifyPassword);
+router.put(
+  "/api/mail/:token",
+  hashPasswordForReset,
+  userControllers.updateUserForChangePassword
+);
 // MUR
 router.use(verifyToken);
 
