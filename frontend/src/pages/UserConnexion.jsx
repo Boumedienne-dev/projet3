@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import AuthContext from "../context/AuthContext";
-import AuthApi from "../services/AuthApi";
 import CurrentUserContext from "../context/CurrentUserContext";
 
 import "../assets/style/userConnexion.css";
@@ -17,11 +16,6 @@ export default function UserConnexion() {
   const navigate = useNavigate();
   const { setIsAuthenticated } = useContext(AuthContext);
   const { setCurrentUser } = useContext(CurrentUserContext);
-
-  const handleLogout = () => {
-    AuthApi.logout();
-    setIsAuthenticated(false);
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -72,11 +66,26 @@ export default function UserConnexion() {
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
           <input type="submit" />
+          <div>
+            <button
+              type="button"
+              className="MDP"
+              onClick={() => navigate("/modification")}
+            >
+              mot de passe oublié
+            </button>
+          </div>
+          <div className="connect_button_container">
+            <button
+              type="button"
+              className="buttonForm1"
+              onClick={() => navigate("/")}
+            >
+              Annuler
+            </button>
+          </div>
         </form>
       </div>
-      <button type="button" onClick={() => handleLogout()}>
-        DeconnnneeeezzzzziiiiiiiioooNNNNN!!!!
-      </button>
     </div>
   );
 }
