@@ -165,7 +165,69 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .pictureAdminA {
-    flex-direction: column;
+  .adminAccount {
+    font-size: 60px;
   }
+
+  .regions {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .destination {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .city {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .nameActivity {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .themes {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    top: 280px;
+    left: 80px;
+  }
+
+  .description {
+    font-size: 20px;
+    width: 400px;
+    height: 150px;
+    top: 250px;
+    left: 80px;
+  }
+
+  .adress {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    top: 280px;
+    left: 80px;
+  }
+
+  .insertPicture {
+    font-size: 20px;
+    width: 400px;
+    top: 300px;
+  }
+
+  .pictureAdmin {
+    right: 250px;
+  } 
 }

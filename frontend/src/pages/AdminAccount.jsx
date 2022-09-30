@@ -126,19 +126,17 @@ export default function AdminAccount() {
           />
         </div>
         <div>
-          <div className="pictureAdminA">
-            <div className="insertPicture">
-              <input type="file" onChange={(e) => uploadImage(e)} />
-            </div>
-            <div>
-              <img className="pictureAdmin" src={activityPicture} alt="admin" />
-            </div>
+          <div className="insertPicture">
+            <input type="file" onChange={(e) => uploadImage(e)} />
           </div>
-          <div className="toggle-blue">
-            <button type="submit" value="Submit" onClick={() => postActivity()}>
-              <span className="text-btn-black">Valider</span>
-            </button>
+          <div>
+            <img className="pictureAdmin" src={activityPicture} alt="admin" />
           </div>
+        </div>
+        <div className="toggle-blue">
+          <button type="submit" value="Submit" onClick={() => postActivity()}>
+            <span className="text-btn-black">Valider</span>
+          </button>
         </div>
       </form>
     </div>
