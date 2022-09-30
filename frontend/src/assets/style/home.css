@@ -41,18 +41,6 @@
   top: 95px;
 }
 
-@media screen and (min-width: 150px) {
-  .homeRegionTitle {
-    position: relative;
-    top: 73px;
-    right: 5px;
-  }
-
-  .homeRegionContainersChild {
-    width: 150px;
-  }
-}
-
 @media screen and (min-width: 550px) {
   .homeRegionTitle {
     position: relative;

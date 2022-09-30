@@ -81,27 +81,27 @@
 }
 
 @media screen and (min-width: 600px) {
-  .title-registration{
+  .title-registration {
     padding-top: 10%;
     font-size: 30px;
   }
 
-  .text-require{
+  .text-require {
     margin-left: 10%;
   }
 
-  .review-picture img{
+  .review-picture img {
     width: 20%;
     height: 20%;
     align-items: center;
   }
 
-  .form-container input{
+  .form-container input {
     height: 30px;
     font-size: 16px;
   }
 
-  .form-container{
+  .form-container {
     font-size: 18px;
   }
 
@@ -111,13 +111,13 @@
 }
 
 @media screen and (min-width: 1000px) {
-  .toggle-blue{
+  .toggle-blue {
     position: relative;
     left: 20%;
-    bottom: 10%
+    bottom: 10%;
   }
 
-  .review-picture img{
+  .review-picture img {
     margin-bottom: 5%;
   }
 }

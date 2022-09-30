@@ -1,13 +1,15 @@
-.accountuserDivPrincipal {
+.accountUserDivPrincipal {
   padding-top: 8vh;
-  width: 90%;
+  padding-bottom: 10vh;
+
+  width: 100%;
 }
 
 .editProfileDivPrincipal {
   display: flex;
   border-bottom: 2px solid black;
   padding-top: 5vh;
-  height: 50vh;
+  height: 45vh;
 }
 
 .editProfileSectionContainer2 {
