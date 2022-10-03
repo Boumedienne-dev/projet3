@@ -65,6 +65,11 @@ export default function AdminAccount() {
         description: activityDescription,
         picture: activityPicture,
       })
+      .then(() => {
+        setTimeout(() => {
+          window.location.reload();
+        }, 100);
+      })
       .catch((error) => {
         console.error(error);
       });
@@ -131,7 +136,11 @@ export default function AdminAccount() {
             <input type="file" onChange={(e) => uploadImage(e)} />
           </div>
           <div>
-            <img className="pictureAdmin" src={activityPicture} alt="admin" />
+            <img
+              className="pictureAdmin"
+              src={activityPicture}
+              alt={activityName}
+            />
           </div>
           <div className="toggle-blue">
             <button
