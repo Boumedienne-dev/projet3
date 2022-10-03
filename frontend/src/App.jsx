@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-/* eslint-disable prettier/prettier */
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import AccountUser from "./pages/AccountUser";
@@ -56,7 +55,7 @@ function App() {
               <Route path="/connexion" element={<UserConnexion />} />
               <Route path="/inscription" element={<RegistrationUser />} />
               <Route
-                path="/administrateur/"
+                path="/administrateur"
                 element={
                   <AdminRoute>
                     <AdminAccount />

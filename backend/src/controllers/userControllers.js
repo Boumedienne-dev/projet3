@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const models = require("../models");
 
 const browse = (req, res) => {
@@ -122,8 +123,7 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     .findUserByEmail(mail)
     .then(([user]) => {
       if (user[0] != null) {
-        [req.user] = [user[0]];
-        // req.user = [user[0]; juste passage push
+        req.user = user[0];
         next();
       } else {
         res.sendStatus(401);

@@ -1,13 +1,7 @@
-.accountuserDivPrincipal {
-  padding-top: 8vh;
-  width: 100%;
-}
-
 .editProfileDivPrincipal {
   display: flex;
   border-bottom: 2px solid black;
   padding-top: 5vh;
-  height: 75vh;
 }
 
 .editProfileSectionContainer2 {
@@ -35,6 +29,7 @@
 .buttonAccessAdmin {
   margin-top: 20px;
   padding: 5px;
+  border-radius: 15px;
   background-color: blue;
   color: #ffffff;
   border: solid 3px red;

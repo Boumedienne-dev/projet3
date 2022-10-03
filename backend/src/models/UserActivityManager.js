@@ -8,7 +8,7 @@ class UserActivityManager extends AbstractManager {
   insertUserActivity(userActivity) {
     return this.connection.query(
       `INSERT INTO user_activity (id_user, id_activity) values (?, ?)`,
-      [55, userActivity.id_activity]
+      [userActivity.id_user, userActivity.id_activity]
     );
   }
 }

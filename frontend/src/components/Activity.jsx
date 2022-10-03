@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import CurrentUserContext from "../context/CurrentUserContext";
 
 function Activity({ activity }) {
+  const { currentUser } = useContext(CurrentUserContext);
   const [activities] = useState({});
   const [favorite, setFavorite] = useState(false);
 
@@ -12,6 +14,7 @@ function Activity({ activity }) {
       .post(`${import.meta.env.VITE_BACKEND_URL}/usersActivities`, {
         ...activities,
         id_activity: activity.id,
+        id_user: currentUser.sub,
       })
       .then(() => {
         setFavorite(true);
