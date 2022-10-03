@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import "../assets/style/editProfile.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AuthApi from "../services/AuthApi";
 import AuthContext from "../context/AuthContext";
 import CurrentUserContext from "../context/CurrentUserContext";
@@ -62,18 +62,20 @@ export default function EditProfile() {
 
   return (
     <div className="editProfileDivPrincipal">
-      <div className="editProfileDivImg">
-        <img className="editProfileImg" src={getUser.picture} alt="" />
-        {currentUser.isAdmin === 1 ? (
-          <Link to="/administrateur">
-            <button className="buttonAccessAdmin" type="button">
-              Accès Admin
-            </button>
-          </Link>
-        ) : (
-          ""
-        )}
-      </div>
+      <form>
+        <div className="editProfileDivImg">
+          <img className="editProfileImg" src={getUser.picture} alt="" />
+          {currentUser.isAdmin === 1 ? (
+            <a href="/administrateur">
+              <button className="buttonAccessAdmin" type="button">
+                Accès Admin
+              </button>
+            </a>
+          ) : (
+            ""
+          )}
+        </div>
+      </form>
       <form
         className="editProfileForm"
         onSubmit={(e) => {
