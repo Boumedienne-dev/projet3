@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 // import { useParams, useNavigate } from "react-router-dom";
-import plusIcon from "../assets/image/icone_plus.png";
 // import AdminInput from "../components/AdminInput";
 import "../assets/style/AdminAccount.css";
 import RegionsListAdmin from "../components/RegionsListAdmin";
@@ -74,11 +73,7 @@ export default function AdminAccount() {
   return (
     <div>
       <h2 className="adminAccount">COMPTE ADMIN</h2>
-      <div>
-        <h3 className="activitiesH3">Activités</h3>
-        <img className="plusIconB" src={plusIcon} alt="icone plus" />
-      </div>
-      <form>
+      <form className="adminForm">
         <div>
           <RegionsListAdmin
             regions={regions}
@@ -137,11 +132,11 @@ export default function AdminAccount() {
           <div>
             <img className="pictureAdmin" src={activityPicture} alt="admin" />
           </div>
-          <div className="toggle-blue">
-            <button type="submit" value="Submit" onClick={() => postActivity()}>
-              <span className="text-btn-black">Valider</span>
-            </button>
-          </div>
+        </div>
+        <div className="toggle-blue">
+          <button type="submit" value="Submit" onClick={() => postActivity()}>
+            <span className="text-btn-black">Valider</span>
+          </button>
         </div>
       </form>
     </div>
