@@ -139,12 +139,12 @@ export default function EditProfile() {
             <label htmlFor="password">Mot de passe</label>
             <br />
             <input
+              className="profilePass"
               type="password"
               name="password"
               id="password"
               placeholder="Mot de passe"
             />
-            *
           </div>
         </section>
         <div className="editProfileDivUploadImg">
