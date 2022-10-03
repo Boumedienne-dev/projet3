@@ -55,7 +55,8 @@ export default function AdminAccount() {
       .catch((err) => console.error(err));
   };
 
-  const postActivity = () => {
+  const postActivity = (e) => {
+    e.preventDefault();
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/activities`, {
         city: selectedCityId,
@@ -138,7 +139,11 @@ export default function AdminAccount() {
             <img className="pictureAdmin" src={activityPicture} alt="admin" />
           </div>
           <div className="toggle-blue">
-            <button type="submit" value="Submit" onClick={() => postActivity()}>
+            <button
+              type="submit"
+              value="Submit"
+              onClick={(e) => postActivity(e)}
+            >
               <span className="text-btn-black">Valider</span>
             </button>
           </div>
