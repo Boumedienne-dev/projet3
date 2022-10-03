@@ -18,6 +18,10 @@ export default function EditProfile() {
   const handleLogout = () => {
     AuthApi.logout();
     setIsAuthenticated(false);
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("mail");
+    window.localStorage.removeItem("name");
+    window.localStorage.removeItem("id");
     navigate("/");
   };
 
@@ -142,7 +146,13 @@ export default function EditProfile() {
               id="password"
               placeholder="Mot de passe"
             />
-            *
+            <input
+              className="change_password"
+              type="button"
+              id="change_password"
+              defaultValue="Changer de mot de passe"
+              onClick={() => navigate("/modification")}
+            />
           </div>
         </section>
         <div className="editProfileDivUploadImg">

@@ -45,7 +45,6 @@ const edit = (req, res) => {
   const user = req.body;
 
   // TODO validations (length, format...)
-
   user.id = parseInt(req.params.id, 10);
 
   models.user
@@ -67,7 +66,6 @@ const editWithoutPass = (req, res) => {
   const user = req.body;
 
   // TODO validations (length, format...)
-
   user.id = parseInt(req.params.id, 10);
 
   models.user
@@ -123,8 +121,7 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     .findUserByEmail(mail)
     .then(([user]) => {
       if (user[0] != null) {
-        [req.user] = [user[0]];
-        // req.user = [user[0]; juste passage push
+        req.user = user[0];
         next();
       } else {
         res.sendStatus(401);

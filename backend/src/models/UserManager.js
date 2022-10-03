@@ -50,6 +50,7 @@ class userControllers extends AbstractManager {
         user.mail,
         user.hashedPassword,
         user.picture,
+        user.id,
       ]
     );
   }
