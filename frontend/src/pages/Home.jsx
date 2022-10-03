@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import RegionList from "../components/RegionList";
 
 import "../assets/style/home.css";
 
@@ -25,18 +25,7 @@ export default function Home() {
       <div className="homeDiv">
         {getRegion &&
           getRegion.map((region) => (
-            <div className="homeRegionContainers">
-              <Link to={`/les_lignes/${region.id}`}>
-                <div className="homeRegionContainersChild" key={region.id}>
-                  <h4 className="homeRegionTitle">{region.name}</h4>
-                  <img
-                    className="homeRegionImg"
-                    src={region.picture}
-                    alt={region.name}
-                  />
-                </div>
-              </Link>
-            </div>
+            <RegionList region={region} key={region.id} />
           ))}
       </div>
     </div>
