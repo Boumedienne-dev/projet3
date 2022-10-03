@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import "../assets/style/ModifyPassword.css";
 
 function ModifyPassword() {
   const [mail, setMail] = useState("");
@@ -29,28 +30,28 @@ function ModifyPassword() {
         <form>
           <div className="createuser_subtitle">*champs obligatoires</div>
           <div className="createruser_container">
-            <p>Entrez votre mail</p>
+            <p>Entrez votre mail valide</p>
             <input
               className="createuser_password"
               type="email"
               id="createuser_password"
-              value={mail}
-              placeholder="Mail *"
+              defaultValue={mail}
+              placeholder="@ Mail *"
               onChange={(e) => setMail(e.target.value)}
             />
             {userExist ? <p>Utilisateur non existant</p> : ""}
             {mailSent ? <p>Mail envoyé</p> : ""}
           </div>
-          <div className="buttonsContainer">
+          <div className="grid-container-user">
             <button
-              className="buttonForm"
+              className="pill-dark"
               type="submit"
               onClick={(e) => sendMail(e)}
             >
-              Valider
+              <span className="textbtnbalck">Valider</span>
             </button>
-            <button className="buttonForm1" type="submit">
-              Annuler
+            <button className="pill-blue" type="submit">
+              <span className="textbtnwhite">Annuler</span>
             </button>
           </div>
         </form>

@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import "../assets/style/ModifyPassword.css";
 
 function ModifyPasswordWithMail() {
   const [newPassword, setNewPassword] = useState("");
@@ -36,9 +37,9 @@ function ModifyPasswordWithMail() {
       });
   };
   return (
-    <div className="contact1">
+    <div className="">
       <div className="Contact">
-        <h1 className="createuser_title">Modification de votre mot de passe</h1>
+        <h2 className="createuser_title">Modification de votre mot de passe</h2>
         <form>
           <div className="createuser_subtitle">*champs obligatoires</div>
           <div className="createruser_container">
