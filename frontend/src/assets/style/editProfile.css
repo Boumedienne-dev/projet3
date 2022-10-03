@@ -1,7 +1,6 @@
 .accountUserDivPrincipal {
   padding-top: 8vh;
   padding-bottom: 10vh;
-
   width: 100%;
 }
 
@@ -37,6 +36,7 @@
 .buttonAccessAdmin {
   margin-top: 20px;
   padding: 5px;
+  border-radius: 15px;
   background-color: blue;
   color: #ffffff;
   border: solid 3px red;
