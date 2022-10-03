@@ -7,15 +7,16 @@
 }
 
 .AllLinesRegionText {
+  margin-top: 20px;
   margin-left: 25px;
   margin-right: 25px;
-  text-align: justify;
+  text-align: center;
 }
 
 .line-h1 {
   font-size: 20px;
   text-align: center;
-  margin: 10px 0px 20px 0px;
+  margin: 30px 0px 20px 0px;
 }
 
 .line-text {
@@ -27,7 +28,7 @@
 
 .line-map-img {
   width: 250px;
-  height: 100px;
+  height: 120px;
   object-fit: cover;
 }
 
@@ -40,24 +41,26 @@
   border-radius: 20px;
 }
 
-.nav-all-lines,
-.lineposflex {
+.nav-all-lines {
   display: block;
   color: black;
   text-decoration: none;
-  margin: 15px 0 0px 15px;
+  margin: 40px 0 0px 15px;
+  margin-bottom: 100px;
 }
 
 .line-map {
   margin-left: 55px;
   list-style: disc;
   font-size: 60px;
-  margin-bottom: 150px;
+}
+
+.rémiePasDeClass {
+  margin-top: 30px;
 }
 
 @media screen and (min-width: 500px) {
   .line-h1 {
-    color: red;
     font-size: 40px;
   }
 
@@ -73,9 +76,8 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 600px) {
   .line-h1 {
-    color: blue;
     font-size: 60px;
   }
 
@@ -83,12 +85,54 @@
     font-size: 25px;
   }
   .line-map-img {
-    width: 100vw;
     height: 200px;
   }
 
   .lineflex {
     margin-top: 10%;
     margin-bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .line-h1 {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
+
+  .line-text {
+    font-size: 25px;
+  }
+
+  .lineposflex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    align-items: center;
+  }
+
+  .line-map-img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .lineflex {
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
+  .nav-all-lines {
+    border: none;
+    background-color: white;
+    list-style-type: none;
+  }
+  .line-map {
+    list-style-type: none;
+    text-align: center;
+  }
+  .line-text {
+    font-size: 15px;
+    width: auto;
+    flex-wrap: wrap;
   }
 }

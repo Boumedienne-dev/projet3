@@ -26,6 +26,7 @@ router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
 router.post("/usersActivities", userActivityControllers.postUserActivity);
+router.delete("/usersActivities/:id", userActivityControllers.destroy);
 
 router.get("/themes", themeControllers.getAll);
 router.get("/themes/:id", themeControllers.getById);

@@ -1,13 +1,7 @@
-.accountuserDivPrincipal {
-  padding-top: 8vh;
-  width: 90%;
-}
-
 .editProfileDivPrincipal {
   display: flex;
   border-bottom: 2px solid black;
   padding-top: 5vh;
-  height: 50vh;
 }
 
 .editProfileSectionContainer2 {
@@ -35,6 +29,7 @@
 .buttonAccessAdmin {
   margin-top: 20px;
   padding: 5px;
+  border-radius: 15px;
   background-color: blue;
   color: #ffffff;
   border: solid 3px red;
@@ -42,7 +37,7 @@
 }
 
 .editProfileForm {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   width: 60%;
@@ -55,6 +50,8 @@
   height: 20px;
   width: 90%;
   text-align: center;
+  margin-top: 6px;
+  margin-bottom: 10px;
 }
 
 .editProfileLastname {
@@ -63,6 +60,8 @@
   height: 20px;
   width: 90%;
   text-align: center;
+  margin-top: 6px;
+  margin-bottom: 10px;
 }
 
 .editProfileMail {
@@ -72,6 +71,13 @@
   height: 20px;
   margin-bottom: 5px;
   text-align: center;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.profilePass {
+  margin-top: 6px;
+  margin-bottom: 10px;
 }
 
 .editProfileDivUploadImg {
@@ -81,21 +87,19 @@
 }
 .editProfileDivButtons {
   display: flex;
-  width: auto;
 }
 .editProfileDeconnexionbtn {
   display: block;
   position: relative;
   text-align: center;
-  width: 8em;
+  width: 18em;
   height: 1.8em;
   border-radius: 1em;
   background: #8de8fe;
   cursor: pointer;
   font-size: 15px;
   top: 50px;
-  right: 70px;
-  margin-left: 35px;
+  right: 30px;
 }
 
 .editProfileDeconnexionbtn:before {
@@ -113,13 +117,13 @@
   display: block;
   position: relative;
   text-align: center;
-  width: 7.6em;
+  width: 16em;
   height: 1.5em;
   border-radius: 1em;
   background: #0c131f;
   cursor: pointer;
   top: 50px;
-  right: 70px;
+  right: 80px;
 }
 
 .editProfileUpdateBtn:before {
@@ -142,6 +146,11 @@
 .text-btn-black-user {
   padding-left: 18px;
   font-size: 14px;
+}
+
+#file {
+  margin-top: 6px;
+  margin-bottom: 10px;
 }
 
 @media screen and (min-width: 800px) {

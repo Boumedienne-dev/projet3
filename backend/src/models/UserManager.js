@@ -7,7 +7,7 @@ class userControllers extends AbstractManager {
 
   findActivityWithUserId(id) {
     return this.connection.query(
-      `SELECT a.activity_name, a.description, a.adress, a.picture FROM ${this.table} AS u 
+      `SELECT a.activity_name, a.description, a.adress, a.picture, user_activity.id FROM ${this.table} AS u 
       INNER JOIN user_activity ON user_activity.id_user=u.id 
       INNER JOIN activity AS a ON a.id=user_activity.id_activity WHERE u.id = ?`,
       [id]
