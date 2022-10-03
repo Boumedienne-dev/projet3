@@ -3,11 +3,11 @@ import "../assets/style/allLines.css";
 
 function AllLinesList({ line }) {
   return (
-    <div className="">
+    <div className="ess">
       <li className="line-map">
         <div>
           <Link to={`/les_villes/${line.id}`}>
-            <div className="lineposflex">
+            <div className="ess">
               {line.picture ? (
                 <img
                   className="line-map-img"

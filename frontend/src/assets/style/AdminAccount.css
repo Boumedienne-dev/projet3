@@ -230,3 +230,96 @@
     right: 250px;
   }
 }
+
+@media screen and (min-width: 400px) {
+  .insertPicture {
+    position: relative;
+    right: 250px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .adminAccount {
+    top: 100px;
+    left: 40%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: justify;
+    color: #000000;
+  }
+
+  .insertPicture {
+    left: 600px;
+    background: #d9d9d9;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .adminAccount {
+    font-size: 60px;
+  }
+
+  .regions {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .destination {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .city {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .nameActivity {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .themes {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    top: 280px;
+    left: 80px;
+  }
+
+  .description {
+    font-size: 20px;
+    width: 400px;
+    height: 150px;
+    top: 250px;
+    left: 80px;
+  }
+
+  .adress {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    top: 280px;
+    left: 80px;
+  }
+
+  .insertPicture {
+    font-size: 20px;
+    width: 400px;
+    top: 300px;
+  }
+
+  .pictureAdmin {
+    right: 250px;
+  }
+}

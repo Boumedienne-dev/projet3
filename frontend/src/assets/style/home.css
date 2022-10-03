@@ -4,16 +4,17 @@
 
 .homeTitle {
   margin-bottom: 3vh;
-  padding-top: 14%;
+  padding-top: 18%;
 }
 
 .homeDiv {
   display: flex;
   width: 100%;
+  margin: auto;
   flex-flow: wrap;
   justify-content: space-around;
   margin-bottom: 15vh;
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 
 .homeRegionContainers {
@@ -41,47 +42,40 @@
   top: 95px;
 }
 
-@media screen and (min-width: 150px) {
+@media screen and (min-width: 410px) {
   .homeRegionTitle {
     position: relative;
-    top: 73px;
-    right: 5px;
   }
 
-  .homeRegionContainersChild {
-    width: 150px;
-  }
-}
-
-@media screen and (min-width: 550px) {
-  .homeRegionTitle {
-    position: relative;
-    left: 50px;
+  .homeRegionImg {
+    margin-top: -2%;
   }
 }
 
 @media screen and (min-width: 800px) {
   .homeRegionContainers {
     font-size: 10px;
-    height: 25vh;
   }
 
   .homeRegionImg {
     width: 400px;
-    height: 18vh;
+    height: 150px;
   }
-
   .homeRegionTitle {
-    position: relative;
-    top: 120px;
+    top: 100%;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .homeTitle {
+    margin-bottom: 3vh;
+    padding-top: 8%;
+  }
+
   .homeRegionContainersParent {
     font-size: 14px;
     width: 30%;
-    height: 25vh;
+    height: 200%;
   }
 
   .homeRegionContainersChild {
@@ -89,7 +83,10 @@
   }
 
   .homeRegionImg {
-    width: 400px;
-    height: 18vh;
+    width: 300px;
+    height: 100px;
+  }
+  .homeRegionTitle {
+    top: 20%;
   }
 }

@@ -31,15 +31,24 @@ export default function AllLines() {
         alt={getRegion.name}
       />
       <p className="AllLinesRegionText">{getRegion.description}</p>
-      {getRegion.id === 1 ? (
-        <h2 className="line-h1">DE LYON PART DIEU</h2>
+      {getRegion.id === 1 || getRegion.id === 6 ? (
+        <h2 className="line-h1">{getRegion.titre_destination}</h2>
       ) : (
-        <h2>Page en cours de construction</h2>
+        <div className="constructionImage">
+          <h2 className="rémiePasDeClass">Page en cours de construction</h2>
+          <img
+            src="https://res.cloudinary.com/otire82/image/upload/v1664545436/construction/en-construction_vldcnz.jpg"
+            alt=""
+            srcSet=""
+          />
+        </div>
       )}
-      <nav className="nav-all-lines">
-        {getLines &&
-          getLines.map((line) => <AllLinesList key={line.id} line={line} />)}
-      </nav>
+      <div>
+        <nav className="nav-all-lines lineposflex">
+          {getLines &&
+            getLines.map((line) => <AllLinesList key={line.id} line={line} />)}
+        </nav>
+      </div>
     </div>
   );
 }
