@@ -83,31 +83,26 @@ export default function UserConnexion() {
               alt="train touristique"
             />
           </div>
-
+          <div className="posBtnreset">
+            <div className="toggleBlueBtn">
+              <button type="button" onClick={() => navigate("/modification")}>
+                <span className="text-btn-blackUserCo2">
+                  Mot de passe oublié
+                </span>
+              </button>
+            </div>
+            <div className="toggleBlueBtn">
+              <button type="button" onClick={() => navigate("/")}>
+                <span className="text-btn-blackUserCo2">Annuler</span>
+              </button>
+            </div>
+          </div>
           <div className="posBtnCo">
-            <div className="toggle-pill-blueUserCo button">
+            <div className="toggle-pill-blueUserCo">
               <button type="submit">
                 <span className="text-btn-blackUserCo">Connexion</span>
               </button>
             </div>
-          </div>
-          <div>
-            <button
-              type="button"
-              className="MDP"
-              onClick={() => navigate("/modification")}
-            >
-              mot de passe oublié
-            </button>
-          </div>
-          <div className="connect_button_container">
-            <button
-              type="button"
-              className="buttonForm1"
-              onClick={() => navigate("/")}
-            >
-              Annuler
-            </button>
           </div>
         </form>
       </div>

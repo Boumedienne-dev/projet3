@@ -95,7 +95,7 @@ export default function EditProfile() {
               type="text"
               name="lastname"
               id="lastname"
-              value={getUser.last_name}
+              defaultValue={getUser.last_name}
               onChange={(e) => {
                 setGetUser({
                   ...getUser,
@@ -111,7 +111,7 @@ export default function EditProfile() {
               type="text"
               name="firstname"
               id="firstname"
-              value={getUser.first_name}
+              defaultValue={getUser.first_name}
               onChange={(e) => {
                 setGetUser({
                   ...getUser,
@@ -130,7 +130,7 @@ export default function EditProfile() {
               type="email"
               name="mail"
               id="mail"
-              value={getUser.mail}
+              defaultValue={getUser.mail}
               onChange={(e) => {
                 setGetUser({
                   ...getUser,

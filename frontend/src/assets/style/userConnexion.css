@@ -82,3 +82,36 @@
   align-content: center;
   padding-left: 15px;
 }
+
+.posBtnreset {
+  display: flex;
+  justify-content: space-around;
+}
+.toggleBlueBtn button {
+  display: block;
+  position: relative;
+  width: 9em;
+  height: 1.5em;
+  border-radius: 1em;
+  background: #8de8fe;
+  cursor: pointer;
+}
+
+.toggleBlueBtn button:before {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background: #0c131f;
+  position: absolute;
+  left: 0.2em;
+  top: 0.1em;
+}
+
+.text-btn-blackUserCo2 {
+  align-content: center;
+  padding-left: 15px;
+  font-size: 12px;
+  font-style: bold;
+}
