@@ -31,8 +31,8 @@ export default function AllLines() {
         alt={getRegion.name}
       />
       <p className="AllLinesRegionText">{getRegion.description}</p>
-      {getRegion.id === 1 ? (
-        <h2 className="line-h1">DE LYON PART DIEU</h2>
+      {getRegion.id === 1 || getRegion.id === 6 ? (
+        <h2 className="line-h1">{getRegion.titre_destination}</h2>
       ) : (
         <div className="constructionImage">
           <h2 className="rémiePasDeClass">Page en cours de construction</h2>
