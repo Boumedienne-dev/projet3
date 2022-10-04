@@ -142,20 +142,17 @@ export default function EditProfile() {
           <div>
             <label htmlFor="password">Mot de passe</label>
             <br />
-            <input
-              className="profilePass"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Mot de passe"
-            />
-            <input
-              className="change_password"
-              type="button"
-              id="change_password"
-              defaultValue="Changer de mot de passe"
-              onClick={() => navigate("/modification")}
-            />
+            <div className="">
+              <button
+                className="editProfilPassBtn"
+                type="button"
+                onClick={() => navigate("/modification")}
+              >
+                <span className="text-btn-white-user">
+                  Changer de mot de passe
+                </span>
+              </button>
+            </div>
           </div>
         </section>
         <div className="editProfileDivUploadImg">
