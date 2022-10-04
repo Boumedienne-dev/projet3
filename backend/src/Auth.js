@@ -94,8 +94,9 @@ const modifyPassword = (req, res) => {
 const hashPasswordForReset = (req, res, next) => {
   // Récupère le token via le parametre d'url
   const { token } = req.params;
+  const myToken = token.split("$").join(".");
   // Décodage du token
-  req.payload = jwt.verify(token, process.env.JWT_SECRET);
+  req.payload = jwt.verify(myToken, process.env.JWT_SECRET);
   // Vérification que le payload est celui du reset
   if (req.payload.reset === "reset") {
     argon2

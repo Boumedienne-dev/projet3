@@ -11,7 +11,7 @@ function ModifyPasswordWithMail() {
   const [equalTest, setEqualTest] = useState(false);
   const [passChangeSuccess, setpassChangeSuccess] = useState(true);
   const { token } = useParams();
-  const tokenCorrected = token.split("$").join(".");
+  const tokenCorrected = token.replace("$").join(".");
   const nav = useNavigate();
   useEffect(() => {
     // test regex: lettre capital, normal,un chiffre, un charactere spécial et 8 de long
@@ -74,7 +74,11 @@ function ModifyPasswordWithMail() {
             >
               <span className="textbtnbalck">Valider</span>
             </button>
-            <button className="pill-blue" type="submit">
+            <button
+              className="pill-blue"
+              type="button"
+              onClick={() => nav("/")}
+            >
               <span className="textbtnwhite">Annuler</span>
             </button>
           </div>

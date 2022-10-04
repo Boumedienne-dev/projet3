@@ -49,6 +49,7 @@ router.get("/regions", regionControllers.browse);
 router.get("/regions/:id", regionControllers.read);
 router.put("/regions/:id", regionControllers.edit);
 
+router.get("/users/:id", userControllers.read);
 router.post("/users", hashPassword, userControllers.add);
 router.get("/users/:id", userControllers.read);
 router.get("/users", userControllers.browse);
@@ -66,7 +67,6 @@ router.put(
 // MUR
 router.use(verifyToken);
 
-router.get("/users/:id", userControllers.read);
 router.delete("/users/:id", userControllers.destroy);
 router.put("/users/:id", userControllers.editWithoutPass);
 

@@ -162,7 +162,7 @@ const updateUserForChangePassword = (req, res) => {
         res.status(404).send("Not Found");
       } else {
         res.send("success");
-        res.sendStatus(204).send("User password edited");
+        // res.sendStatus(204).send("User password edited");
       }
     })
     .catch((err) => {
