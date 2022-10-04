@@ -52,9 +52,9 @@ function ModifyPassword() {
             {mailSent ? <p className="redUser">Mail envoyé</p> : ""}
           </div>
           <div className="createuser_subtitle">*champs obligatoires</div>
-          <div className="pictureP-UserConnexion">
+          <div className="pictureP-UserModif">
             <img
-              className="pictureT-UserConnexion"
+              className="pictureT-UserModif"
               src="https://res.cloudinary.com/otire82/image/upload/v1664874035/image/image_cewabb.jpg"
               alt="train touristique"
             />
