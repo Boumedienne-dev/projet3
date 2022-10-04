@@ -41,46 +41,43 @@ function ModifyPasswordWithMail() {
       <div className="Contact">
         <h2 className="createuser_title">Modification de votre mot de passe</h2>
         <form>
-          <div className="createuser_subtitle">*champs obligatoires</div>
           <div className="createruser_container">
             <input
               className="createuser_password"
               type="password"
-              id="createuser_password"
               value={newPassword}
               placeholder="Nouveau mot de passe*"
               onChange={(e) => setNewPassword(e.target.value)}
             />
             <input
-              className="createuser_confirm_password"
+              className="createuser_password"
               type="password"
-              id="createuser_confirm_password"
               value={confirmNewPassword}
               placeholder="Confirmez le nouveau mot de passe*"
               onChange={(e) => setConfirmNewPassword(e.target.value)}
             />
+            <div className="createuser_subtitle">*champs obligatoires</div>
           </div>
           {passChangeSuccess ? "" : <p>Echec de mise a jour du mot de passe</p>}
           {equalTest ? "" : <p>Mot de passe différent</p>}
           {regBool ? <p>Mot de passe ne respectant pas les critères</p> : ""}
           <div className="buttonsContainer">
-            <button
-              className="pill-dark"
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                equalTest === true ? editPass(e) : "";
-              }}
-            >
-              <span className="textbtnbalck">Valider</span>
-            </button>
-            <button
-              className="pill-blue"
-              type="button"
-              onClick={() => nav("/")}
-            >
-              <span className="textbtnwhite">Annuler</span>
-            </button>
+            <div className="pill-dark">
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  equalTest === true ? editPass(e) : "";
+                }}
+              >
+                <span className="textbtnwhite">Valider</span>
+              </button>
+            </div>
+            <div className="pill-blue">
+              <button type="button" onClick={() => nav("/")}>
+                <span className="textbtnblack">Annuler</span>
+              </button>
+            </div>
           </div>
         </form>
       </div>
