@@ -34,9 +34,8 @@ function ModifyPassword() {
       <div className="Contact">
         <h2 className="createuser_title">Modification de votre mot de passe</h2>
         <form>
-          <div className="createuser_subtitle">*champs obligatoires</div>
           <div className="createruser_container">
-            <p>Entrez votre mail valide</p>
+            <p>Veuillez entrer une adresse mail valide</p>
             <input
               className="createuser_password"
               type="email"
@@ -52,10 +51,11 @@ function ModifyPassword() {
             )}
             {mailSent ? <p className="redUser">Mail envoyé</p> : ""}
           </div>
+          <div className="createuser_subtitle">*champs obligatoires</div>
           <div className="pictureP-UserConnexion">
             <img
               className="pictureT-UserConnexion"
-              src="https://res.cloudinary.com/otire82/image/upload/v1662624134/image/train-jaune.jpg"
+              src="https://res.cloudinary.com/otire82/image/upload/v1664874035/image/image_cewabb.jpg"
               alt="train touristique"
             />
           </div>
