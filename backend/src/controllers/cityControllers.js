@@ -40,6 +40,18 @@ const getWithIdLine = (req, res) => {
     });
 };
 
+const getCityLogo = (req, res) => {
+  models.city
+    .findCityLogo(req.params.id)
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const edit = (req, res) => {
   const city = req.body;
 
@@ -98,6 +110,7 @@ module.exports = {
   getAll,
   getById,
   getWithIdLine,
+  getCityLogo,
   edit,
   add,
   destroy,
