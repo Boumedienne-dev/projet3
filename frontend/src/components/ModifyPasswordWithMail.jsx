@@ -11,7 +11,7 @@ function ModifyPasswordWithMail() {
   const [equalTest, setEqualTest] = useState(false);
   const [passChangeSuccess, setpassChangeSuccess] = useState(true);
   const { token } = useParams();
-  const tokenCorrected = token.replace("$").join(".");
+  const tokenCorrected = token.split("$").join(".");
   const nav = useNavigate();
   useEffect(() => {
     // test regex: lettre capital, normal,un chiffre, un charactere spécial et 8 de long
@@ -28,7 +28,7 @@ function ModifyPasswordWithMail() {
         password,
       })
       .then((response) => {
-        response === "success" ? nav("/login") : setpassChangeSuccess(false);
+        response.data ? nav("/connexion") : setpassChangeSuccess(false);
         console.warn(response);
       })
       .catch((error) => {
