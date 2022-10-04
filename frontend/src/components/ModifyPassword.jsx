@@ -1,21 +1,26 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../assets/style/ModifyPassword.css";
 
 function ModifyPassword() {
   const [mail, setMail] = useState("");
   const [userExist, setUserExist] = useState("");
   const [mailSent, setMailSent] = useState("");
+  const nav = useNavigate();
 
   const sendMail = (e) => {
     e.preventDefault();
+
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/mail/`, {
         mail,
       })
-      .then((response) => {
-        // console.error(response);
-        console.warn(response.data);
+      .then((response) => response.data)
+      .then((data) => {
+        console.warn(data);
+      })
+      .then(() => {
         setMailSent(true);
         setUserExist(false);
       })
@@ -23,10 +28,11 @@ function ModifyPassword() {
         error.response.status === 404 ? setUserExist(true) : setUserExist(false)
       );
   };
+
   return (
     <div className="contact1">
       <div className="Contact">
-        <h1 className="createuser_title">Modification de votre mot de passe</h1>
+        <h2 className="createuser_title">Modification de votre mot de passe</h2>
         <form>
           <div className="createuser_subtitle">*champs obligatoires</div>
           <div className="createruser_container">
@@ -39,20 +45,31 @@ function ModifyPassword() {
               placeholder="@ Mail *"
               onChange={(e) => setMail(e.target.value)}
             />
-            {userExist ? <p>Utilisateur non existant</p> : ""}
-            {mailSent ? <p>Mail envoyé</p> : ""}
+            {userExist ? (
+              <p className="redUser">Utilisateur non existant</p>
+            ) : (
+              ""
+            )}
+            {mailSent ? <p className="redUser">Mail envoyé</p> : ""}
           </div>
-          <div className="grid-container-user">
-            <button
-              className="pill-dark"
-              type="submit"
-              onClick={(e) => sendMail(e)}
-            >
-              <span className="textbtnbalck">Valider</span>
-            </button>
-            <button className="pill-blue" type="submit">
-              <span className="textbtnwhite">Annuler</span>
-            </button>
+          <div className="pictureP-UserConnexion">
+            <img
+              className="pictureT-UserConnexion"
+              src="https://res.cloudinary.com/otire82/image/upload/v1662624134/image/train-jaune.jpg"
+              alt="train touristique"
+            />
+          </div>
+          <div className="buttonsContainer">
+            <div className="pill-blue">
+              <button type="button" onClick={() => nav("/")}>
+                <span className="textbtnblack">Annuler</span>
+              </button>
+            </div>
+            <div className="pill-dark">
+              <button type="button" onClick={(e) => sendMail(e)}>
+                <span className="textbtnwhite">Valider</span>
+              </button>
+            </div>
           </div>
         </form>
       </div>

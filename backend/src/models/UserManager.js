@@ -57,7 +57,7 @@ class userControllers extends AbstractManager {
 
   findUserByEmail(mail) {
     return this.connection.query(`SELECT * FROM ${this.table} WHERE mail = ?`, [
-      [mail],
+      mail,
     ]);
   }
 

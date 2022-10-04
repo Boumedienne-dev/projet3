@@ -65,17 +65,17 @@ function ModifyPasswordWithMail() {
           {regBool ? <p>Mot de passe ne respectant pas les critères</p> : ""}
           <div className="buttonsContainer">
             <button
-              className="buttonForm"
+              className="pill-dark"
               type="submit"
               onClick={(e) => {
                 e.preventDefault();
                 equalTest === true ? editPass(e) : "";
               }}
             >
-              Valider
+              <span className="textbtnbalck">Valider</span>
             </button>
-            <button className="buttonForm1" type="submit">
-              Annuler
+            <button className="pill-blue" type="submit">
+              <span className="textbtnwhite">Annuler</span>
             </button>
           </div>
         </form>

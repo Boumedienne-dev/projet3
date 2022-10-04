@@ -88,7 +88,7 @@ const modifyPassword = (req, res) => {
   const message = { token, mail: req.user.mail };
   mailRecover(message);
   delete req.user.hashedPassword;
-  req.send({ token, user: req.user });
+  // req.send({ token, user: req.user });
 };
 
 const hashPasswordForReset = (req, res, next) => {
