@@ -120,8 +120,6 @@ export default function EditProfile() {
               }}
             />
           </div>
-        </section>
-        <section className="editProfileSectionContainer2">
           <div>
             <label htmlFor="mail">Votre email</label>
             <br />
@@ -142,13 +140,13 @@ export default function EditProfile() {
           <div>
             <label htmlFor="password">Mot de passe</label>
             <br />
-            <div className="">
+            <div className="editProfileDivButtons">
               <button
                 className="editProfilPassBtn"
                 type="button"
                 onClick={() => navigate("/modification")}
               >
-                <span className="text-btn-white-user">
+                <span className="text-btn-black-user">
                   Changer de mot de passe
                 </span>
               </button>
