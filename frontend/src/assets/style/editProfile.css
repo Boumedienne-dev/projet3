@@ -31,7 +31,7 @@
   height: 45%;
   object-fit: contain;
   top: 25px;
-  border: solid 1px; 
+  border: solid 1px;
 }
 
 .buttonAccessAdmin {
@@ -87,7 +87,7 @@
   width: 100%;
 }
 
-.editProfilPassBtn{
+.editProfilPassBtn {
   position: relative;
   text-align: center;
   width: 200px;
@@ -112,7 +112,7 @@
   top: 0px;
   right: 20%;
 }
-.editProfilPassBtn:before{
+.editProfilPassBtn:before {
   content: "";
   width: 1.2em;
   height: 1.2em;

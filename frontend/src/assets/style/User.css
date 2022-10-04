@@ -7,7 +7,7 @@
   width: 90%;
   height: 40vh;
   margin: 40px 0px 30px 0px;
-  object-fit:cover
+  object-fit: cover;
 }
 
 .grid-container-user {

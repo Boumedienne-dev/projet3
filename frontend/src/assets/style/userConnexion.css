@@ -115,3 +115,49 @@
   font-size: 12px;
   font-style: bold;
 }
+
+@media screen and (min-width: 600px) {
+  .userCoTitle h1 {
+    margin-bottom: 5%;
+  }
+
+  .pictureP-UserConnexion {
+    margin: 5%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .userCoTitle h1 {
+    padding-top: 9%;
+  }
+  .posBtnreset span {
+    font-size: 20px;
+  }
+
+  .pictureP-UserConnexion {
+    margin: 2%;
+  }
+
+  .posBtnCo {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .pictureP-UserConnexion {
+    max-width: 1000px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .userCoTitle h1 {
+    padding-top: 5%;
+    margin-bottom: 25px;
+  }
+
+  .userCoInput-containerUser,
+  .userCoInput-containerPass {
+    margin-top: 20px;
+  }
+}

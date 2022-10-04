@@ -81,8 +81,7 @@
 }
 
 @media screen and (min-width: 800px) {
-
-  .activityContainerParagraph{
-  font-size: 16px;
+  .activityContainerParagraph {
+    font-size: 16px;
   }
 }
