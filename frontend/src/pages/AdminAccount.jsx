@@ -1,25 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import { useParams, useNavigate } from "react-router-dom";
-// import AdminInput from "../components/AdminInput";
 import "../assets/style/AdminAccount.css";
 import RegionsListAdmin from "../components/RegionsListAdmin";
 import AllLinesListAdmin from "../components/AllLinesListAdmin";
 import AllCityAdmin from "../components/AllCityAdmin";
-// import AllActivityAdmin from "../components/AllActivityAdmin";
 import ThemesAdmin from "../components/ThemesAdmin";
 
 export default function AdminAccount() {
-  // const params = useParams();
-  // const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`)
-  //     .then((response) => response.data)
-  //     .then((data) => setUser(data));
-  // }, []);
-
   const [regions, setRegions] = useState("");
   const [selectedRegionId, setSelectedRegionId] = useState(1);
   const [selectedLineId, setSelectedLineId] = useState(1);
@@ -73,7 +60,6 @@ export default function AdminAccount() {
       .catch((error) => {
         console.error(error);
       });
-    // navigate("/admininistrateur/activities");
   };
 
   return (
@@ -97,9 +83,6 @@ export default function AdminAccount() {
             selectedLineId={selectedLineId}
             setSelectedCityId={setSelectedCityId}
           />
-          {/* <form action="#">
-            <AllActivityAdmin selectedCityId={selectedCityId} />
-          </form> */}
         </div>
         <div>
           <ThemesAdmin setSelectedThemeId={setSelectedThemeId} />

@@ -10,6 +10,7 @@ const activityControllers = require("./controllers/activityControllers");
 const themeControllers = require("./controllers/themeControllers");
 const userActivityControllers = require("./controllers/userActivityControllers");
 const userControllers = require("./controllers/userControllers");
+const commentControllers = require("./controllers/contactControllers");
 
 const {
   hashPassword,
@@ -18,6 +19,9 @@ const {
   modifyPassword,
   hashPasswordForReset,
 } = require("./Auth");
+
+router.post("/comments", commentControllers.add);
+router.get("/comments", commentControllers.getAll);
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
