@@ -1,197 +1,65 @@
-.FormContainer {
-  box-sizing: border-box;
+.ContactContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15%;
+}
+
+.contactUs{
+  margin-bottom: 5%;
+}
+
+.ContactText{
+  margin: 0% 10% 5% 10%;
+  text-align: center;
+}
+
+.ContactForm{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.ContactForm input{
+  width: 80%;
+  margin-bottom: 5%;
+  margin-top: 5px;
+  background-color: rgb(215, 211, 211)
+}
+.ContactRequired{
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+.ContactTextarera{
+  height: 100px;
+}
+
+.ContactBtnPos{
+  position: fixed;
+  bottom: 15%;
+  right: 10%;
+}
+.ContactToggleBlue {
+  display: block;
   position: relative;
-  height: 800px;
-  background-color: #ffffff;
+  width: 8em;
+  height: 2em;
+  margin-bottom: 20px;
+  border-radius: 1em;
+  background: #8de8fe;
+  cursor: pointer;
 }
-
-.contactUs {
+.ContactToggleBlue:before {
+  content: "";
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 1em;
+  background: #0c131f;
   position: absolute;
-  left: 31.03%;
-  right: 30.51%;
-  top: 9.34%;
-  bottom: 87.94%;
-  font-family: "Arial Rounded MT Bold";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #000000;
+  left: 0.2em;
+  top: 0.2em;
 }
-
-.text-contact {
-  position: absolute;
-  left: 9.49%;
-  right: 8.97%;
-  top: 13.24%;
-  bottom: 79.79%;
-  font-family: "?????";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #000000;
-}
-
-.requiredFields {
-  position: absolute;
-  left: 4.36%;
-  right: 63.33%;
-  top: 24.35%;
-  bottom: 74%;
-  font-family: "Arial Rounded MT Bold";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  /* identical to box height */
-  color: #000000;
-}
-
-/* Name* : */
-.name {
-  position: absolute;
-  left: 44.62%;
-  right: 41.79%;
-  top: 25.65%;
-  bottom: 72.1%;
-  font-family: "Arial Rounded MT Bold";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  /* identical to box height */
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #000000;
-}
-
-.inputName {
-  box-sizing: border-box;
-  position: absolute;
-  left: 6.92%;
-  right: 6.15%;
-  top: 28.25%;
-  bottom: 68.44%;
-  background: #d9d9d9;
-  border: 1px solid #000000;
-  border-radius: 9px;
-  padding-left: 10px;
-}
-*/
-
-/* Firstname : */
-.firstName {
-  position: absolute;
-  left: 42.82%;
-  right: 37.44%;
-  top: 37%;
-  bottom: 60.76%;
-  font-family: "Arial Rounded MT Bold";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  /* identical to box height */
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #000000;
-}
-
-.input-firstName {
-  box-sizing: border-box;
-  position: absolute;
-  left: 6.92%;
-  right: 6.15%;
-  top: 39.83%;
-  bottom: 56.86%;
-  background: #d9d9d9;
-  border: 1px solid #000000;
-  border-radius: 9px;
-}
-
-/* Email : */
-.email {
-  position: absolute;
-  left: 43.85%;
-  right: 40.77%;
-  top: 48.94%;
-  bottom: 48.82%;
-  font-family: "Arial Rounded MT Bold";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  /* identical to box height */
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #000000;
-}
-
-.input-email {
-  box-sizing: border-box;
-  position: absolute;
-  left: 6.92%;
-  right: 6.15%;
-  top: 51.42%;
-  bottom: 45.27%;
-  background: #d9d9d9;
-  border: 1px solid #000000;
-  border-radius: 9px;
-}
-
-/* Your comment* : */
-.comment {
-  position: absolute;
-  left: 30.77%;
-  right: 27.95%;
-  top: 60.17%;
-  bottom: 37.59%;
-  font-family: "Arial Rounded MT Bold";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  /* identical to box height */
-  display: flex;
-  align-items: center;
-  text-align: justify;
-  color: #000000;
-}
-
-/* Input Your comment */
-.textarera-comment {
-  box-sizing: border-box;
-  position: absolute;
-  left: 6.92%;
-  right: 6.15%;
-  top: 63%;
-  bottom: 19.15%;
-  background: #d9d9d9;
-  border: 1px solid #000000;
-  border-radius: 9px;
-  padding-left: 10px;
-  padding-top: 10px;
-}
-
-/* BTN submit */
-.buttonSubmit {
-  position: absolute;
-  left: 33.33%;
-  right: 32.82%;
-  top: 83.1%;
-  bottom: 11.35%;
-}
-
-.buttonSubmit img {
-  width: 20vh;
+.ContactTextBlack {
+  padding-left: 15px;
 }

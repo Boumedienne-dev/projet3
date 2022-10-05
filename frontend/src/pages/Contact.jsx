@@ -1,40 +1,45 @@
 import "../assets/style/Contact.css";
-import { Link } from "react-router-dom";
 
 export default function Contact() {
   return (
-    <div className="FormContainer">
+    <div className="ContactContainer">
       <h2 className="contactUs">Nous Contacter</h2>
-      <p className="text-contact">
+      <p className="ContactText">
         Merci de nous laisser vos questions, commentaires ou suggestions en
         complétant ce formulaire.
       </p>
-      <form>
-        <p className="requiredFields">*Champs obligatoires</p>
-        <label className="name" htmlFor="Nom" placeholder="Doe">
+      <form className="ContactForm">
+        <p className="ContactRequired">*Champs obligatoires</p>
+        <label className="ContactName" htmlFor="Nom" placeholder="Doe">
           Nom*
         </label>
-        <input className="inputName" type="text" name="name" />
-        <label className="firstName" htmlFor="prenom" placeholder="Jhon">
+        <input type="text" name="name" />
+        <label className="ContactFirstName" htmlFor="prenom" placeholder="Jhon">
           Prenom*
         </label>
-        <input className="input-firstName" type="text" name="name" />
+        <input type="text" name="name" />
         <label
-          className="email"
+          className="ContactEmail"
           htmlFor="email"
           placeholder="Jhon.Doe@example.com"
         >
           Email*
         </label>
-        <input className="input-email" type="email" email="email" />
-        <label className="comment" htmlFor="message" placeholder="message">
+        <input type="email" email="email" />
+        <label
+          className="ContactComment"
+          htmlFor="message"
+          placeholder="message"
+        >
           Votre commentaire :*
         </label>
-        <textarea className="textarera-comment" name="message" />
+        <input className="ContactTextarera" type="textarera" name="message" />
+        <div className="ContactBtnPos">
+          <button className="ContactToggleBlue" type="submit" value="Submit">
+            <span className="ContactTextBlack">Valider</span>
+          </button>
+        </div>
       </form>
-      <Link to="/accueil" className="buttonSubmit">
-        <img src="{Btnenvoyer}" alt="envoi-formulaire" />
-      </Link>
     </div>
   );
 }
