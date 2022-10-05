@@ -7,6 +7,7 @@ import "../assets/style/allLines.css";
 export default function AllLines() {
   const [getLines, setGetLines] = useState("");
   const [getRegion, setGetRegion] = useState("");
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -31,6 +32,9 @@ export default function AllLines() {
         alt={getRegion.name}
       />
       <p className="AllLinesRegionText">{getRegion.description}</p>
+      <a href={getRegion.url} target="_blank" alt="lien ter" rel="noreferrer">
+        <span className="urlRegion"> Tarification TER {getRegion.name}</span>
+      </a>
       {getRegion.id === 1 || getRegion.id === 6 ? (
         <h2 className="line-h1">{getRegion.titre_destination}</h2>
       ) : (
