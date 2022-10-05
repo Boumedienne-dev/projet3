@@ -20,8 +20,11 @@
 
 .activityContainerImg {
   width: 100%;
+  max-width: 250px;
   height: 60%;
+  max-height: 250px;
   margin-left: 5px;
+  object-fit: cover;
 }
 
 .activityContainerDiv2 {
@@ -75,4 +78,10 @@
 .activityContainerFlat {
   width: 100%;
   height: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .activityContainerParagraph {
+    font-size: 16px;
+  }
 }

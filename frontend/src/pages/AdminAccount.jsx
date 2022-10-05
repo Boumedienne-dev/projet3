@@ -108,7 +108,7 @@ export default function AdminAccount() {
           <input
             className="nameActivity"
             type="text"
-            value={activityName}
+            defaultValue={activityName}
             onChange={(e) => setActivityName(e.target.value)}
             placeholder="Nom de l'activité"
           />
@@ -118,7 +118,7 @@ export default function AdminAccount() {
             className="description"
             type="text"
             placeholder="descriptif"
-            value={activityDescription}
+            defaultValue={activityDescription}
             onChange={(e) => setActivityDescription(e.target.value)}
           />
         </div>
@@ -127,7 +127,7 @@ export default function AdminAccount() {
             className="adress"
             type="text"
             placeholder="Rue, Code Postal et Ville"
-            value={activityAddress}
+            defaultValue={activityAddress}
             onChange={(e) => setActivityAddress(e.target.value)}
           />
         </div>
@@ -145,7 +145,7 @@ export default function AdminAccount() {
           <div className="toggle-blue">
             <button
               type="submit"
-              value="Submit"
+              Value="Submit"
               onClick={(e) => postActivity(e)}
             >
               <span className="text-btn-black">Valider</span>
