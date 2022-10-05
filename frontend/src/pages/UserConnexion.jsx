@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import AuthContext from "../context/AuthContext";
-import AuthApi from "../services/AuthApi";
 import CurrentUserContext from "../context/CurrentUserContext";
 
 import "../assets/style/userConnexion.css";
@@ -17,11 +16,6 @@ export default function UserConnexion() {
   const navigate = useNavigate();
   const { setIsAuthenticated } = useContext(AuthContext);
   const { setCurrentUser } = useContext(CurrentUserContext);
-
-  const handleLogout = () => {
-    AuthApi.logout();
-    setIsAuthenticated(false);
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -89,21 +83,29 @@ export default function UserConnexion() {
               alt="train touristique"
             />
           </div>
-
+          <div className="posBtnreset">
+            <div className="toggleBlueBtn">
+              <button type="button" onClick={() => navigate("/modification")}>
+                <span className="text-btn-blackUserCo2">
+                  Mot de passe oublié
+                </span>
+              </button>
+            </div>
+            <div className="toggleBlueBtn">
+              <button type="button" onClick={() => navigate("/")}>
+                <span className="text-btn-blackUserCo2">Annuler</span>
+              </button>
+            </div>
+          </div>
           <div className="posBtnCo">
-            <a href="/inscription">
-              <div className="toggle-pill-blueUserCo button">
-                <button type="submit">
-                  <span className="text-btn-blackUserCo">Connexion</span>
-                </button>
-              </div>
-            </a>
+            <div className="toggle-pill-blueUserCo">
+              <button type="submit">
+                <span className="text-btn-blackUserCo">Connexion</span>
+              </button>
+            </div>
           </div>
         </form>
       </div>
-      <button type="button" onClick={() => handleLogout()}>
-        DeconnnneeeezzzzziiiiiiiioooNNNNN!!!!
-      </button>
     </div>
   );
 }

@@ -50,14 +50,21 @@ class userControllers extends AbstractManager {
         user.mail,
         user.hashedPassword,
         user.picture,
+        user.id,
       ]
     );
   }
 
-  findUserByEmail(email) {
+  findUserByEmail(mail) {
+    return this.connection.query(`SELECT * FROM ${this.table} WHERE mail = ?`, [
+      mail,
+    ]);
+  }
+
+  updatePassword(user, id) {
     return this.connection.query(
-      `select * from  ${this.table} where mail = ?`,
-      [email]
+      `update ${this.table} set hashedPassword = ? where id = ?`,
+      [user.hashedPassword, id]
     );
   }
 }
