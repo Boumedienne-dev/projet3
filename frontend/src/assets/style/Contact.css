@@ -69,17 +69,17 @@
 }
 
 @media screen and (min-width: 800px) {
-  .ContactTextBlack{
+  .ContactTextBlack {
     font-size: 20px;
   }
 }
 @media screen and (min-width: 1000px) {
-  .ContactContainer{
+  .ContactContainer {
     padding-top: 100px;
   }
   .ContactForm input:not(.ContactTextarera) {
-  height: 30px;
-  margin-bottom: 2%;
-  margin-top: 5px;
+    height: 30px;
+    margin-bottom: 2%;
+    margin-top: 5px;
   }
 }
