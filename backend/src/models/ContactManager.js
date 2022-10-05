@@ -5,9 +5,13 @@ class CommentManager extends AbstractManager {
     super({ table: "comment" });
   }
 
+  findAll() {
+    return this.connection.query(`select * from  ${this.table}`);
+  }
+
   insert(comment) {
     return this.connection.query(
-      `insert into ${this.table} (lastname, firstname, mail, comment, picture, date) values (?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (lastname, firstname, mail, comment, picture, date ) values (?, ?, ?, ?, ?, ?)`,
       [
         comment.lastname,
         comment.firstname,

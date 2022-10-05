@@ -1,5 +1,17 @@
 const models = require("../models");
 
+const getAll = (req, res) => {
+  models.comment
+    .findAll()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const add = (req, res) => {
   const comment = req.body;
 
@@ -17,5 +29,6 @@ const add = (req, res) => {
 };
 
 module.exports = {
+  getAll,
   add,
 };

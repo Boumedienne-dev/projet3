@@ -21,6 +21,7 @@ const {
 } = require("./Auth");
 
 router.post("/comments", commentControllers.add);
+router.get("/comments", commentControllers.getAll);
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);

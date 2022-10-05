@@ -1,12 +1,12 @@
-import { axios } from "axios";
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/style/Contact.css";
 
 export default function Contact() {
   const [comment, setComment] = useState({
-    lastName: "",
-    firstName: "",
+    lastname: "",
+    firstname: "",
     mail: "",
     comment: "",
     picture: "",
@@ -15,9 +15,7 @@ export default function Contact() {
 
   const postComment = () => {
     axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/comments`, {
-        ...comment,
-      })
+      .post(`${import.meta.env.VITE_BACKEND_URL}/comments`)
       .then((res) => {
         console.error(res);
         console.error(res.data);
@@ -66,12 +64,7 @@ export default function Contact() {
         <input
           type="text"
           name="name"
-          onChange={(e) =>
-            setComment({
-              ...comment,
-              lastName: e.target.value,
-            })
-          }
+          onChange={(e) => setComment.lastname(e.target.value)}
           required
         />
         <label className="ContactFirstName" htmlFor="prenom" placeholder="Jhon">
@@ -136,9 +129,13 @@ export default function Contact() {
           accept="image/*"
           onChange={(e) => handleInputProfile(e)}
         />
-        <div className="ReviewContactPicture">
+        <div className="ReviewContact">
           <p>Prévualisation de votre photo:</p>
-          <img alt={comment.picture} src={comment.picture} />
+          <img
+            className="ReviewContactPicture"
+            alt={comment.picture}
+            src={comment.picture}
+          />
         </div>
         <div className="ContactBtnPos">
           <button className="ContactToggleBlue" type="submit" value="Submit">
