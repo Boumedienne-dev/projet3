@@ -4,26 +4,36 @@ import { useNavigate } from "react-router-dom";
 import "../assets/style/Contact.css";
 
 export default function Contact() {
-  const [comment, setComment] = useState({
-    lastname: "",
-    firstname: "",
-    mail: "",
-    comment: "",
-    picture: "",
-  });
+  const [lastnameValue, setLastnameValue] = useState("");
+  const [firstnameValue, setFirstnameValue] = useState("");
+  const [mailValue, setMailValue] = useState("");
+  const [commentValue, setCommentValue] = useState("");
+  const [pictureValue, setPictureValue] = useState("");
   const navigate = useNavigate();
 
-  const postComment = () => {
+  const postComment = (e) => {
+    e.preventDefault();
     axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/comments`)
-      .then((res) => {
-        console.error(res);
-        console.error(res.data);
+      .post(`${import.meta.env.VITE_BACKEND_URL}/comments`, {
+        lastname: lastnameValue,
+        firstname: firstnameValue,
+        mail: mailValue,
+        comment: commentValue,
+        picture: pictureValue,
+        date: "2022-10-05",
       })
-      .then(() => navigate("/"));
+      .then(() => {
+        setTimeout(() => {
+          navigate("/");
+        }, 5000);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const uploadImage = (e) => {
+    e.preventDefault();
     const data = new FormData();
     data.append("file", e.target.files[0]);
     data.append("upload_preset", "sncf-exploration");
@@ -34,15 +44,11 @@ export default function Contact() {
     })
       .then((res) => res.json())
       .then((data1) => {
-        setComment({ ...comment, picture: data1.url });
+        setPictureValue(data1.url);
       })
       .catch((err) => console.error(err));
   };
 
-  function handleInputProfile(e) {
-    uploadImage(e);
-    setComment({ ...comment, picture: e.target.value });
-  }
   return (
     <div className="ContactContainer">
       <h2 className="contactUs">Nous Contacter</h2>
@@ -50,13 +56,7 @@ export default function Contact() {
         Merci de nous laisser vos questions, commentaires ou suggestions en
         complétant ce formulaire.
       </p>
-      <form
-        className="ContactForm"
-        onSubmit={(e) => {
-          e.preventDefault();
-          postComment();
-        }}
-      >
+      <form className="ContactForm" onSubmit={(e) => postComment(e)}>
         <p className="ContactRequired">*Champs obligatoires</p>
         <label className="ContactName" htmlFor="Nom" placeholder="Doe">
           Nom*
@@ -64,7 +64,8 @@ export default function Contact() {
         <input
           type="text"
           name="name"
-          onChange={(e) => setComment.lastname(e.target.value)}
+          defaultValue={lastnameValue}
+          onChange={(e) => setLastnameValue(e.target.value)}
           required
         />
         <label className="ContactFirstName" htmlFor="prenom" placeholder="Jhon">
@@ -73,12 +74,8 @@ export default function Contact() {
         <input
           type="text"
           name="name"
-          onChange={(e) =>
-            setComment({
-              ...comment,
-              firstName: e.target.value,
-            })
-          }
+          defaultValue={firstnameValue}
+          onChange={(e) => setFirstnameValue(e.target.value)}
           required
         />
         <label
@@ -91,12 +88,8 @@ export default function Contact() {
         <input
           type="email"
           email="email"
-          onChange={(e) =>
-            setComment({
-              ...comment,
-              mail: e.target.value,
-            })
-          }
+          defaultValue={mailValue}
+          onChange={(e) => setMailValue(e.target.value)}
           required
         />
         <label
@@ -110,31 +103,20 @@ export default function Contact() {
           className="ContactTextarera"
           type="textarera"
           name="message"
-          onChange={(e) =>
-            setComment({
-              ...comment,
-              comment: e.target.value,
-            })
-          }
+          defaultValue={commentValue}
+          onChange={(e) => setCommentValue(e.target.value)}
           required
         />
         <label className="ContactPicture" htmlFor="file">
           Photo:
         </label>
-        <input
-          type="file"
-          name="file"
-          id="file"
-          alt="Photo"
-          accept="image/*"
-          onChange={(e) => handleInputProfile(e)}
-        />
+        <input type="file" accept="image/*" onChange={(e) => uploadImage(e)} />
         <div className="ReviewContact">
           <p>Prévualisation de votre photo:</p>
           <img
             className="ReviewContactPicture"
-            alt={comment.picture}
-            src={comment.picture}
+            alt={lastnameValue}
+            src={pictureValue}
           />
         </div>
         <div className="ContactBtnPos">

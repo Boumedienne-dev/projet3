@@ -7,7 +7,6 @@ import AllCityAdmin from "../components/AllCityAdmin";
 import ThemesAdmin from "../components/ThemesAdmin";
 
 export default function AdminAccount() {
-
   const [regions, setRegions] = useState("");
   const [selectedRegionId, setSelectedRegionId] = useState(1);
   const [selectedLineId, setSelectedLineId] = useState(1);
