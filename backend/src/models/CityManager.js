@@ -17,9 +17,9 @@ class CityManager extends AbstractManager {
 
   findCityLogo(id) {
     return this.connection.query(
-      `SELECT DISTINCT c.city_name, t.image FROM ${this.table} AS c 
-INNER JOIN activity AS a ON c.id=a.id_city
-INNER JOIN theme AS t ON a.id_theme=t.id WHERE c.id= ?`,
+      `SELECT DISTINCT c.city_name, t.id, t.theme_name, t.image FROM ${this.table} AS c
+  INNER JOIN activity AS a ON c.id=a.id_city
+  INNER JOIN theme AS t ON a.id_theme=t.id where c.id = ?`,
 
       [id]
     );

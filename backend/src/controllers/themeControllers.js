@@ -9,6 +9,7 @@ const getAll = (req, res) => {
         themes.push({
           value: row.id,
           label: row.theme_name,
+          image: row.image,
         })
       );
       res.send(themes);
