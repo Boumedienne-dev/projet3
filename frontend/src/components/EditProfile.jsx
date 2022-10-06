@@ -18,6 +18,10 @@ export default function EditProfile() {
   const handleLogout = () => {
     AuthApi.logout();
     setIsAuthenticated(false);
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("mail");
+    window.localStorage.removeItem("name");
+    window.localStorage.removeItem("id");
     navigate("/");
   };
 
@@ -91,7 +95,7 @@ export default function EditProfile() {
               type="text"
               name="lastname"
               id="lastname"
-              value={getUser.last_name}
+              defaultValue={getUser.last_name}
               onChange={(e) => {
                 setGetUser({
                   ...getUser,
@@ -107,7 +111,7 @@ export default function EditProfile() {
               type="text"
               name="firstname"
               id="firstname"
-              value={getUser.first_name}
+              defaultValue={getUser.first_name}
               onChange={(e) => {
                 setGetUser({
                   ...getUser,
@@ -116,8 +120,6 @@ export default function EditProfile() {
               }}
             />
           </div>
-        </section>
-        <section className="editProfileSectionContainer2">
           <div>
             <label htmlFor="mail">Votre email</label>
             <br />
@@ -126,7 +128,7 @@ export default function EditProfile() {
               type="email"
               name="mail"
               id="mail"
-              value={getUser.mail}
+              defaultValue={getUser.mail}
               onChange={(e) => {
                 setGetUser({
                   ...getUser,
@@ -138,13 +140,17 @@ export default function EditProfile() {
           <div>
             <label htmlFor="password">Mot de passe</label>
             <br />
-            <input
-              className="profilePass"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Mot de passe"
-            />
+            <div className="editProfileDivButtons">
+              <button
+                className="editProfilPassBtn"
+                type="button"
+                onClick={() => navigate("/modification")}
+              >
+                <span className="text-btn-black-user">
+                  Changer de mot de passe
+                </span>
+              </button>
+            </div>
           </div>
         </section>
         <div className="editProfileDivUploadImg">

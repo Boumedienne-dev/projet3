@@ -13,6 +13,17 @@
   text-align: center;
 }
 
+.urlRegion {
+  width: fit-content;
+  border: 1px solid black;
+  background-color: #8de8fe;
+  border-radius: 10px;
+  padding: 7px;
+  position: relative;
+  top: 18px;
+  text-align: center;
+}
+
 .line-h1 {
   font-size: 20px;
   text-align: center;

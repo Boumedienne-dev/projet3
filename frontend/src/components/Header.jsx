@@ -22,6 +22,7 @@ export default function Header() {
           {isAuthenticated ? (
             <li className="liWithName">
               <Link to="/compte_utilisateur">
+                {/* <span>{AuthContext.first_name}</span> */}
                 <img
                   className="user-account-logo"
                   src="https://res.cloudinary.com/otire82/image/upload/v1662558227/logo/userCO_urz833.png"

@@ -1,25 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import { useParams, useNavigate } from "react-router-dom";
-// import AdminInput from "../components/AdminInput";
 import "../assets/style/AdminAccount.css";
 import RegionsListAdmin from "../components/RegionsListAdmin";
 import AllLinesListAdmin from "../components/AllLinesListAdmin";
 import AllCityAdmin from "../components/AllCityAdmin";
-// import AllActivityAdmin from "../components/AllActivityAdmin";
 import ThemesAdmin from "../components/ThemesAdmin";
 
 export default function AdminAccount() {
-  // const params = useParams();
-  // const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`)
-  //     .then((response) => response.data)
-  //     .then((data) => setUser(data));
-  // }, []);
-
   const [regions, setRegions] = useState("");
   const [selectedRegionId, setSelectedRegionId] = useState(1);
   const [selectedLineId, setSelectedLineId] = useState(1);
@@ -73,7 +60,6 @@ export default function AdminAccount() {
       .catch((error) => {
         console.error(error);
       });
-    // navigate("/admininistrateur/activities");
   };
 
   return (
@@ -97,9 +83,6 @@ export default function AdminAccount() {
             selectedLineId={selectedLineId}
             setSelectedCityId={setSelectedCityId}
           />
-          {/* <form action="#">
-            <AllActivityAdmin selectedCityId={selectedCityId} />
-          </form> */}
         </div>
         <div>
           <ThemesAdmin setSelectedThemeId={setSelectedThemeId} />
@@ -108,7 +91,7 @@ export default function AdminAccount() {
           <input
             className="nameActivity"
             type="text"
-            value={activityName}
+            defaultValue={activityName}
             onChange={(e) => setActivityName(e.target.value)}
             placeholder="Nom de l'activité"
           />
@@ -118,7 +101,7 @@ export default function AdminAccount() {
             className="description"
             type="text"
             placeholder="descriptif"
-            value={activityDescription}
+            defaultValue={activityDescription}
             onChange={(e) => setActivityDescription(e.target.value)}
           />
         </div>
@@ -127,7 +110,7 @@ export default function AdminAccount() {
             className="adress"
             type="text"
             placeholder="Rue, Code Postal et Ville"
-            value={activityAddress}
+            defaultValue={activityAddress}
             onChange={(e) => setActivityAddress(e.target.value)}
           />
         </div>
@@ -145,7 +128,7 @@ export default function AdminAccount() {
           <div className="toggle-blue">
             <button
               type="submit"
-              value="Submit"
+              Value="Submit"
               onClick={(e) => postActivity(e)}
             >
               <span className="text-btn-black">Valider</span>
