@@ -34,12 +34,12 @@
   font-size: 14px;
   width: max-content;
   margin-top: -10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .line-map-img {
-  width: 250px;
-  height: 120px;
+  width: 200px;
+  height: 100px;
   object-fit: cover;
 }
 
@@ -68,6 +68,32 @@
 
 .rémiePasDeClass {
   margin-top: 30px;
+}
+
+.themeContainerFlex {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.themeContainerPos {
+  display: flex;
+  width: 30px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.legendethemeContainerFlex {
+  right: 0px;
+  margin-right: 20px;
+  position: fixed;
+}
+.legendethemeContainerPos {
+  width: 20px;
+  height: 15px;
+}
+.legendeh2 {
+  font-size: 6px;
+  margin-bottom: 5px;
 }
 
 @media screen and (min-width: 500px) {

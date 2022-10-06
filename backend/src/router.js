@@ -46,7 +46,9 @@ router.get("/cities", cityControllers.getAll);
 router.get("/cities/:id", cityControllers.getById);
 router.get("/lines/:id/cities", cityControllers.getWithIdLine);
 
+router.get("/lines/:id/logo", cityControllers.getCityLogo);
 router.get("/:id/logo", cityControllers.getCityLogo);
+
 router.put("/cities/:id", cityControllers.edit);
 router.post("/cities", cityControllers.add);
 router.delete("/cities/:id", cityControllers.destroy);

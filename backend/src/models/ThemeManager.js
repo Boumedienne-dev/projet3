@@ -7,15 +7,15 @@ class ThemeManager extends AbstractManager {
 
   insert(theme) {
     return this.connection.query(
-      `insert into ${this.table} (theme_name) values (?)`,
-      [theme.theme_name]
+      `insert into ${this.table} (theme_name, image) values (?,?)`,
+      [theme.theme_name, theme.image]
     );
   }
 
   update(theme) {
     return this.connection.query(
-      `update ${this.table} set theme_name = ? where id = ?`,
-      [theme.theme_name, theme.id]
+      `update ${this.table} set theme_name = ?, image = ? where id = ?`,
+      [theme.theme_name, theme.image, theme.id]
     );
   }
 }
