@@ -206,7 +206,7 @@
     margin-left: 10%;
   }
 
-  #editProfileDivPassword{
+  #editProfileDivPassword {
     margin-right: 150px;
   }
 }
@@ -244,7 +244,7 @@
     margin-left: 10%;
   }
 
-  #editProfileDivPassword{
+  #editProfileDivPassword {
     margin-right: 300px;
   }
 }
@@ -254,7 +254,7 @@
     margin-left: 500px;
   }
 
-  #editProfileDivPassword{
+  #editProfileDivPassword {
     margin-right: 500px;
   }
 
@@ -275,7 +275,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  .editProfileDivPrincipal{
+  .editProfileDivPrincipal {
     height: 50vh;
   }
 
@@ -283,210 +283,195 @@
     width: 40%;
   }
 
-  .editProfileImg{
+  .editProfileImg {
     width: auto;
   }
 
-.editProfileForm {
-  width: 60%;
-  height: auto;
-}
+  .editProfileForm {
+    width: 60%;
+    height: auto;
+  }
 
-.editProfileSectionContainer1{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
+  .editProfileSectionContainer1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 
-.editProfileContainer1{
-  width: 50%;
-}
+  .editProfileContainer1 {
+    width: 50%;
+  }
 
-.editProfileLastname{
-  width: 80%;
-  margin: 0px;
-  margin-bottom: 2vh;
-}
+  .editProfileLastname {
+    width: 80%;
+    margin: 0px;
+    margin-bottom: 2vh;
+  }
 
-.editProfileContainer2{
-  width: 50%;
-}
+  .editProfileContainer2 {
+    width: 50%;
+  }
 
+  .editProfileFirstname {
+    width: 80%;
+    margin: 0px;
+    margin-bottom: 2vh;
+  }
 
-.editProfileFirstname{
-  width: 80%;
-  margin: 0px;
-  margin-bottom: 2vh;
-}
+  .editProfileContainer3 {
+    width: 100%;
+  }
 
+  .editProfileMail {
+    width: 90%;
+    margin: 0px;
+    margin-bottom: 2vh;
+  }
 
-.editProfileContainer3{
-  width: 100%;
-}
+  .editProfileDivButtons {
+    margin-left: 0px;
+  }
 
-.editProfileMail{
-  width: 90%;
-  margin: 0px;
-  margin-bottom: 2vh;
-}
+  .editProfileDivPassword {
+    margin-right: 0px;
+    margin-left: 130px;
+    margin-bottom: 2vh;
+    width: 100%;
+  }
 
-.editProfileDivButtons {
-  margin-left: 0px;
-}
+  .editProfileDivUploadImg {
+    margin-bottom: 2vh;
+  }
 
-.editProfileDivPassword{
-  margin-right: 0px;
-  margin-left: 130px;
-  margin-bottom: 2vh;
-  width: 100%;
-}
+  .editProfileInputImg {
+    margin-left: 110px;
+  }
 
-.editProfileDivUploadImg{
-  margin-bottom: 2vh;
-}
+  .editProfileUpdateBtn {
+    right: 30px;
+    margin-left: 70px;
+  }
 
-.editProfileInputImg{
-  margin-left: 110px;
-}
-
-.editProfileUpdateBtn{
-  right: 30px;
-  margin-left: 70px;
-}
-
-.editProfileDeconnexionbtn{
-  top: 0px;
-  left: 50px;
-}
+  .editProfileDeconnexionbtn {
+    top: 0px;
+    left: 50px;
+  }
 }
 
 @media screen and (min-width: 900px) {
-  .editProfileDivPassword{
+  .editProfileDivPassword {
     margin-left: 170px;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 140px;
   }
 
-  .editProfileUpdateBtn{
+  .editProfileUpdateBtn {
     margin-left: 100px;
   }
-  
+
   .editProfileDivPrincipal {
     border: none;
   }
-
 }
 
 @media screen and (min-width: 950px) {
-
-  .editProfileDivPassword{
+  .editProfileDivPassword {
     margin-left: 190px;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 160px;
   }
 
-  .editProfileUpdateBtn{
+  .editProfileUpdateBtn {
     margin-left: 120px;
   }
-
 }
 
 @media screen and (min-width: 1000px) {
-  .editProfileDivPassword{
+  .editProfileDivPassword {
     margin-left: 210px;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 180px;
   }
 
-  .editProfileUpdateBtn{
+  .editProfileUpdateBtn {
     margin-left: 130px;
   }
 }
 
 @media screen and (min-width: 1050px) {
-
-  .editProfileDivPassword{
+  .editProfileDivPassword {
     margin-left: 230px;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 200px;
   }
 
-  .editProfileUpdateBtn{
+  .editProfileUpdateBtn {
     margin-left: 150px;
   }
-
 }
 
 @media screen and (min-width: 1100px) {
-
-  .editProfileDivPassword{
+  .editProfileDivPassword {
     margin-left: 250px;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 220px;
   }
 
-  .editProfileUpdateBtn{
+  .editProfileUpdateBtn {
     margin-left: 170px;
   }
-
 }
 
 @media screen and (min-width: 1150px) {
-
-  .editProfileDivPassword{
+  .editProfileDivPassword {
     margin-left: 270px;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 250px;
   }
 
-  .editProfileUpdateBtn{
+  .editProfileUpdateBtn {
     margin-left: 180px;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
-
-  .editProfileDivPassword{
+  .editProfileDivPassword {
     margin-left: 290px;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 270px;
   }
 
-  .editProfileUpdateBtn{
+  .editProfileUpdateBtn {
     margin-left: 200px;
   }
-
 }
 
 @media screen and (min-width: 1250px) {
-
-  .editProfileDivPassword{
+  .editProfileDivPassword {
     margin-left: 310px;
   }
 
-  .editProfileInputImg{
+  .editProfileInputImg {
     margin-left: 290px;
   }
 
-  .editProfileUpdateBtn{
+  .editProfileUpdateBtn {
     margin-left: 220px;
   }
-
 }
 
 /*
