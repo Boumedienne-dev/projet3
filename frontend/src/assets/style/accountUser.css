@@ -1,5 +1,5 @@
 .accountUserDivPrincipal {
-  padding-top: 8vh;
+  padding-top: 10vh;
   padding-bottom: 10vh;
   width: 100%;
 }
@@ -39,3 +39,9 @@
   color: red;
   text-shadow: 1px 1px 2px black;
 }
+
+@media screen and (min-width: 400px) {
+  .accountUserDivPrincipal {
+    padding-top: 12vh;
+  }
+  }

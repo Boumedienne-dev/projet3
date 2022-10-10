@@ -168,6 +168,328 @@
   font-size: 14px;
 }
 
+@media screen and (min-width: 400px) {
+  .editProfileDivPrincipal {
+    height: auto;
+    margin-top: 5vh;
+  }
+
+  .editProfileDivImg {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .editProfileDivButtons {
+    margin-left: 150px;
+  }
+
+  .editProfileDivImg {
+    height: 400px;
+  }
+
+  .editProfileFirstname {
+    width: 65%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  .editProfileLastname {
+    width: 65%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  .editProfileMail {
+    width: 65%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  #editProfileDivPassword{
+    margin-right: 150px;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .editProfileDivButtons {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .editProfileDivButtons {
+    margin-left: 300px;
+  }
+
+  .editProfileDivImg {
+    height: 400px;
+  }
+
+  .editProfileFirstname {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  .editProfileLastname {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  .editProfileMail {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  #editProfileDivPassword{
+    margin-right: 300px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .editProfileDivButtons {
+    margin-left: 500px;
+  }
+
+  #editProfileDivPassword{
+    margin-right: 500px;
+  }
+
+  .editProfileFirstname {
+    width: 40%;
+    margin-left: 10%;
+  }
+
+  .editProfileLastname {
+    width: 40%;
+    margin-left: 10%;
+  }
+
+  .editProfileMail {
+    width: 40%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .editProfileDivPrincipal{
+    height: 50vh;
+  }
+
+  .editProfileDivImg {
+    width: 40%;
+  }
+
+  .editProfileImg{
+    width: auto;
+  }
+
+.editProfileForm {
+  width: 60%;
+  height: auto;
+}
+
+.editProfileSectionContainer1{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.editProfileContainer1{
+  width: 50%;
+}
+
+.editProfileLastname{
+  width: 80%;
+  margin: 0px;
+  margin-bottom: 2vh;
+}
+
+.editProfileContainer2{
+  width: 50%;
+}
+
+
+.editProfileFirstname{
+  width: 80%;
+  margin: 0px;
+  margin-bottom: 2vh;
+}
+
+
+.editProfileContainer3{
+  width: 100%;
+}
+
+.editProfileMail{
+  width: 90%;
+  margin: 0px;
+  margin-bottom: 2vh;
+}
+
+.editProfileDivButtons {
+  margin-left: 0px;
+}
+
+.editProfileDivPassword{
+  margin-right: 0px;
+  margin-left: 130px;
+  margin-bottom: 2vh;
+  width: 100%;
+}
+
+.editProfileDivUploadImg{
+  margin-bottom: 2vh;
+}
+
+.editProfileInputImg{
+  margin-left: 110px;
+}
+
+.editProfileUpdateBtn{
+  right: 30px;
+  margin-left: 70px;
+}
+
+.editProfileDeconnexionbtn{
+  top: 0px;
+  left: 50px;
+}
+}
+
+@media screen and (min-width: 900px) {
+  .editProfileDivPassword{
+    margin-left: 170px;
+  }
+
+  .editProfileInputImg{
+    margin-left: 140px;
+  }
+
+  .editProfileUpdateBtn{
+    margin-left: 100px;
+  }
+  
+  .editProfileDivPrincipal {
+    border: none;
+  }
+
+}
+
+@media screen and (min-width: 950px) {
+
+  .editProfileDivPassword{
+    margin-left: 190px;
+  }
+
+  .editProfileInputImg{
+    margin-left: 160px;
+  }
+
+  .editProfileUpdateBtn{
+    margin-left: 120px;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+  .editProfileDivPassword{
+    margin-left: 210px;
+  }
+
+  .editProfileInputImg{
+    margin-left: 180px;
+  }
+
+  .editProfileUpdateBtn{
+    margin-left: 130px;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+
+  .editProfileDivPassword{
+    margin-left: 230px;
+  }
+
+  .editProfileInputImg{
+    margin-left: 200px;
+  }
+
+  .editProfileUpdateBtn{
+    margin-left: 150px;
+  }
+
+}
+
+@media screen and (min-width: 1100px) {
+
+  .editProfileDivPassword{
+    margin-left: 250px;
+  }
+
+  .editProfileInputImg{
+    margin-left: 220px;
+  }
+
+  .editProfileUpdateBtn{
+    margin-left: 170px;
+  }
+
+}
+
+@media screen and (min-width: 1150px) {
+
+  .editProfileDivPassword{
+    margin-left: 270px;
+  }
+
+  .editProfileInputImg{
+    margin-left: 250px;
+  }
+
+  .editProfileUpdateBtn{
+    margin-left: 180px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  .editProfileDivPassword{
+    margin-left: 290px;
+  }
+
+  .editProfileInputImg{
+    margin-left: 270px;
+  }
+
+  .editProfileUpdateBtn{
+    margin-left: 200px;
+  }
+
+}
+
+@media screen and (min-width: 1250px) {
+
+  .editProfileDivPassword{
+    margin-left: 310px;
+  }
+
+  .editProfileInputImg{
+    margin-left: 290px;
+  }
+
+  .editProfileUpdateBtn{
+    margin-left: 220px;
+  }
+
+}
+
+/*
 @media screen and (min-width: 800px) {
   .accountuserDivPrincipal {
     padding-top: 2vh;
@@ -235,4 +557,4 @@
   .editProfileUpdateBtn:before {
     top: 0.1em;
   }
-}
+}*/
