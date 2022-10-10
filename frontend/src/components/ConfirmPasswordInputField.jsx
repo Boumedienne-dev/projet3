@@ -1,3 +1,4 @@
+// fonction du deuxieme input qui comparera à l'autre input mot de passe
 function ConfirmPasswordInputField({
   handleValidation,
   confirmPasswordError,

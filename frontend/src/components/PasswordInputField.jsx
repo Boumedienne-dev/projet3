@@ -1,3 +1,4 @@
+// Fonction Input du mot de passe qui sera vérifié avec le REGEX
 function PasswordInputField({
   password,
   setPassword,

@@ -4,6 +4,7 @@ import PasswordInputField from "./PasswordInputField";
 import ConfirmPasswordInputField from "./ConfirmPasswordInputField";
 import "../assets/style/RegistrationUser.css";
 
+// fonction REGEX du mot de passe et de la confirmation
 export default function PasswordAndConfirmPasswordRegistration({
   password,
   setPassword,
@@ -13,16 +14,22 @@ export default function PasswordAndConfirmPasswordRegistration({
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // mot de passe avec REGEX
   const handleValidation = (e) => {
+    // retire si un espace vide est au début
     const passwordInputValue = e.target.value.trim();
     const passwordInputFieldName = e.target.name;
-    // const confirmPasswordInputValue = e.target.value.trim();
-    // for password
+    // pour le mot de passe
     if (passwordInputFieldName === "password") {
+      // une majuscule
       const uppercaseRegExp = /(?=.*?[A-Z])/;
+      // une minuscule
       const lowercaseRegExp = /(?=.*?[a-z])/;
+      // un chiffre
       const digitsRegExp = /(?=.*?[0-9])/;
+      // caractère spécial
       const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
+      // 8 caracteres minimum
       const minLengthRegExp = /.{8,}/;
       const passwordLength = passwordInputValue.length;
       const uppercasePassword = uppercaseRegExp.test(passwordInputValue);
@@ -31,7 +38,7 @@ export default function PasswordAndConfirmPasswordRegistration({
       const specialCharPassword = specialCharRegExp.test(passwordInputValue);
       const minLengthPassword = minLengthRegExp.test(passwordInputValue);
       let errMsg = "";
-
+      // indique un mesage au fur et à mesure que l'utilisateur tape sur son clavier
       if (passwordLength === 0) {
         errMsg = "Veuillez indiquer un mot de passe";
         setErrorsPassword(true);
@@ -56,13 +63,15 @@ export default function PasswordAndConfirmPasswordRegistration({
       }
       setPasswordError(errMsg);
     }
-    // for confirm password
   };
-
+  // useEffect pour eviter l'erreur asynchrome il compare en boucle
+  // le mot de passe et confirmation de mot de passe.
   useEffect(() => {
+    // si différent erreur
     if (confirmPassword !== password) {
       setConfirmPasswordError("Le mot de passe n'est pas identique");
     } else {
+      // sinon pas d'erreur
       setConfirmPasswordError("");
     }
   }, [confirmPassword, password]);
