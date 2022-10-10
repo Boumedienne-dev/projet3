@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable no-lone-blocks */
+import { useState, useEffect } from "react";
 import PasswordInputField from "./PasswordInputField";
 import ConfirmPasswordInputField from "./ConfirmPasswordInputField";
 import "../assets/style/RegistrationUser.css";
@@ -15,6 +16,7 @@ export default function PasswordAndConfirmPasswordRegistration({
   const handleValidation = (e) => {
     const passwordInputValue = e.target.value.trim();
     const passwordInputFieldName = e.target.name;
+    // const confirmPasswordInputValue = e.target.value.trim();
     // for password
     if (passwordInputFieldName === "password") {
       const uppercaseRegExp = /(?=.*?[A-Z])/;
@@ -55,17 +57,16 @@ export default function PasswordAndConfirmPasswordRegistration({
       setPasswordError(errMsg);
     }
     // for confirm password
-    if (
-      passwordInputFieldName === "confirmPassword" ||
-      (passwordInputFieldName === "password" && confirmPassword.length > 0)
-    ) {
-      if (confirmPassword !== password) {
-        setConfirmPasswordError("Le mot de passe n'est pas identique");
-      } else {
-        setConfirmPasswordError("");
-      }
-    }
   };
+
+  useEffect(() => {
+    if (confirmPassword !== password) {
+      setConfirmPasswordError("Le mot de passe n'est pas identique");
+    } else {
+      setConfirmPasswordError("");
+    }
+  }, [confirmPassword, password]);
+
   return (
     <div>
       <div>
