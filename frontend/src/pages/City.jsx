@@ -26,11 +26,13 @@ export default function City() {
 
   return (
     <div className="cityDivPrincipal">
-      <img className="cityImg" src={getCity.picture} alt="" />
-      <div className="cityDivName">
-        <h2 className="cityDivNameH2">{getCity.city_name}</h2>
+      <div className="cityDivImg">
+        <img className="cityImg" src={getCity.picture} alt="" />
+        <div className="cityDivName">
+          <h2 className="cityDivNameH2">{getCity.city_name}</h2>
+        </div>
       </div>
-      <div>
+      <div className="cityDivMap">
         {getActivities &&
           getActivities.map((activity) => (
             <Activity key={activity.id} activity={activity} />
