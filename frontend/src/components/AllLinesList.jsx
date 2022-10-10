@@ -3,7 +3,7 @@ import "../assets/style/allLines.css";
 
 function AllLinesList({ line }) {
   return (
-    <div className="ess">
+    <div className="">
       <li className="line-map">
         <div>
           <Link to={`/les_villes/${line.id}`}>
