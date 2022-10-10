@@ -67,7 +67,7 @@ const verifyToken = (req, res, next) => {
     if (type !== "Bearer") {
       throw new Error("Authorization header has not the 'Bearer' type");
     }
-    // Véreifie que le token a été écrit par le back
+    // Vérifie que le token a été écrit par le back
     req.payload = jwt.verify(token, process.env.JWT_SECRET);
     next();
   } catch (err) {
