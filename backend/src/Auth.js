@@ -42,7 +42,7 @@ const verifyPassword = (req, res) => {
           // a changer en 1h il est en 1an pour developper sans devoir se reconnecter
           expiresIn: "365d",
         });
-        // efface le mdp
+        // efface les traces du mot de passe non hashé
         delete req.user.hashedPassword;
 
         res.send({ token, user: req.user });
