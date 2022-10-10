@@ -1,16 +1,20 @@
+// fonction du deuxieme input qui comparera à l'autre input mot de passe
 function ConfirmPasswordInputField({
   handleValidation,
   confirmPasswordError,
   confirmPassword,
   setConfirmPassword,
 }) {
+  function handleInputChangeConfirm(e) {
+    setConfirmPassword(e.target.value);
+    handleValidation(e);
+  }
   return (
     <div>
       <input
         type="password"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        onBlur={(e) => handleValidation(e)}
+        defaultValue={confirmPassword}
+        onChange={(e) => handleInputChangeConfirm(e)}
         name="confirmPassword"
         placeholder="Répéter le mot de passe"
       />

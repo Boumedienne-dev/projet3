@@ -1,16 +1,21 @@
+// Fonction Input du mot de passe qui sera vérifié avec le REGEX
 function PasswordInputField({
   password,
   setPassword,
   handleValidation,
   passwordError,
 }) {
+  function handleInputChange(e) {
+    setPassword(e.target.value);
+    handleValidation(e);
+  }
+
   return (
     <div>
       <input
         type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        onBlur={(e) => handleValidation(e)}
+        defaultValue={password}
+        onChange={(e) => handleInputChange(e)}
         name="password"
         placeholder="Mot de passe"
         required
