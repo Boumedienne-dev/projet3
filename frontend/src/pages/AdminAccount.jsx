@@ -63,7 +63,7 @@ export default function AdminAccount() {
   };
 
   return (
-    <div>
+    <>
       <h2 className="adminAccount">COMPTE ADMIN</h2>
       <form className="adminForm">
         <div>
@@ -114,28 +114,23 @@ export default function AdminAccount() {
             onChange={(e) => setActivityAddress(e.target.value)}
           />
         </div>
+        <div className="inserPicture">
+          <input type="file" onChange={(e) => uploadImage(e)} />
+        </div>
         <div>
-          <div className="insertPicture">
-            <input type="file" onChange={(e) => uploadImage(e)} />
-          </div>
-          <div>
-            <img
-              className="pictureAdmin"
-              src={activityPicture}
-              alt={activityName}
-            />
-          </div>
-          <div className="toggle-blue">
-            <button
-              type="submit"
-              Value="Submit"
-              onClick={(e) => postActivity(e)}
-            >
-              <span className="text-btn-black">Valider</span>
-            </button>
-          </div>
+          <img
+            className="pictureAdmin"
+            src={activityPicture}
+            alt={activityName}
+          />
+        </div>
+
+        <div className="toggle-blue">
+          <button type="submit" value="Submit" onClick={(e) => postActivity(e)}>
+            <span className="text-btn-black">Valider</span>
+          </button>
         </div>
       </form>
-    </div>
+    </>
   );
 }

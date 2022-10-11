@@ -8,16 +8,17 @@
 }
 
 .cityDivName {
-  height: 6vh;
+  height: 5vh;
   position: absolute;
   background-color: black;
   width: 100%;
-  top: 200px;
+  top: 150px;
   opacity: 0.6;
 }
 
 .cityDivNameH2 {
   color: white;
+  font-size: 18px;
   margin-top: 2%;
 }
 
@@ -58,14 +59,106 @@
 }
 
 .cityContainerDiv3 {
-  position: absolute;
+  position: static;
   height: 25px;
   width: 25px;
-  right: 15px;
   margin-top: 5px;
   cursor: pointer;
 }
 
 .cityContainerImgFavorite {
   width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .cityDivImg {
+    width: 60%;
+    margin: 0% 20% 0% 20%;
+  }
+
+  .cityImg {
+    width: 100%;
+  }
+
+  .cityDivName {
+    width: 60%;
+    top: 120px;
+    height: 7vh;
+  }
+
+  .cityDivMap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 15vh;
+    margin-top: 3vh;
+  }
+
+  .cityContainer {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .cityDivName {
+    top: 140px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .cityDivName {
+    top: 180px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .cityDivImg {
+    width: 50%;
+    margin: 0% 25% 0% 25%;
+  }
+
+  .cityDivName {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .cityDivImg {
+    width: 40%;
+    margin: 0% 30% 0% 30%;
+  }
+
+  .cityDivName {
+    width: 40%;
+    top: 160px;
+  }
+
+  .cityContainer {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .cityDivName {
+    top: 180px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .cityDivName {
+    top: 200px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .cityDivName {
+    top: 210px;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .cityDivName {
+    top: 230px;
+  }
 }

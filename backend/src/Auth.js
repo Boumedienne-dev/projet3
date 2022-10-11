@@ -35,14 +35,16 @@ const verifyPassword = (req, res) => {
     // Suite si le verify est correct entre le mot de passe que l'utilisateur rentre et celui hashé dans la BDD.
     .then((isVerified) => {
       if (isVerified) {
+        // le payload contient les données users
         const payload = { sub: req.user.id, isAdmin: req.user.isAdmin };
-
+        // jeton lié avec la chaine secrète JWT_SECRET
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
           // a changer en 1h il est en 1an pour developper sans devoir se reconnecter
           expiresIn: "365d",
         });
-
+        // efface les traces du mot de passe non hashé
         delete req.user.hashedPassword;
+
         res.send({ token, user: req.user });
       } else {
         res.sendStatus(401);
@@ -67,7 +69,7 @@ const verifyToken = (req, res, next) => {
     if (type !== "Bearer") {
       throw new Error("Authorization header has not the 'Bearer' type");
     }
-    // Véreifie que le token a été écrit par le back
+    // Vérifie que le token a été écrit par le back
     req.payload = jwt.verify(token, process.env.JWT_SECRET);
     next();
   } catch (err) {

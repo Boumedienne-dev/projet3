@@ -36,6 +36,7 @@ function AllCityList({ city }) {
             {getLogo &&
               getLogo.map((theme) => (
                 <img
+                  key={theme.id}
                   className="themeContainerPos"
                   src={theme.image}
                   alt={theme.theme_name}

@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import PasswordAndConfirmPasswordRegistration from "../components/PasswordAndConfirmPasswordRegistration";
 
+// fonction pour l'inscription et récupère la gestion du mot de passe et de confirmation
 export default function RegistrationUser() {
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
@@ -15,6 +16,7 @@ export default function RegistrationUser() {
     picture: "",
   });
 
+  // variable pour envoyer la requête si pas de messages d'erreurs du mot de passe.
   const postUser = () => {
     if (!errorsPassword) {
       axios
@@ -30,6 +32,7 @@ export default function RegistrationUser() {
     }
   };
 
+  // variable pour l'avatar et charge automatiquement pour affichage.
   const uploadImage = (e) => {
     const data = new FormData();
     data.append("file", e.target.files[0]);
@@ -48,9 +51,11 @@ export default function RegistrationUser() {
 
   function handleInputProfile(e) {
     uploadImage(e);
+    // url cloudinary sur la BDD a l'envoie de la requete.
     setUser({ ...user, picture: e.target.value });
   }
 
+  // formulaire controlé form onSubmit et button submit pour envoyé la requete a la BDD.
   return (
     <div className="">
       <h3 className="title-registration">
