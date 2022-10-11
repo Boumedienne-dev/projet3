@@ -1,12 +1,14 @@
 .navbarmain ul {
   position: fixed;
 }
+
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #0c131f;
   width: 100%;
+  z-index: 1;
 }
 
 /* .liWithName span{

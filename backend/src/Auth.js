@@ -40,7 +40,7 @@ const verifyPassword = (req, res) => {
         // jeton lié avec la chaine secrète JWT_SECRET
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
           // a changer en 1h il est en 1an pour developper sans devoir se reconnecter
-          expiresIn: "365d",
+          expiresIn: "1h",
         });
         // efface les traces du mot de passe non hashé
         delete req.user.hashedPassword;

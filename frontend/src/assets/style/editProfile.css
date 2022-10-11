@@ -19,7 +19,7 @@
 }
 
 .editProfileDivImg {
-  width: 100%;
+  width: 80%;
   min-width: 150px;
   height: 35vh;
   z-index: -5;
@@ -28,7 +28,7 @@
 .editProfileImg {
   width: 100%;
   min-width: 150px;
-  height: 45%;
+  height: 65%;
   object-fit: contain;
   top: 25px;
   border: solid 1px;
@@ -98,8 +98,7 @@
   font-size: 15px;
   top: 0px;
   left: 0%;
-  z-index: -10;
-}
+  }
 
 .editProfileDeconnexionbtn {
   position: relative;
@@ -112,8 +111,8 @@
   font-size: 15px;
   top: 0px;
   right: 20%;
-  z-index: -10;
 }
+
 .editProfilPassBtn:before {
   content: "";
   width: 1.2em;
@@ -124,6 +123,7 @@
   left: 0.2em;
   top: 0.2em;
 }
+
 .editProfileDeconnexionbtn:before {
   content: "";
   width: 1.2em;
@@ -146,7 +146,6 @@
   cursor: pointer;
   top: 0px;
   right: 50%;
-  z-index: -10;
 }
 
 .editProfileUpdateBtn:before {
@@ -408,6 +407,11 @@
 
   .editProfileForm {
     width: 40%;
+    margin-left: 20%;
+  }
+
+  .editProfileDivImg{
+    margin-left: 25%;
   }
 }
 
