@@ -1,6 +1,7 @@
 .navbarmain ul {
   position: fixed;
 }
+
 .navbar {
   display: flex;
   flex-direction: row;
