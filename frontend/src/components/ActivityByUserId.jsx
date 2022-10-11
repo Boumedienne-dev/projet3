@@ -15,7 +15,6 @@ function ActivityByUserId({ activity }) {
   return (
     <section key={activity.id} className="activityContainer">
       <div className="activityContainerDiv1">
-        <h1>{activity.id}</h1>
         <img className="activityContainerImg" src={activity.picture} alt="" />
       </div>
       <div className="activityContainerDiv2">

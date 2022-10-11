@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useState, useContext } from "react";
 import CurrentUserContext from "../context/CurrentUserContext";
+import "../assets/style/activityCity.css";
 
 function Activity({ activity }) {
   const { currentUser } = useContext(CurrentUserContext);

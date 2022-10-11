@@ -66,20 +66,18 @@ export default function EditProfile() {
 
   return (
     <div className="editProfileDivPrincipal">
-      <form>
-        <div className="editProfileDivImg">
-          <img className="editProfileImg" src={getUser.picture} alt="" />
-          {currentUser.isAdmin === 1 ? (
-            <a href="/administrateur">
-              <button className="buttonAccessAdmin" type="button">
-                Accès Admin
-              </button>
-            </a>
-          ) : (
-            ""
-          )}
-        </div>
-      </form>
+      <div className="editProfileDivImg">
+        <img className="editProfileImg" src={getUser.picture} alt="avatar" />
+        {currentUser.isAdmin === 1 ? (
+          <a href="/administrateur">
+            <button className="buttonAccessAdmin" type="button">
+              Accès Admin
+            </button>
+          </a>
+        ) : (
+          ""
+        )}
+      </div>
       <form
         className="editProfileForm"
         onSubmit={(e) => {
@@ -90,6 +88,7 @@ export default function EditProfile() {
         <section className="editProfileSectionContainer1">
           <div className="editProfileContainer1">
             <label htmlFor="lastname">Votre nom</label>
+            <br />
             <input
               className="editProfileLastname"
               type="text"
@@ -106,6 +105,7 @@ export default function EditProfile() {
           </div>
           <div className="editProfileContainer2">
             <label htmlFor="firstname">Votre Prenom</label>
+            <br />
             <input
               className="editProfileFirstname"
               type="text"
@@ -120,7 +120,7 @@ export default function EditProfile() {
               }}
             />
           </div>
-          <div>
+          <div className="editProfileContainer3">
             <label htmlFor="mail">Votre email</label>
             <br />
             <input
@@ -137,10 +137,9 @@ export default function EditProfile() {
               }}
             />
           </div>
-          <div>
-            <label htmlFor="password">Mot de passe</label>
+          <div className="editProfileDivPassword">
             <br />
-            <div className="editProfileDivButtons">
+            <div className="editProfileDivButtons" id="editProfileDivPassword">
               <button
                 className="editProfilPassBtn"
                 type="button"
