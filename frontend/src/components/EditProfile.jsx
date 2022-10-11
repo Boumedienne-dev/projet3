@@ -67,7 +67,7 @@ export default function EditProfile() {
   return (
     <div className="editProfileDivPrincipal">
       <div className="editProfileDivImg">
-        <img className="editProfileImg" src={getUser.picture} alt="" />
+        <img className="editProfileImg" src={getUser.picture} alt="avatar" />
         {currentUser.isAdmin === 1 ? (
           <a href="/administrateur">
             <button className="buttonAccessAdmin" type="button">
