@@ -42,6 +42,50 @@
 
 @media screen and (min-width: 400px) {
   .accountUserDivPrincipal {
+    padding-top: 10vh;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .accountUserDivPrincipal {
     padding-top: 12vh;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .accountUserDivPrincipal {
+    padding-top: 14vh;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .accountUserMap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .accountUserBorder {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 1px;
+    border-top: solid black 2px;
+    margin-bottom: 2vh;
+  }
+
+  .acountUserDeleteAccountButton {
+    width: 50%;
+    height: 1.8em;
+    border-radius: 1em;
+    background: #8de8fe;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 5vh;
   }
 }

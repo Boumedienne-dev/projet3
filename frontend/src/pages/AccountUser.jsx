@@ -40,10 +40,13 @@ export default function AccountUser() {
     <div className="accountUserDivPrincipal">
       <h2 className="accountUserTitle">Mon profil</h2>
       <EditProfile />
-      {getActivityByUserId &&
-        getActivityByUserId.map((activity) => (
-          <ActivityByUserId key={activity.id} activity={activity} />
-        ))}
+      <div className="accountUserBorder" />
+      <div className="accountUserMap">
+        {getActivityByUserId &&
+          getActivityByUserId.map((activity) => (
+            <ActivityByUserId key={activity.id} activity={activity} />
+          ))}
+      </div>
       <div className="acountUserDeleteAccountDiv">
         <button
           className="acountUserDeleteAccountButton"

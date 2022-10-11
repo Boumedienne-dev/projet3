@@ -98,6 +98,7 @@
   font-size: 15px;
   top: 0px;
   left: 0%;
+  z-index: -10;
 }
 
 .editProfileDeconnexionbtn {
@@ -111,6 +112,7 @@
   font-size: 15px;
   top: 0px;
   right: 20%;
+  z-index: -10;
 }
 .editProfilPassBtn:before {
   content: "";
@@ -144,6 +146,7 @@
   cursor: pointer;
   top: 0px;
   right: 50%;
+  z-index: -10;
 }
 
 .editProfileUpdateBtn:before {
@@ -392,85 +395,89 @@
 
 @media screen and (min-width: 1000px) {
   .editProfileDivPassword {
-    margin-left: 210px;
+    margin-left: 100px;
   }
 
   .editProfileInputImg {
-    margin-left: 180px;
+    margin-left: 80px;
   }
 
   .editProfileUpdateBtn {
-    margin-left: 130px;
+    margin-left: 50px;
+  }
+
+  .editProfileForm {
+    width: 40%;
   }
 }
 
 @media screen and (min-width: 1050px) {
   .editProfileDivPassword {
-    margin-left: 230px;
+    margin-left: 100px;
   }
 
   .editProfileInputImg {
-    margin-left: 200px;
+    margin-left: 80px;
   }
 
   .editProfileUpdateBtn {
-    margin-left: 150px;
+    margin-left: 50px;
   }
 }
 
 @media screen and (min-width: 1100px) {
   .editProfileDivPassword {
-    margin-left: 250px;
+    margin-left: 100px;
   }
 
   .editProfileInputImg {
-    margin-left: 220px;
+    margin-left: 80px;
   }
 
   .editProfileUpdateBtn {
-    margin-left: 170px;
+    margin-left: 50px;
   }
 }
 
 @media screen and (min-width: 1150px) {
   .editProfileDivPassword {
-    margin-left: 270px;
+    margin-left: 120px;
   }
 
   .editProfileInputImg {
-    margin-left: 250px;
+    margin-left: 100px;
   }
 
   .editProfileUpdateBtn {
-    margin-left: 180px;
+    margin-left: 70px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .editProfileDivPassword {
-    margin-left: 290px;
+    margin-left: 120px;
   }
 
   .editProfileInputImg {
-    margin-left: 270px;
+    margin-left: 100px;
   }
 
   .editProfileUpdateBtn {
-    margin-left: 200px;
+    margin-left: 70px;
   }
 }
 
 @media screen and (min-width: 1250px) {
   .editProfileDivPassword {
-    margin-left: 310px;
+    margin-left: 130px;
   }
 
   .editProfileInputImg {
-    margin-left: 290px;
+    margin-left: 110px;
   }
 
   .editProfileUpdateBtn {
-    margin-left: 220px;
+    margin-left: 80px;
   }
 }
 
