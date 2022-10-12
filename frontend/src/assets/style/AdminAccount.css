@@ -1,0 +1,313 @@
+.adminForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.adminAccount {
+  padding-top: 75px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Choice regions */
+.regions {
+  width: 250px;
+  height: 26px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Choice lines */
+.destination {
+  width: 250px;
+  height: 25px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Choice city */
+.city {
+  width: 250px;
+  height: 25px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/*Name of Activity */
+.nameActivity {
+  width: 250px;
+  height: 25px;
+  font-weight: 700;
+  /* identical to box height */
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* choice themes */
+.themes {
+  width: 250px;
+  height: 25px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.description {
+  width: 250px;
+  height: 73px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Adress */
+.adress {
+  width: 250px;
+  height: 56px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Insert a picture */
+.inserPicture {
+  width: 250px;
+  height: 25px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-left: 20%;
+}
+
+.insertPicture input {
+  width: 250px;
+}
+
+.pictureAdmin {
+  border: solid 2px black;
+  width: 240px;
+  height: 200px;
+  display: flex;
+  display: inline-block;
+}
+
+/* Button Validate of admin account */
+.validateAdmin {
+  position: absolute;
+  width: 192px;
+  height: 39px;
+  left: 186px;
+  top: 740px;
+  border: none;
+}
+
+.validateAdminB {
+  width: 120px;
+  cursor: pointer;
+}
+
+.buttonAdmin {
+  background-color: white;
+  border: none;
+}
+
+@media screen and (min-width: 400px) {
+  .insertPicture {
+    position: relative;
+    right: 250px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .adminAccount {
+    top: 100px;
+    left: 40%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: justify;
+    color: #000000;
+  }
+
+  .insertPicture {
+    left: 600px;
+    background: #d9d9d9;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .adminAccount {
+    font-size: 60px;
+  }
+
+  .regions {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .destination {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .city {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .nameActivity {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .themes {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    top: 280px;
+    left: 80px;
+  }
+
+  .description {
+    font-size: 20px;
+    width: 400px;
+    height: 150px;
+    top: 250px;
+    left: 80px;
+  }
+
+  .adress {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    top: 280px;
+    left: 80px;
+  }
+
+  .insertPicture {
+    font-size: 20px;
+    width: 400px;
+    top: 300px;
+  }
+
+  .pictureAdmin {
+    right: 250px;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .insertPicture {
+    position: relative;
+    right: 250px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .adminAccount {
+    top: 100px;
+    left: 40%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: justify;
+    color: #000000;
+  }
+
+  .insertPicture {
+    left: 600px;
+    background: #d9d9d9;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .adminAccount {
+    font-size: 60px;
+  }
+
+  .regions {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .destination {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .city {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .nameActivity {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    left: 80px;
+  }
+
+  .themes {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    top: 280px;
+    left: 80px;
+  }
+
+  .description {
+    font-size: 20px;
+    width: 400px;
+    height: 150px;
+    top: 250px;
+    left: 80px;
+  }
+
+  .adress {
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    top: 280px;
+    left: 80px;
+  }
+
+  .insertPicture {
+    font-size: 20px;
+    width: 400px;
+    top: 300px;
+  }
+
+  .pictureAdmin {
+    right: 250px;
+  }
+}

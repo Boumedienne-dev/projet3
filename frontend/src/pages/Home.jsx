@@ -1,36 +1,33 @@
-import Counter from "@components/Counter";
-import logo from "@assets/logo.svg";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import RegionList from "../components/RegionList";
+
+import "../assets/style/home.css";
 
 export default function Home() {
+  const [getRegion, setGetRegion] = useState();
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/regions`)
+      .then((response) => response.data)
+      .then((data) => setGetRegion(data));
+  }, []);
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
+    <div className="homeDivMain">
+      <h2 className="homeTitle">
+        Bienvenue sur l'application Sncf Exploration
+      </h2>
       <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
+        Vous voulez trouver une activité proche de nos gare TER? Vous êtes au
+        bon endroit
       </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+      <div className="homeDiv">
+        {getRegion &&
+          getRegion.map((region) => (
+            <RegionList region={region} key={region.id} />
+          ))}
+      </div>
+    </div>
   );
 }

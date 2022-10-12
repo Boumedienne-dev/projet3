@@ -1,0 +1,556 @@
+.accountUserDivPrincipal {
+  padding-top: 8vh;
+  padding-bottom: 10vh;
+  width: 100%;
+}
+
+.editProfileDivPrincipal {
+  display: flex;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+.editProfileSectionContainer2 {
+  width: 100%;
+}
+
+.editProfileContainers {
+  width: 100%;
+}
+
+.editProfileDivImg {
+  width: 80%;
+  min-width: 150px;
+  height: 35vh;
+  z-index: -5;
+}
+
+.editProfileImg {
+  width: 100%;
+  min-width: 150px;
+  height: 65%;
+  object-fit: contain;
+  top: 25px;
+  border: solid 1px;
+}
+
+.buttonAccessAdmin {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: blue;
+  color: #ffffff;
+  border: solid 3px red;
+  cursor: pointer;
+}
+
+.editProfileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin-top: 2vh;
+}
+
+.editProfileFirstname {
+  border-radius: 5px;
+  background-color: rgb(215, 211, 211);
+  height: 20px;
+  width: 90%;
+  text-align: center;
+}
+
+.editProfileLastname {
+  border-radius: 5px;
+  background-color: rgb(215, 211, 211);
+  height: 20px;
+  width: 90%;
+  text-align: center;
+}
+
+.editProfileMail {
+  border-radius: 5px;
+  background-color: rgb(215, 211, 211);
+  width: 90%;
+  height: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.editProfileDivUploadImg {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.editProfileDivButtons {
+  display: flex;
+  width: 100%;
+}
+
+.editProfilPassBtn {
+  position: relative;
+  text-align: center;
+  width: 200px;
+  height: 1.8em;
+  border-radius: 1em;
+  background: #8de8fe;
+  cursor: pointer;
+  font-size: 15px;
+  top: 0px;
+  left: 0%;
+  }
+
+.editProfileDeconnexionbtn {
+  position: relative;
+  text-align: center;
+  width: 150px;
+  height: 1.8em;
+  border-radius: 1em;
+  background: #8de8fe;
+  cursor: pointer;
+  font-size: 15px;
+  top: 0px;
+  right: 20%;
+}
+
+.editProfilPassBtn:before {
+  content: "";
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 1em;
+  background: #0c131f;
+  position: absolute;
+  left: 0.2em;
+  top: 0.2em;
+}
+
+.editProfileDeconnexionbtn:before {
+  content: "";
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 1em;
+  background: #0c131f;
+  position: absolute;
+  left: 0.2em;
+  top: 0.2em;
+}
+
+.editProfileUpdateBtn {
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 150px;
+  height: 1.5em;
+  border-radius: 1em;
+  background: #0c131f;
+  cursor: pointer;
+  top: 0px;
+  right: 50%;
+}
+
+.editProfileUpdateBtn:before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background: #8de8fe;
+  position: absolute;
+  right: 0.2em;
+  top: 0.2em;
+}
+
+.text-btn-white-user {
+  padding-right: 15px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.text-btn-black-user {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 400px) {
+  .editProfileDivPrincipal {
+    height: auto;
+    margin-top: 5vh;
+  }
+
+  .editProfileDivImg {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .editProfileDivButtons {
+    margin-left: 150px;
+  }
+
+  .editProfileDivImg {
+    height: 400px;
+  }
+
+  .editProfileFirstname {
+    width: 65%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  .editProfileLastname {
+    width: 65%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  .editProfileMail {
+    width: 65%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  #editProfileDivPassword {
+    margin-right: 150px;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .editProfileDivButtons {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .editProfileDivButtons {
+    margin-left: 300px;
+  }
+
+  .editProfileDivImg {
+    height: 400px;
+  }
+
+  .editProfileFirstname {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  .editProfileLastname {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  .editProfileMail {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-left: 10%;
+  }
+
+  #editProfileDivPassword {
+    margin-right: 300px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .editProfileDivButtons {
+    margin-left: 500px;
+  }
+
+  #editProfileDivPassword {
+    margin-right: 500px;
+  }
+
+  .editProfileFirstname {
+    width: 40%;
+    margin-left: 10%;
+  }
+
+  .editProfileLastname {
+    width: 40%;
+    margin-left: 10%;
+  }
+
+  .editProfileMail {
+    width: 40%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .editProfileDivPrincipal {
+    height: 50vh;
+  }
+
+  .editProfileDivImg {
+    width: 40%;
+  }
+
+  .editProfileImg {
+    width: auto;
+  }
+
+  .editProfileForm {
+    width: 60%;
+    height: auto;
+  }
+
+  .editProfileSectionContainer1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .editProfileContainer1 {
+    width: 50%;
+  }
+
+  .editProfileLastname {
+    width: 80%;
+    margin: 0px;
+    margin-bottom: 2vh;
+  }
+
+  .editProfileContainer2 {
+    width: 50%;
+  }
+
+  .editProfileFirstname {
+    width: 80%;
+    margin: 0px;
+    margin-bottom: 2vh;
+  }
+
+  .editProfileContainer3 {
+    width: 100%;
+  }
+
+  .editProfileMail {
+    width: 90%;
+    margin: 0px;
+    margin-bottom: 2vh;
+  }
+
+  .editProfileDivButtons {
+    margin-left: 0px;
+  }
+
+  .editProfileDivPassword {
+    margin-right: 0px;
+    margin-left: 130px;
+    margin-bottom: 2vh;
+    width: 100%;
+  }
+
+  .editProfileDivUploadImg {
+    margin-bottom: 2vh;
+  }
+
+  .editProfileInputImg {
+    margin-left: 110px;
+  }
+
+  .editProfileUpdateBtn {
+    right: 30px;
+    margin-left: 70px;
+  }
+
+  .editProfileDeconnexionbtn {
+    top: 0px;
+    left: 50px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .editProfileDivPassword {
+    margin-left: 170px;
+  }
+
+  .editProfileInputImg {
+    margin-left: 140px;
+  }
+
+  .editProfileUpdateBtn {
+    margin-left: 100px;
+  }
+
+  .editProfileDivPrincipal {
+    border: none;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .editProfileDivPassword {
+    margin-left: 190px;
+  }
+
+  .editProfileInputImg {
+    margin-left: 160px;
+  }
+
+  .editProfileUpdateBtn {
+    margin-left: 120px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .editProfileDivPassword {
+    margin-left: 100px;
+  }
+
+  .editProfileInputImg {
+    margin-left: 80px;
+  }
+
+  .editProfileUpdateBtn {
+    margin-left: 50px;
+  }
+
+  .editProfileForm {
+    width: 40%;
+    margin-left: 20%;
+  }
+
+  .editProfileDivImg{
+    margin-left: 25%;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .editProfileDivPassword {
+    margin-left: 100px;
+  }
+
+  .editProfileInputImg {
+    margin-left: 80px;
+  }
+
+  .editProfileUpdateBtn {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .editProfileDivPassword {
+    margin-left: 100px;
+  }
+
+  .editProfileInputImg {
+    margin-left: 80px;
+  }
+
+  .editProfileUpdateBtn {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .editProfileDivPassword {
+    margin-left: 120px;
+  }
+
+  .editProfileInputImg {
+    margin-left: 100px;
+  }
+
+  .editProfileUpdateBtn {
+    margin-left: 70px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .editProfileDivPassword {
+    margin-left: 120px;
+  }
+
+  .editProfileInputImg {
+    margin-left: 100px;
+  }
+
+  .editProfileUpdateBtn {
+    margin-left: 70px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .editProfileDivPassword {
+    margin-left: 130px;
+  }
+
+  .editProfileInputImg {
+    margin-left: 110px;
+  }
+
+  .editProfileUpdateBtn {
+    margin-left: 80px;
+  }
+}
+
+/*
+@media screen and (min-width: 800px) {
+  .accountuserDivPrincipal {
+    padding-top: 2vh;
+  }
+
+  .editProfileDivPrincipal {
+    height: 45vh;
+    margin-bottom: 0px;
+    margin-top: 5vh;
+  }
+  .editProfileDivImg {
+    width: 400px;
+    height: 400px;
+  }
+  .editProfileForm {
+    width: 80%;
+  }
+
+  .editProfileImg {
+    height: 70%;
+    width: 70%;
+    margin-left: 30%;
+  }
+
+  .editProfileFirstname {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .editProfileLastname {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .editProfileMail {
+    width: 500px;
+    margin-bottom: 20px;
+  }
+
+  .editProfileDivUploadImg {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+
+  .editProfileInputImg {
+    margin-left: 35%;
+  }
+
+  .editProfileSectionContainer2 {
+    margin-top: 5vh;
+  }
+
+  .editProfileDivButtons {
+    justify-content: center;
+  }
+
+  .editProfileUpdateBtn {
+    width: 150px;
+    height: 1.2em;
+    top: 50px;
+    left: 10%;
+  }
+
+  .editProfileUpdateBtn:before {
+    top: 0.1em;
+  }
+}*/

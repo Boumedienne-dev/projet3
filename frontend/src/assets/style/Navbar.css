@@ -1,0 +1,33 @@
+.navbarmain ul {
+  position: fixed;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #0c131f;
+  width: 100%;
+  z-index: 1;
+}
+
+/* .liWithName span{
+  color: white;
+} */
+
+.sncf-explo-logo {
+  width: 100%;
+  height: auto;
+  margin: 10px 10px;
+  max-width: 150px;
+}
+
+.user-account-logo {
+  width: 30%;
+  height: auto;
+  margin: 10px 0px 0 50px;
+  max-width: 60px;
+}
+.navbar li {
+  width: 25%;
+}
